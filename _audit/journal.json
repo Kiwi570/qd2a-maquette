@@ -85,7 +85,7 @@
         "mécaniques reprises sans copie de code : bac-a-feuilleter (pile des 26), rature-au-stylo, fil-conducteur, manifeste-mot-a-mot, lumiere-au-pointeur, formulaire-par-etapes, envol-vers-le-panier (enveloppe)"
       ],
       "audit": {
-        "niveau": "standard + passe des formats",
+        "niveau": "standard, passe des formats, puis complet (version finale)",
         "echecsPremierPassage": 133,
         "relances": 4,
         "corrections": [
@@ -98,7 +98,18 @@
           "bloc « 26 » qui recouvrait le titre",
           "positions des noms de l'Hydre effacées en mode calme",
           "pli du voile qui laissait une bande au bord"
-        ]
+        ],
+        "complet": {
+          "date": "2026-11-07T22:29:03+01:00",
+          "echecs": 0,
+          "aRegarder": [
+            "rechargement au milieu de l'accueil (écran différent à 15 %)",
+            "fluidité de l'accueil (6 % d'images lentes)"
+          ],
+          "nonLance": [
+            "Safari"
+          ]
+        }
       },
       "effetsRetires": [],
       "grilleDispenses": {},
@@ -112,7 +123,8 @@
         "étapes inactives plus lisibles",
         "repères du crayon plus petits sur téléphone",
         "barre du téléphone : « E-mail »"
-      ]
+      ],
+      "valideeLe": "2026-11-07T22:04:00+01:00"
     }
   ]
 }
