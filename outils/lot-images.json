@@ -1,0 +1,277 @@
+[
+ {
+  "source": "recu/grokzip/qd2a-images/g-accueil-ouverture.jpg",
+  "nom": "grok/g-accueil-ouverture",
+  "largeurs": [
+   640,
+   1168
+  ],
+  "source_mobile": "recu/grokzip/qd2a-images/g-accueil-ouverture-mobile.jpg"
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-accueil-lecture.jpg",
+  "nom": "grok/g-accueil-lecture",
+  "largeurs": [
+   640,
+   1168
+  ],
+  "source_mobile": "recu/grokzip/qd2a-images/g-accueil-lecture-mobile.jpg"
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-saison-ouverture.jpg",
+  "nom": "grok/g-saison-ouverture",
+  "largeurs": [
+   640,
+   1168
+  ],
+  "source_mobile": "recu/grokzip/qd2a-images/g-saison-ouverture-mobile.jpg"
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-appel-ouverture.jpg",
+  "nom": "grok/g-appel-ouverture",
+  "largeurs": [
+   640,
+   1168
+  ],
+  "source_mobile": "recu/grokzip/qd2a-images/g-appel-ouverture-mobile.jpg"
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-hydre-ouverture.jpg",
+  "nom": "grok/g-hydre-ouverture",
+  "largeurs": [
+   640,
+   1168
+  ],
+  "source_mobile": "recu/grokzip/qd2a-images/g-hydre-ouverture-mobile.jpg"
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-accueil-appel.jpg",
+  "nom": "grok/g-accueil-appel",
+  "largeurs": [
+   640,
+   1168
+  ]
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-saison-lectures.jpg",
+  "nom": "grok/g-saison-lectures",
+  "largeurs": [
+   640,
+   1168
+  ]
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-hydre-marais.jpg",
+  "nom": "grok/g-hydre-marais",
+  "largeurs": [
+   640,
+   1168
+  ]
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-contact-bandeau.jpg",
+  "nom": "grok/g-contact-bandeau",
+  "largeurs": [
+   640,
+   1168
+  ]
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-404.jpg",
+  "nom": "grok/g-404",
+  "largeurs": [
+   640,
+   1168
+  ]
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-accueil-lecteur.jpg",
+  "nom": "grok/g-accueil-lecteur",
+  "largeurs": [
+   480,
+   784
+  ]
+ },
+ {
+  "source": "recu/grokzip/qd2a-images/g-appel-fiches.jpg",
+  "nom": "grok/g-appel-fiches",
+  "largeurs": [
+   480,
+   784
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/accueil.jpg",
+  "nom": "site/mazunya",
+  "largeurs": [
+   640,
+   1100
+  ],
+  "ratio": "4:5",
+  "cadrage": [
+   42,
+   30
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/lectures-textes-laureats-25.jpg",
+  "nom": "site/mazunya-portrait",
+  "largeurs": [
+   480,
+   800
+  ],
+  "ratio": "4:5",
+  "cadrage": [
+   45,
+   44
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/coups-coeur-25-26-3.jpg",
+  "nom": "site/nicolas",
+  "largeurs": [
+   480,
+   757
+  ],
+  "ratio": "4:5",
+  "cadrage": [
+   48,
+   40
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/140225-helene-marx-2.jpg",
+  "nom": "site/okbi",
+  "largeurs": [
+   480,
+   900
+  ],
+  "ratio": "4:5",
+  "cadrage": [
+   45,
+   50
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/coups-coeur-25-26-2.jpg",
+  "nom": "site/nzila",
+  "largeurs": [
+   480,
+   900
+  ],
+  "ratio": "4:5",
+  "cadrage": [
+   50,
+   45
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/coups-coeur-25-26-5.jpg",
+  "nom": "site/porcher-jouve",
+  "largeurs": [
+   480,
+   621
+  ],
+  "ratio": "4:5",
+  "cadrage": [
+   49,
+   55
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-france.png",
+  "nom": "site/comite-france",
+  "largeurs": [
+   480,
+   900
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-3.png",
+  "nom": "site/comite-belgique",
+  "largeurs": [
+   480,
+   900
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun.png",
+  "nom": "site/comite-cameroun",
+  "largeurs": [
+   480,
+   900
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-canada.png",
+  "nom": "site/comite-canada",
+  "largeurs": [
+   480,
+   900
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/vie-quartier.jpg",
+  "nom": "site/vie-quartier",
+  "largeurs": [
+   640,
+   1280
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/logo-sombre-2.png",
+  "nom": "site/logo-tqi",
+  "largeurs": [
+   320
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/logo.jpg",
+  "nom": "site/logo-ced",
+  "largeurs": [
+   320
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/logo-2.jpg",
+  "nom": "site/logo-avant-scene",
+  "largeurs": [
+   400
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/logo-3.jpg",
+  "nom": "site/logo-bellone",
+  "largeurs": [
+   235
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/bellone-maison-spectacle.png",
+  "nom": "site/logo-cite-arts",
+  "largeurs": [
+   400
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/loin-hommes.jpg",
+  "nom": "site/couv-loin-des-hommes",
+  "largeurs": [
+   400
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/selection-finale-22-23.jpg",
+  "nom": "site/couv-nombril",
+  "largeurs": [
+   400
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/quartiers-intranquilles-saison-2020.jpg",
+  "nom": "site/couv-saison-2020",
+  "largeurs": [
+   400
+  ]
+ }
+]

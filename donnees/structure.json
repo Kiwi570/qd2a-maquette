@@ -1,0 +1,18 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Le Quartier des Autrices et des Auteurs",
+  "alternateName": "QD2A",
+  "url": "https://qd2a-maquette.vercel.app/",
+  "email": "comiteqdaa@gmail.com",
+  "foundingDate": "2020-05",
+  "description": { "fr": "Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry." },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Manufacture des Œillets, 1 place Pierre Gosnat",
+    "postalCode": "94200",
+    "addressLocality": "Ivry-sur-Seine",
+    "addressCountry": "FR"
+  },
+  "sameAs": ["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]
+}

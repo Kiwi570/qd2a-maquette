@@ -1,0 +1,399 @@
+{
+  "commun": {
+    "navigation": "Navigation principale",
+    "menu": "Menu",
+    "fermer": "Fermer",
+    "actionEntete": "Envoyer un texte",
+    "ecrire": "E-mail",
+    "calmeReduire": "Réduire les animations",
+    "calmeRetablir": "Rétablir les animations",
+    "calmeSysteme": "Animations réduites par le réglage de votre appareil",
+    "sommaire": "Sommaire",
+    "confort": "Confort de lecture",
+    "retourHaut": "Retour en haut",
+    "maquette": "Maquette : les informations marquées « à compléter » seront fournies par le Quartier.",
+    "evitement": "Aller au contenu",
+    "mentionIa": "Illustration générée",
+    "pause": "Pause",
+    "lecture": "Lecture",
+    "introLigne": "Comité de lecture international",
+    "introTape": "Le Quartier des Autrices et des Auteurs",
+    "mentions": "Mentions légales : à compléter",
+    "confidentialite": "Politique de confidentialité : à compléter",
+    "facebook": "Facebook",
+    "nouvelOnglet": "(nouvel onglet)",
+    "accueilLogo": "Le Quartier des Autrices et des Auteurs, accueil",
+    "nousTrouver": "Nous trouver",
+    "accueilli": "Accueilli au Théâtre des Quartiers d’Ivry",
+    "piedTexte": "Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.",
+    "envoyer": "Envoyer un texte",
+    "fiche": "Fiche de renseignements 26/27 (PDF)",
+    "logo": "Logo {nom}"
+  },
+  "pages": {
+    "accueil": {
+      "titre": "Le Quartier des Autrices et des Auteurs (QD2A) : comité de lecture international",
+      "description": "Le QD2A lit les écritures dramatiques contemporaines de langue française : près de 50 lecteurs, quatre comités, un appel à textes ouvert sans date limite.",
+      "nav": "Accueil",
+      "partageAlt": "Le Quartier des Autrices et des Auteurs : un tapuscrit sur une table de lecture",
+      "accroche": "On lit vos textes"
+    },
+    "saison": {
+      "titre": "La saison 25/26 : lauréate, coups de cœur et sélection finale du QD2A",
+      "description": "Chronologies de Stephie Mazunya, lauréate internationale 25/26, quatre coups de cœur et les 26 textes de la sélection finale.",
+      "nav": "La saison 25/26",
+      "partageAlt": "La saison 25/26 du QD2A : une pile de tapuscrits",
+      "accroche": "26 textes, une lauréate"
+    },
+    "appel": {
+      "titre": "L’appel à textes 26/27 du QD2A : conditions et envoi",
+      "description": "Textes dramatiques en français, inédits, de trois ans au plus : l’appel à textes 26/27 du Quartier est ouvert, sans date limite.",
+      "nav": "L’appel à textes",
+      "partageAlt": "L’appel à textes 26/27 du QD2A : une enveloppe sous une lampe",
+      "accroche": "Ouvert, sans date limite"
+    },
+    "hydre": {
+      "titre": "L’Hydre de Lerne : le comité international du QD2A",
+      "description": "France, Belgique, Cameroun, Canada : quatre comités, près de 50 lecteurs, un lauréat élu en commun.",
+      "nav": "L’Hydre",
+      "partageAlt": "L’Hydre de Lerne du QD2A : quatre lampes de lecture",
+      "accroche": "Quatre têtes, un comité"
+    },
+    "contact": {
+      "titre": "Écrire au Quartier des Autrices et des Auteurs",
+      "description": "Une question, un partenariat, une lecture : écrivez au QD2A, accueilli au Théâtre des Quartiers d’Ivry.",
+      "nav": "Contact",
+      "partageAlt": "Écrire au QD2A : des enveloppes sur un bureau",
+      "accroche": "Écrivez-nous"
+    },
+    "404": {
+      "titre": "Page introuvable : Le Quartier des Autrices et des Auteurs",
+      "description": "Cette page n’existe pas ou plus.",
+      "nav": "Page introuvable",
+      "partageAlt": "Page introuvable",
+      "accroche": "La servante est restée allumée"
+    }
+  },
+  "accueil": {
+    "hero": {
+      "surtitre": "Comité de lecture international · depuis 2020",
+      "titre": "Le Quartier des Autrices et des Auteurs",
+      "texte": "Nous lisons les écritures dramatiques contemporaines de langue française, d’où qu’elles viennent. Près de 50 lecteurs, quatre comités, et chaque texte reçu lu par trois d’entre eux.",
+      "action": "Envoyer un texte",
+      "info": "Appel à textes 26/27 ouvert, sans date limite",
+      "alt": "Table de lecture couverte de tapuscrits",
+      "consigne": "Attrapez le tapuscrit lauréat et tournez ses pages",
+      "consigneTactile": "Faites glisser le tapuscrit pour tourner ses pages",
+      "precedente": "Page précédente",
+      "suivante": "Page suivante",
+      "region": "Tapuscrit de Chronologies, à feuilleter",
+      "p1sur": "Lauréate internationale 25/26",
+      "p1lien": "Lire la fiche",
+      "p2titre": "Personnages",
+      "p3titre": "Le texte",
+      "p3texte": "Deux jeunes femmes, deux trajectoires qui se croisent et s’éloignent : l’éveil, l’écriture, l’épreuve du retour au pays.",
+      "p4titre": "L’autrice",
+      "p4texte": "Comédienne et autrice canadienne d’origine burundaise, diplômée de l’École nationale de théâtre du Canada en 2019.",
+      "p5titre": "Comment il a été choisi",
+      "p5texte": "Lu par trois lecteurs, retenu en sélection finale, puis élu en commun par les quatre comités de l’Hydre.",
+      "p6titre": "Lu en juin 2026",
+      "p6fin": "Fin du tapuscrit",
+      "l1": "Le Quartier",
+      "l2": "des Autrices",
+      "l3": "et des Auteurs",
+      "tampon": "QD2A 25/26"
+    },
+    "titres": {
+      "titre": "Les 26 textes de la sélection finale 25/26"
+    },
+    "lecture": {
+      "surtitre": "Comment un texte est lu",
+      "titre": "Trois lecteurs, trois fiches, puis tout le comité",
+      "consigne": "Faites pivoter la table",
+      "e1t": "Le texte arrive",
+      "e1": "Par e-mail, avec sa fiche de renseignements. L’appel est ouvert toute l’année.",
+      "e2t": "Trois lecteurs",
+      "e2": "Trois lecteurs bénévoles le lisent, et chacun écrit sa fiche.",
+      "e3t": "Deux avis favorables",
+      "e3": "Deux avis favorables suffisent pour passer en sélection finale.",
+      "e4t": "Tout le comité relit",
+      "e4": "La sélection finale est relue par l’ensemble du comité, qui se réunit une fois par mois.",
+      "e5t": "Un lauréat, élu en commun",
+      "e5": "Les quatre comités élisent ensemble le lauréat ; chacun choisit aussi son coup de cœur.",
+      "fiche": "Fiche de lecture",
+      "lecteur": "Lecteur",
+      "favorable": "Favorable",
+      "pile": "Sélection finale",
+      "laureat": "Lauréat",
+      "alt": "Lecteur de dos annotant un tapuscrit au crayon rouge",
+      "recu": "Texte reçu"
+    },
+    "saison": {
+      "surtitre": "Saison 25/26",
+      "titre": "Une lauréate, quatre coups de cœur",
+      "texte": "Faites tourner : la lauréate internationale et les coups de cœur des comités.",
+      "region": "Carrousel de la saison 25/26",
+      "precedent": "Texte précédent",
+      "suivant": "Texte suivant",
+      "lien": "Toute la saison 25/26",
+      "laureate": "Lauréate internationale",
+      "coup": "Coup de cœur"
+    },
+    "plein": {
+      "g": "Lu",
+      "d": "à voix haute",
+      "titre": "Le lauréat est lu à voix haute",
+      "apres": "Chaque année, le texte lauréat est mis en lecture dans les pays du comité. En juin 2026 : France le 3, Cameroun le 6, Belgique le 12.",
+      "alt": "Plateau vide préparé pour une lecture, quatre pupitres éclairés"
+    },
+    "hydre": {
+      "surtitre": "Le manifeste",
+      "avant": "un comité de lecture",
+      "apres": "une Hydre de Lerne",
+      "titreDebut": "Le Quartier n’est pas seulement",
+      "titreFin": "C’est",
+      "texte": "Un comité aux têtes nombreuses, autrices, auteurs, comédiennes, metteurs en scène, lecteurs, dont aucune ne lit pareil. Lire, ici, est une expérience vivante : on y engage le lecteur, l’autre, et la conversation.",
+      "signature": "D’après le manifeste de Laëtitia Ajanohun, autrice, metteuse en scène, comédienne et membre du QD2A. Texte intégral à reprendre.",
+      "pays": "France · Belgique · Cameroun · Canada",
+      "lien": "Rencontrer l’Hydre"
+    },
+    "appel": {
+      "surtitre": "Saison 26/27",
+      "titre": "L’appel à textes est ouvert.",
+      "texte": "Autrices et auteurs de toutes nationalités. Les textes non lus pendant la saison le seront la suivante.",
+      "c1": "Écrit en français, sans traduction",
+      "c2": "Texte dramatique ou libre adaptation, de trois ans au plus",
+      "c3": "Inédit au moment de l’envoi",
+      "c4": "Avec la fiche de renseignements 26/27",
+      "action": "Envoyer un texte",
+      "alt": "Tapuscrit tenu par une pince, sortant d’une enveloppe kraft"
+    },
+    "partenaires": {
+      "titre": "Ils nous accueillent et nous accompagnent",
+      "visiter": "Visiter"
+    }
+  },
+  "saison": {
+    "hero": {
+      "surtitre": "Dernière saison",
+      "titre": "La saison 25/26",
+      "texte": "26 textes en sélection finale, venus de 12 pays. Une lauréate internationale, quatre coups de cœur, trois lectures en juin.",
+      "action": "Feuilleter les 26 textes",
+      "info": "L’appel 26/27 est ouvert",
+      "alt": "Haute pile de tapuscrits aux tranches éclairées",
+      "compteur": "textes"
+    },
+    "laureat": {
+      "surtitre": "Lauréate internationale 25/26",
+      "personnages": "Personnages",
+      "distinctions": "Distinctions",
+      "alt": "Portrait de Stephie Mazunya"
+    },
+    "selection": {
+      "surtitre": "Sélection finale",
+      "titre": "Les 26 textes",
+      "texte": "Faites défiler pour feuilleter la pile, ou choisissez un pays.",
+      "tous": "Tous",
+      "filtres": "Filtrer par pays",
+      "region": "Pile des tapuscrits de la sélection finale",
+      "aucun": "Aucun texte pour ce pays.",
+      "compte": "{n} textes"
+    },
+    "coups": {
+      "surtitre": "Les singularités",
+      "titre": "Quatre coups de cœur",
+      "texte": "Chaque comité choisit, en plus du lauréat commun, le texte qui l’a le plus touché.",
+      "comite": "Choisi par",
+      "alt": "Portrait de {nom}"
+    },
+    "lectures": {
+      "surtitre": "Agenda",
+      "titre": "Les lectures de juin",
+      "texte": "Le texte lauréat lu dans les pays du comité, avec le coup de cœur de chacun.",
+      "termine": "Terminé",
+      "aVenir": "À venir",
+      "alt": "Petite salle après une lecture publique, pupitres éteints",
+      "canada": "Lecture au Canada : à compléter."
+    },
+    "pays": {
+      "titre": "Douze pays dans la sélection"
+    },
+    "fin": {
+      "titre": "La saison 26/27 se lit déjà",
+      "texte": "L’appel est ouvert toute l’année : votre texte peut être dans la prochaine pile.",
+      "action": "Envoyer un texte"
+    }
+  },
+  "appel": {
+    "hero": {
+      "surtitre": "Saison 26/27",
+      "titre": "L’appel à textes",
+      "texte": "Autrices et auteurs de toutes nationalités, écrivant en français : le Quartier lit votre texte.",
+      "action": "Déposer un texte",
+      "info": "Ouvert sans date limite",
+      "alt": "Enveloppe kraft et tapuscrit sous une lampe, la nuit",
+      "lampe": "Promenez la lampe sur la table"
+    },
+    "conditions": {
+      "surtitre": "Les conditions",
+      "titre": "Quatre cachets avant l’envoi",
+      "c1t": "En français",
+      "c1": "Écrit en langue française, sans traduction.",
+      "c2t": "Trois ans au plus",
+      "c2": "Un texte dramatique, ou une libre adaptation théâtrale, de trois ans au plus.",
+      "c3t": "Inédit",
+      "c3": "Pas encore édité au moment de l’envoi.",
+      "c4t": "Avec sa fiche",
+      "c4": "Accompagné de la fiche de renseignements 26/27, en PDF à remplir.",
+      "cachet": "QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·"
+    },
+    "parcours": {
+      "surtitre": "Le parcours d’un texte",
+      "titre": "De votre boîte d’envoi à la scène",
+      "e1t": "L’envoi",
+      "e1": "Par e-mail à Thierry Blanc, coordinateur du comité, avec la fiche remplie.",
+      "e2t": "Trois lecteurs",
+      "e2": "Trois lecteurs bénévoles lisent le texte et écrivent chacun une fiche.",
+      "e3t": "Deux avis favorables",
+      "e3": "Avec deux avis favorables, le texte entre en sélection finale.",
+      "e4t": "La sélection finale",
+      "e4": "Elle est relue par l’ensemble du comité, réuni une fois par mois.",
+      "e5t": "L’élection",
+      "e5": "Les têtes du comité élisent ensemble le lauréat ; chaque comité choisit son coup de cœur.",
+      "e6t": "La scène et le livre",
+      "e6": "Le lauréat reçoit un prix en numéraire (montant à compléter), une mise en lecture dans quatre pays et une édition chez Passage(s).",
+      "etape": "Étape"
+    },
+    "retour": {
+      "surtitre": "Ce que vous recevez",
+      "titre": "Une fiche, toujours",
+      "texte": "Chaque autrice et chaque auteur reçoit une fiche de lecture détaillée. Le comité accepte aussi de relire plusieurs versions d’un même texte, ce que peu de comités font.",
+      "plus": "Plus de 200 pièces reçues pour la saison 22/23.",
+      "alt": "Trois piles de fiches de lecture à côté d’un tapuscrit"
+    },
+    "depot": {
+      "surtitre": "Déposer",
+      "titre": "Glissez votre texte dans l’enveloppe",
+      "texte": "Démonstration : sur ce site, rien n’est envoyé. Aujourd’hui, l’envoi se fait par e-mail à comiteqdaa@gmail.com, avec la fiche de renseignements.",
+      "etapes": "Trois étapes : vous, le texte, le récapitulatif.",
+      "e1": "Vous",
+      "e2": "Le texte",
+      "e3": "Récapitulatif",
+      "nom": "Nom et prénom",
+      "email": "E-mail",
+      "pays": "Pays",
+      "titreTexte": "Titre du texte",
+      "annee": "Année d’écriture",
+      "francais": "Le texte est écrit en français, sans traduction",
+      "inedit": "Le texte n’est pas encore édité",
+      "suivant": "Continuer",
+      "retour": "Revenir",
+      "envoyer": "Glisser dans l’enveloppe",
+      "recap": "Votre envoi",
+      "message": "Démonstration : rien n’a été envoyé. Sur le site final, votre texte partira vers le comité.",
+      "recu": "Reçu",
+      "lu": "lu par trois lecteurs",
+      "donnees": "Vos données servent seulement à traiter votre envoi. Politique de confidentialité : à compléter.",
+      "fichierTexte": "Votre texte (PDF)",
+      "fichierFiche": "La fiche de renseignements remplie (PDF)",
+      "fichierAide": "Glissez le fichier ici ou choisissez-le. Démonstration : rien n’est envoyé."
+    }
+  },
+  "hydre": {
+    "hero": {
+      "surtitre": "Le comité international",
+      "titre": "L’Hydre de Lerne",
+      "texte": "Près de 50 lecteurs, quatre comités, un lauréat élu en commun. Ouvert à l’international depuis la saison 22/23.",
+      "action": "Lire le manifeste",
+      "info": "France · Belgique · Cameroun · Canada",
+      "alt": "Quatre lampes de lecture sur une longue table, chacune sur sa pile de textes",
+      "ivry": "Ivry"
+    },
+    "manifeste": {
+      "surtitre": "Le manifeste international",
+      "titre": "Des ponts plutôt que des murs",
+      "texte": "Le Quartier s’est ouvert à l’international pour faire ce qu’il voulait depuis toujours : partager ce qui relie le théâtre de langue française partout dans le monde, et donner le pouvoir de choisir à des pays qui, longtemps, n’ont fait que fournir des textes.",
+      "citation": "« un monde où les ponts sont plus puissants que les murs »",
+      "source": "Manifeste de l’Hydre de Lerne internationale",
+      "alt": "Marais calme dans la brume du matin"
+    },
+    "tetes": {
+      "surtitre": "Les quatre têtes",
+      "titre": "Un comité par pays",
+      "texte": "Chaque pays a sa tête au comité, ses lecteurs, et son coup de cœur.",
+      "alt": "Le comité QD2A {pays}"
+    },
+    "choix": {
+      "surtitre": "Comment l’Hydre choisit",
+      "titre": "En commun, et chacun sa singularité",
+      "communT": "En commun",
+      "commun": "Tout au long de l’année, les têtes choisissent ensemble le texte lauréat, puis l’élisent ensemble. Il est lu dans chaque pays par une équipe différente.",
+      "singT": "Une singularité",
+      "sing": "Chaque comité ajoute son coup de cœur, lu le même soir que le lauréat.",
+      "quatre": "4 comités",
+      "un": "1 lauréat"
+    },
+    "coordination": {
+      "surtitre": "La vie du Quartier",
+      "titre": "Des lecteurs bénévoles, une réunion par mois",
+      "texte": "Le comité est coordonné et animé par Thierry Blanc. Ses lecteurs, bénévoles, se retrouvent une fois par mois. Indépendant de toute structure culturelle, il repère les nouvelles voix, accompagne les premiers textes et les fait circuler.",
+      "alt": "Les membres 2025 du QD2A France"
+    },
+    "partenaires": {
+      "titre": "Partenaires"
+    },
+    "fin": {
+      "titre": "Une cinquième voix ?",
+      "texte": "La vôtre : envoyez votre texte, il sera lu par trois lecteurs du comité.",
+      "action": "Envoyer un texte"
+    }
+  },
+  "contact": {
+    "hero": {
+      "surtitre": "Contact",
+      "titre": "Écrire au Quartier",
+      "texte": "Une question sur l’appel, une lecture, un partenariat : écrivez au comité.",
+      "action": "Écrire un message",
+      "enveloppe": "Au Quartier des Autrices et des Auteurs",
+      "mail": "comiteqdaa@gmail.com"
+    },
+    "formulaire": {
+      "titre": "Votre message",
+      "texte": "Démonstration : rien n’est envoyé depuis ce site.",
+      "nom": "Nom",
+      "email": "E-mail",
+      "objet": "Objet",
+      "oTexte": "L’envoi d’un texte",
+      "oLecture": "Une lecture",
+      "oPartenariat": "Un partenariat",
+      "oAutre": "Autre chose",
+      "message": "Message",
+      "envoyer": "Plier et envoyer",
+      "envoye": "Démonstration : rien n’a été envoyé. Sur le site final, votre message partira vers le comité.",
+      "donnees": "Vos données servent seulement à vous répondre. Politique de confidentialité : à compléter.",
+      "recu": "Reçu"
+    },
+    "lieu": {
+      "titre": "Le Quartier habite au théâtre",
+      "texte": "Le comité est accueilli au Théâtre des Quartiers d’Ivry, Centre Dramatique National du Val-de-Marne.",
+      "acces": "Accès",
+      "metro": "Métro ligne 7 : Mairie d’Ivry",
+      "rer": "RER C : Ivry-sur-Seine",
+      "plan": "Plan schématique, non à l’échelle",
+      "mairie": "Mairie d’Ivry",
+      "manufacture": "Manufacture des Œillets"
+    },
+    "bandeau": {
+      "titre": "Et pour envoyer un texte ?",
+      "texte": "Passez par l’appel à textes : conditions, fiche et parcours d’un texte.",
+      "action": "Voir l’appel à textes",
+      "alt": "Bureau près d’une fenêtre, pile d’enveloppes kraft"
+    }
+  },
+  "introuvable": {
+    "titre": "La servante est restée allumée",
+    "texte": "Cette page n’existe pas ou plus. Au théâtre, on laisse une lampe sur le plateau vide pour que personne ne s’y perde : suivez-la jusqu’à l’accueil.",
+    "retour": "Revenir à l’accueil",
+    "alt": "Une servante allumée sur un plateau vide"
+  }
+}

@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr" data-v="1" class="theme-bleu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L’Hydre de Lerne : le comité international du QD2A</title>
+<meta name="description" content="France, Belgique, Cameroun, Canada : quatre comités, près de 50 lecteurs, un lauréat élu en commun.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://qd2a-maquette.vercel.app/hydre">
+<style>:root{--fond:#f4efe4;--texte:#16130f;--voile-fond:#ebe3d1;--ouverture-fond:#f4efe4;--menu-fond:#16130f}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f4efe4">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Le Quartier des Autrices et des Auteurs">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="L’Hydre de Lerne : le comité international du QD2A">
+<meta property="og:description" content="France, Belgique, Cameroun, Canada : quatre comités, près de 50 lecteurs, un lauréat élu en commun.">
+<meta property="og:url" content="https://qd2a-maquette.vercel.app/hydre">
+<meta property="og:image" content="https://qd2a-maquette.vercel.app/assets/partage/hydre-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="L’Hydre de Lerne du QD2A : quatre lampes de lecture">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Le Quartier des Autrices et des Auteurs","alternateName":"QD2A","url":"https://qd2a-maquette.vercel.app/","email":"comiteqdaa@gmail.com","foundingDate":"2020-05","description":"Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry.","address":{"@type":"PostalAddress","streetAddress":"Manufacture des Œillets, 1 place Pierre Gosnat","postalCode":"94200","addressLocality":"Ivry-sur-Seine","addressCountry":"FR"},"sameAs":["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="page" aria-hidden="true"><span class="voile-pli" aria-hidden="true"></span><span class="voile-lignes" aria-hidden="true"></span><div class="voile-contenu"><img src="/assets/images/logo.png" alt="" width="56" height="56"><span data-voile-libelle>L’Hydre</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <div class="ouverture-feuille" data-ouverture-objet>
+    <p class="ouverture-tape"><span class="ouverture-car" style="--i:0">L</span><span class="ouverture-car" style="--i:1">e</span><span class="ouverture-car ouverture-espace" style="--i:2">&nbsp;</span><span class="ouverture-car" style="--i:3">Q</span><span class="ouverture-car" style="--i:4">u</span><span class="ouverture-car" style="--i:5">a</span><span class="ouverture-car" style="--i:6">r</span><span class="ouverture-car" style="--i:7">t</span><span class="ouverture-car" style="--i:8">i</span><span class="ouverture-car" style="--i:9">e</span><span class="ouverture-car" style="--i:10">r</span><span class="ouverture-car ouverture-espace" style="--i:11">&nbsp;</span><span class="ouverture-car" style="--i:12">d</span><span class="ouverture-car" style="--i:13">e</span><span class="ouverture-car" style="--i:14">s</span><span class="ouverture-car ouverture-espace" style="--i:15">&nbsp;</span><span class="ouverture-car" style="--i:16">A</span><span class="ouverture-car" style="--i:17">u</span><span class="ouverture-car" style="--i:18">t</span><span class="ouverture-car" style="--i:19">r</span><span class="ouverture-car" style="--i:20">i</span><span class="ouverture-car" style="--i:21">c</span><span class="ouverture-car" style="--i:22">e</span><span class="ouverture-car" style="--i:23">s</span><span class="ouverture-car ouverture-espace" style="--i:24">&nbsp;</span><span class="ouverture-car" style="--i:25">e</span><span class="ouverture-car" style="--i:26">t</span><span class="ouverture-car ouverture-espace" style="--i:27">&nbsp;</span><span class="ouverture-car" style="--i:28">d</span><span class="ouverture-car" style="--i:29">e</span><span class="ouverture-car" style="--i:30">s</span><span class="ouverture-car ouverture-espace" style="--i:31">&nbsp;</span><span class="ouverture-car" style="--i:32">A</span><span class="ouverture-car" style="--i:33">u</span><span class="ouverture-car" style="--i:34">t</span><span class="ouverture-car" style="--i:35">e</span><span class="ouverture-car" style="--i:36">u</span><span class="ouverture-car" style="--i:37">r</span><span class="ouverture-car" style="--i:38">s</span><span class="ouverture-curseur"></span></p>
+    <svg class="ouverture-souligne" viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M3 9 C 50 4, 120 12, 197 6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" pathLength="1"/></svg>
+    <p class="ouverture-ligne">Comité de lecture international</p>
+  </div>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <img src="/assets/images/logo.png" alt="" width="40" height="40"><span aria-hidden="true">QD2A</span><span class="visuellement-cache">Le Quartier des Autrices et des Auteurs, accueil</span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/saison" data-libelle="La saison 25/26">La saison 25/26</a></li><li><a href="/appel-a-textes" data-libelle="L’appel à textes">L’appel à textes</a></li><li><a href="/hydre" data-libelle="L’Hydre" aria-current="page">L’Hydre</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/saison" class="menu-lien" data-libelle="La saison 25/26">La saison 25/26</a></li><li style="--i:2"><a href="/appel-a-textes" class="menu-lien" data-libelle="L’appel à textes">L’appel à textes</a></li><li style="--i:3"><a href="/hydre" class="menu-lien" data-libelle="L’Hydre" aria-current="page">L’Hydre</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a> <a class="menu-mail" href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1">
+<div class="fil" data-grille="fil" data-effet="crayon" aria-hidden="true"><svg class="fil-svg"><path class="fil-trait" d=""/></svg><span class="fil-mine"></span></div>
+<section class="ouv ouv-hydre ecran" id="debut">
+  <figure class="media hydre-fond" data-grok data-fx="parallaxe" data-fx-force="8" style="--cadrage:50% 70%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/g-hydre-ouverture-mobile-540.webp 540w, /assets/images/grok/g-hydre-ouverture-mobile-784.webp 784w" sizes="100vw">
+    <img src="/assets/images/grok/g-hydre-ouverture-1168.webp" srcset="/assets/images/grok/g-hydre-ouverture-640.webp 640w, /assets/images/grok/g-hydre-ouverture-1168.webp 1168w" sizes="100vw" alt="Quatre lampes de lecture sur une longue table, chacune sur sa pile de textes" width="1168" height="784" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="hydre-ouv conteneur">
+    <div class="hydre-dessin" data-iris-centre data-effet="cous" data-visuel aria-hidden="true">
+      <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
+        <path class="cou" data-cou d="M300,384 C300,250 84,258 84,88" pathLength="1"/><path class="cou" data-cou d="M300,384 C300,238 228,202 228,32" pathLength="1"/><path class="cou" data-cou d="M300,384 C300,226 372,202 372,32" pathLength="1"/><path class="cou" data-cou d="M300,384 C300,214 516,258 516,88" pathLength="1"/>
+        <circle class="tete" data-tete cx="84" cy="88" r="9"/><circle class="tete" data-tete cx="228" cy="32" r="9"/><circle class="tete" data-tete cx="372" cy="32" r="9"/><circle class="tete" data-tete cx="516" cy="88" r="9"/>
+        <circle class="corps" cx="300" cy="384" r="7"/>
+      </svg>
+      <span class="tete-nom" data-tete-nom style="--x:14%;--y:22%">France</span><span class="tete-nom" data-tete-nom style="--x:38%;--y:8%">Belgique</span><span class="tete-nom" data-tete-nom style="--x:62%;--y:8%">Cameroun</span><span class="tete-nom" data-tete-nom style="--x:86%;--y:22%">Canada</span>
+      <span class="tete-nom tete-nom--ivry" style="--x:50%;--y:96%">Ivry</span>
+    </div>
+    <p class="surtitre" data-anime="gsap">Le comité international</p>
+    <h1 class="ouv-titre"><span class="ligne-masque"><span class="ouv-ligne" data-anime="gsap">L’Hydre de Lerne</span></span></h1>
+    <p class="ouv-intro masque-ecran-bas" data-anime="gsap">Près de 50 lecteurs, quatre comités, un lauréat élu en commun. Ouvert à l’international depuis la saison 22/23.</p>
+    <p class="ouv-actions" data-anime="gsap">
+      <a class="bouton" href="#manifeste" data-action-principale data-survol="magnetique">Lire le manifeste</a>
+      <span class="ouv-info" data-info-cle>France · Belgique · Cameroun · Canada</span>
+    </p>
+  </div>
+</section>
+<section class="marais" id="manifeste" aria-labelledby="manifeste-h">
+  <figure class="media marais-fond" data-grok data-fx="parallaxe" data-fx-force="12" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/grok/g-hydre-marais-1168.webp" srcset="/assets/images/grok/g-hydre-marais-640.webp 640w, /assets/images/grok/g-hydre-marais-1168.webp 1168w" sizes="100vw" alt="Marais calme dans la brume du matin" width="1168" height="784" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+  <div class="conteneur marais-texte">
+    <p class="surtitre">Le manifeste international</p>
+    <h2 id="manifeste-h" class="axes" data-axes data-grille="typo">Des ponts plutôt que des murs</h2>
+    <p class="manifeste-texte" data-mot-a-mot data-effet="mot-a-mot">Le Quartier s’est ouvert à l’international pour faire ce qu’il voulait depuis toujours : partager ce qui relie le théâtre de langue française partout dans le monde, et donner le pouvoir de choisir à des pays qui, longtemps, n’ont fait que fournir des textes.</p>
+    <blockquote class="citation" data-anime><p>« un monde où les ponts sont plus puissants que les murs »</p><footer>Manifeste de l’Hydre de Lerne internationale</footer></blockquote>
+  </div>
+</section>
+<section class="tetes" id="comites" data-scene data-entete-cache aria-labelledby="comites-h">
+  <div class="tetes-cadre" data-collant>
+    <div class="conteneur tetes-tete">
+      <p class="surtitre">Les quatre têtes</p>
+      <h2 id="comites-h" data-anime="lignes">Un comité par pays</h2>
+      <p class="masque-ecran-bas">Chaque pays a sa tête au comité, ses lecteurs, et son coup de cœur.</p>
+    </div>
+    <div class="tambour-zone" data-effet="tambour" data-visuel>
+      <ul class="tambour" data-tambour>
+        <li class="tambour-carte" style="--i:0" data-carte="0">
+          <figure class="media tambour-photo" style="--cadrage:50% 50%;aspect-ratio:2 / 3">
+  <picture>
+    <img src="/assets/images/site/comite-france-900.webp" srcset="/assets/images/site/comite-france-480.webp 480w, /assets/images/site/comite-france-900.webp 900w" sizes="(max-width: 760px) 50vw, 20vw" alt="Le comité QD2A France" width="900" height="1350" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="tambour-texte"><h3>QD2A France</h3><p>Le comité d’origine, association depuis mai 2020</p></div>
+        </li><li class="tambour-carte" style="--i:1" data-carte="1">
+          <figure class="media tambour-photo" style="--cadrage:50% 50%;aspect-ratio:2 / 3">
+  <picture>
+    <img src="/assets/images/site/comite-belgique-900.webp" srcset="/assets/images/site/comite-belgique-480.webp 480w, /assets/images/site/comite-belgique-900.webp 900w" sizes="(max-width: 760px) 50vw, 20vw" alt="Le comité QD2A Belgique" width="900" height="1350" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="tambour-texte"><h3>QD2A Belgique</h3><p>Année d’arrivée à compléter</p></div>
+        </li><li class="tambour-carte" style="--i:2" data-carte="2">
+          <figure class="media tambour-photo" style="--cadrage:50% 50%;aspect-ratio:2 / 3">
+  <picture>
+    <img src="/assets/images/site/comite-cameroun-900.webp" srcset="/assets/images/site/comite-cameroun-480.webp 480w, /assets/images/site/comite-cameroun-900.webp 900w" sizes="(max-width: 760px) 50vw, 20vw" alt="Le comité QD2A Cameroun" width="900" height="1350" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="tambour-texte"><h3>QD2A Cameroun</h3><p>Arrivé à la rentrée 24/25</p></div>
+        </li><li class="tambour-carte" style="--i:3" data-carte="3">
+          <figure class="media tambour-photo" style="--cadrage:50% 50%;aspect-ratio:2 / 3">
+  <picture>
+    <img src="/assets/images/site/comite-canada-900.webp" srcset="/assets/images/site/comite-canada-480.webp 480w, /assets/images/site/comite-canada-900.webp 900w" sizes="(max-width: 760px) 50vw, 20vw" alt="Le comité QD2A Canada" width="900" height="1350" loading="lazy" decoding="async">
+  </picture>
+</figure>
+          <div class="tambour-texte"><h3>QD2A Canada</h3><p>Arrivé à la rentrée 25/26</p></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="choix" id="fonctionnement" aria-labelledby="choix-h">
+  <div class="conteneur choix-grille">
+    <div class="choix-schema" data-visuel aria-hidden="true">
+      <svg viewBox="0 0 400 300" data-fx="trace">
+        <path d="M40 30 C 40 140, 200 140, 200 250" fill="none"/><path d="M140 30 C 140 140, 200 140, 200 250" fill="none"/><path d="M260 30 C 260 140, 200 140, 200 250" fill="none"/><path d="M360 30 C 360 140, 200 140, 200 250" fill="none"/>
+        <circle cx="200" cy="262" r="12"/>
+      </svg>
+      <span class="choix-4">4 comités</span><span class="choix-1">1 lauréat</span>
+    </div>
+    <div>
+      <p class="surtitre">Comment l’Hydre choisit</p>
+      <h2 id="choix-h" data-anime="lignes">En commun, et chacun sa singularité</h2>
+      <div class="choix-cols" data-anime="cascade">
+        <div><h3>En commun</h3><p>Tout au long de l’année, les têtes choisissent ensemble le texte lauréat, puis l’élisent ensemble. Il est lu dans chaque pays par une équipe différente.</p></div>
+        <div><h3>Une singularité</h3><p>Chaque comité ajoute son coup de cœur, lu le même soir que le lauréat.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="vie" id="vie" aria-labelledby="vie-h">
+  <div class="conteneur vie-grille">
+    <div>
+      <p class="surtitre">La vie du Quartier</p>
+      <h2 id="vie-h" class="frappe" data-frappe data-effet="frappe">Des lecteurs bénévoles, une réunion par mois</h2>
+      <p data-anime="mots">Le comité est coordonné et animé par Thierry Blanc. Ses lecteurs, bénévoles, se retrouvent une fois par mois. Indépendant de toute structure culturelle, il repère les nouvelles voix, accompagne les premiers textes et les fait circuler.</p>
+    </div>
+    <figure class="media vie-photo" data-fx="zoom" style="--cadrage:54% 42%">
+  <picture>
+    <img src="/assets/images/site/vie-quartier-1280.webp" srcset="/assets/images/site/vie-quartier-640.webp 640w, /assets/images/site/vie-quartier-1280.webp 1280w" sizes="(max-width: 760px) 100vw, 50vw" alt="Les membres 2025 du QD2A France" width="1280" height="853" loading="lazy" decoding="async">
+  </picture>
+</figure>
+  </div>
+  <div class="conteneur partenaires-bande">
+    <h3>Partenaires</h3>
+    <ul data-anime="cascade"><li><a href="https://www.theatre-quartiers-ivry.com/" target="_blank" rel="noopener" aria-label="Théâtre des Quartiers d’Ivry (nouvel onglet)"><figure class="media bande-logo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/logo-tqi-320.webp" srcset="/assets/images/site/logo-tqi-320.webp 320w" sizes="120px" alt="" width="320" height="199" loading="lazy" decoding="async">
+  </picture>
+</figure><span>Théâtre des Quartiers d’Ivry</span></a></li><li><a href="https://www.ced-wb.be/" target="_blank" rel="noopener" aria-label="Centre des écritures dramatiques Wallonie-Bruxelles (nouvel onglet)"><figure class="media bande-logo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/logo-ced-320.webp" srcset="/assets/images/site/logo-ced-320.webp 320w" sizes="120px" alt="" width="320" height="458" loading="lazy" decoding="async">
+  </picture>
+</figure><span>Centre des écritures dramatiques Wallonie-Bruxelles</span></a></li><li><a href="https://www.facebook.com/avantsceneassociation" target="_blank" rel="noopener" aria-label="Avant/Scène (nouvel onglet)"><figure class="media bande-logo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/logo-avant-scene-400.webp" srcset="/assets/images/site/logo-avant-scene-400.webp 400w" sizes="120px" alt="" width="400" height="266" loading="lazy" decoding="async">
+  </picture>
+</figure><span>Avant/Scène</span></a></li><li><a href="https://www.bellone.be/f/index.asp" target="_blank" rel="noopener" aria-label="La Bellone (nouvel onglet)"><figure class="media bande-logo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/logo-bellone-235.webp" srcset="/assets/images/site/logo-bellone-235.webp 235w" sizes="120px" alt="" width="235" height="400" loading="lazy" decoding="async">
+  </picture>
+</figure><span>La Bellone</span></a></li><li><a href="https://www.citedesartsparis.net/" target="_blank" rel="noopener" aria-label="Cité internationale des arts (nouvel onglet)"><figure class="media bande-logo" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/logo-cite-arts-400.webp" srcset="/assets/images/site/logo-cite-arts-400.webp 400w" sizes="120px" alt="" width="400" height="283" loading="lazy" decoding="async">
+  </picture>
+</figure><span>Cité internationale des arts</span></a></li></ul>
+  </div>
+</section>
+<section class="fin" id="fin" aria-labelledby="fin-h">
+  <div class="conteneur fin-grille">
+    <div class="fin-pile" data-visuel data-fx="vitesse" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i></div>
+    <h2 id="fin-h" data-anime="lignes">Une cinquième voix ?</h2>
+    <p data-anime>La vôtre : envoyez votre texte, il sera lu par trois lecteurs du comité.</p>
+    <p data-anime><a href="/appel-a-textes#deposer" class="bouton" data-libelle="L’appel à textes" data-survol="magnetique">Envoyer un texte</a></p>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div class="pied-identite">
+      <img class="pied-logo" src="/assets/images/logo-clair.png" alt="" width="64" height="64">
+      <p><strong>Le Quartier des Autrices et des Auteurs</strong></p>
+      <p class="pied-texte">Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.</p>
+    </div>
+    <div>
+      <p><strong>Nous trouver</strong></p>
+      <p>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne<br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
+      <p><a href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/saison" data-libelle="La saison 25/26">La saison 25/26</a></li><li><a href="/appel-a-textes" data-libelle="L’appel à textes">L’appel à textes</a></li><li><a href="/hydre" data-libelle="L’Hydre" aria-current="page">L’Hydre</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le Quartier.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>© Le Quartier des Autrices et des Auteurs</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="mailto:comiteqdaa@gmail.com">E-mail</a>
+  <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,254 @@
+{
+ "pays": {
+  "guinee": "Guinée",
+  "canada": "Canada",
+  "france": "France",
+  "suisse": "Suisse",
+  "japon": "Japon",
+  "burundi": "Burundi",
+  "rdc": "RD Congo",
+  "haiti": "Haïti",
+  "benin": "Bénin",
+  "italie": "Italie",
+  "angleterre": "Angleterre",
+  "turquie": "Turquie"
+ },
+ "textes": [
+  {
+   "prenom": "Souleymane",
+   "nom": "Bah",
+   "titre": "Petit père vient de",
+   "pays": [
+    "guinee"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Evelyne",
+   "nom": "de la Chenelière",
+   "titre": "Le traitement de la nuit",
+   "pays": [
+    "canada"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Baptiste",
+   "nom": "Dezerces",
+   "titre": "Un style inimitable",
+   "pays": [
+    "france"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Karine",
+   "nom": "Fellous",
+   "titre": "Les petits garçons ne rêvent pas d’être dealer",
+   "pays": [
+    "france"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Carolanne",
+   "nom": "Foucher",
+   "titre": "Manipuler avec soin",
+   "pays": [
+    "canada"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Tiphaine",
+   "nom": "Guitton",
+   "titre": "Vent de bout",
+   "pays": [
+    "france"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Marie",
+   "nom": "Haerrig",
+   "titre": "Les inversions terrestres",
+   "pays": [
+    "france"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Isabelle",
+   "nom": "Hubert",
+   "titre": "Rose",
+   "pays": [
+    "canada"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Salomé",
+   "nom": "Joly",
+   "titre": "Et il,",
+   "pays": [
+    "suisse"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Shiho",
+   "nom": "Kasahara",
+   "titre": "Virages noirs",
+   "pays": [
+    "japon"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Soleil",
+   "nom": "Launière",
+   "titre": "Akuteu",
+   "pays": [
+    "canada"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Mishka",
+   "nom": "Lavigne",
+   "titre": "Lichen",
+   "pays": [
+    "canada"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Mélanie",
+   "nom": "Léger",
+   "titre": "Tsunami",
+   "pays": [
+    "canada"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Stephie",
+   "nom": "Mazunya",
+   "titre": "Chronologies",
+   "pays": [
+    "burundi",
+    "canada"
+   ],
+   "distinction": "Lauréate internationale"
+  },
+  {
+   "prenom": "Djo",
+   "nom": "Ngeleka",
+   "titre": "On dit, oui",
+   "pays": [
+    "rdc"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Alexandro Christi",
+   "nom": "Nicolas",
+   "titre": "Boukan",
+   "pays": [
+    "haiti"
+   ],
+   "distinction": "Coup de cœur"
+  },
+  {
+   "prenom": "Israël",
+   "nom": "Nzila",
+   "titre": "Clipping",
+   "pays": [
+    "rdc"
+   ],
+   "distinction": "Coup de cœur"
+  },
+  {
+   "prenom": "Esteban",
+   "nom": "Okbi",
+   "titre": "SP 98",
+   "pays": [
+    "france"
+   ],
+   "distinction": "Coup de cœur"
+  },
+  {
+   "prenom": "Gemain",
+   "nom": "Oussou",
+   "titre": "Les litiges",
+   "pays": [
+    "benin"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Mariella",
+   "nom": "Parisi",
+   "titre": "Paternò, une histoire sicilienne",
+   "pays": [
+    "italie"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Nicolas",
+   "nom": "Porcher Jouve",
+   "titre": "Sans retour",
+   "pays": [
+    "france"
+   ],
+   "distinction": "Coup de cœur"
+  },
+  {
+   "prenom": "Anna",
+   "nom": "Schmutz",
+   "titre": "La prise de la Bastille",
+   "pays": [
+    "france"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Marion",
+   "nom": "Stenton",
+   "titre": "$anctuaire",
+   "pays": [
+    "angleterre",
+    "france"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Olivier",
+   "nom": "Sylvestre",
+   "titre": "Retour à Laval",
+   "pays": [
+    "canada"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Lydie",
+   "nom": "Tamisier",
+   "titre": "La nuit est une aventure",
+   "pays": [
+    "france"
+   ],
+   "distinction": null
+  },
+  {
+   "prenom": "Sultan",
+   "nom": "Ulutas Alopé",
+   "titre": "Réductions sauvages",
+   "pays": [
+    "turquie"
+   ],
+   "distinction": null
+  }
+ ]
+}

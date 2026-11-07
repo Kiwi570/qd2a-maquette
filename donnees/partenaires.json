@@ -1,0 +1,37 @@
+[
+ {
+  "nom": "Théâtre des Quartiers d’Ivry",
+  "role": "Centre Dramatique National d’Ivry et du Val-de-Marne",
+  "ville": "Ivry-sur-Seine, France",
+  "url": "https://www.theatre-quartiers-ivry.com/",
+  "logo": "site/logo-tqi"
+ },
+ {
+  "nom": "Centre des écritures dramatiques Wallonie-Bruxelles",
+  "role": "Centre des écritures dramatiques",
+  "ville": "Bruxelles, Belgique",
+  "url": "https://www.ced-wb.be/",
+  "logo": "site/logo-ced"
+ },
+ {
+  "nom": "Avant/Scène",
+  "role": "Groupe de création international",
+  "ville": "Yaoundé, Cameroun",
+  "url": "https://www.facebook.com/avantsceneassociation",
+  "logo": "site/logo-avant-scene"
+ },
+ {
+  "nom": "La Bellone",
+  "role": "Maison du spectacle",
+  "ville": "Bruxelles, Belgique",
+  "url": "https://www.bellone.be/f/index.asp",
+  "logo": "site/logo-bellone"
+ },
+ {
+  "nom": "Cité internationale des arts",
+  "role": "Pôle de la création théâtrale francophone",
+  "ville": "Paris, France",
+  "url": "https://www.citedesartsparis.net/",
+  "logo": "site/logo-cite-arts"
+ }
+]

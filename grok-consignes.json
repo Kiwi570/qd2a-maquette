@@ -1,0 +1,238 @@
+{
+ "client": "QD2A",
+ "activite": "média",
+ "direction": "Le Tapuscrit",
+ "date": "2026-11-07T20:20:21.465780",
+ "images": [
+  {
+   "nom": "g-accueil-ouverture",
+   "fichier": "g-accueil-ouverture.jpg",
+   "page": "Accueil",
+   "emplacement": "Ouverture, sous le tapuscrit à feuilleter (ordinateur)",
+   "format": "16:9",
+   "grok": "1168×784",
+   "priorite": "Indispensable",
+   "consigne": "Top-down view of a long worn oak reading table covered with a loose fan of typed manuscripts whose lines are blank and unreadable, a red pencil and a black binder clip, the left half of the frame left as calm empty ivory paper. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-accueil-ouverture",
+   "fichier": "g-accueil-ouverture-mobile.jpg",
+   "page": "Accueil",
+   "emplacement": "Ouverture, sous le tapuscrit à feuilleter (téléphone)",
+   "format": "9:16",
+   "grok": "784×1168",
+   "priorite": "Indispensable",
+   "consigne": "Top-down view of a long worn oak reading table covered with a loose fan of typed manuscripts whose lines are blank and unreadable, a red pencil and a black binder clip, the left half of the frame left as calm empty ivory paper. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, main subject in the lower half, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-accueil-lecture",
+   "fichier": "g-accueil-lecture.jpg",
+   "page": "Accueil",
+   "emplacement": "Image qui s'ouvre en plein écran (lecture publique) (ordinateur)",
+   "format": "16:9",
+   "grok": "1168×784",
+   "priorite": "Indispensable",
+   "consigne": "An empty small theatre stage in soft darkness with four simple wooden reading desks in a row, each lit by its own small warm reading lamp, an empty chair behind each desk, a few typed pages with blank lines resting on the desks, seen from the first row of empty seats, nobody. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, the lower third stays dark and simple for text overlay. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, small warm pools of lamp light in soft darkness, tactile uncoated ivory paper, worn oak wood and graphite, set in a small contemporary theatre on an autumn evening, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. Pages completely blank, blank book spines, abstract unreadable marks, plain unmarked surfaces, dials with tick marks only and no numbers. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [
+    "texte parasite"
+   ],
+   "gabarit": "section-fond",
+   "role": "section-fond"
+  },
+  {
+   "nom": "g-accueil-lecture",
+   "fichier": "g-accueil-lecture-mobile.jpg",
+   "page": "Accueil",
+   "emplacement": "Image qui s'ouvre en plein écran (lecture publique) (téléphone)",
+   "format": "9:16",
+   "grok": "784×1168",
+   "priorite": "Indispensable",
+   "consigne": "An empty small theatre stage in soft darkness with four simple wooden reading desks in a row, each lit by its own small warm reading lamp, an empty chair behind each desk, a few typed pages with blank lines resting on the desks, seen from the first row of empty seats, nobody. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, main subject in the lower half, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, small warm pools of lamp light in soft darkness, tactile uncoated ivory paper, worn oak wood and graphite, set in a small contemporary theatre on an autumn evening, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. Pages completely blank, blank book spines, abstract unreadable marks, plain unmarked surfaces, dials with tick marks only and no numbers. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [
+    "texte parasite"
+   ],
+   "gabarit": "section-fond",
+   "role": "section-fond"
+  },
+  {
+   "nom": "g-accueil-lecteur",
+   "fichier": "g-accueil-lecteur.jpg",
+   "page": "Accueil",
+   "emplacement": "Comment un texte est lu",
+   "format": "4:5",
+   "grok": "784×1168",
+   "priorite": "Conseillée",
+   "consigne": "Over-the-shoulder view from behind of one reader at a desk annotating a typed manuscript with a red pencil, head out of frame, only one hand visible, the manuscript lines blank and unreadable, warm desk lamp. Vertical composition, aspect ratio 4:5, main subject well inside the central area with generous margins on every side, so the image can be cropped. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. Only two hands, both belonging to one single person and clearly attached to the same forearms, no other hand anywhere in the frame. Seen strictly from behind, face never visible, head turned away, or cropped at the shoulders. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [
+    "mains en trop",
+    "visages"
+   ],
+   "gabarit": "scene-metier",
+   "role": "galerie"
+  },
+  {
+   "nom": "g-accueil-appel",
+   "fichier": "g-accueil-appel.jpg",
+   "page": "Accueil",
+   "emplacement": "L'appel à textes",
+   "format": "3:2",
+   "grok": "1168×784",
+   "priorite": "Conseillée",
+   "consigne": "A typed manuscript held by a black binder clip sliding out of a plain kraft envelope on an oak table, the manuscript lines blank and unreadable, the right third of the frame left as calm empty wood. Landscape composition, aspect ratio 3:2, calm empty area in the right third of the frame for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "section-fond",
+   "role": "section-fond"
+  },
+  {
+   "nom": "g-saison-ouverture",
+   "fichier": "g-saison-ouverture.jpg",
+   "page": "La saison 25/26",
+   "emplacement": "Ouverture (ordinateur)",
+   "format": "16:9",
+   "grok": "1168×784",
+   "priorite": "Indispensable",
+   "consigne": "A tall neat stack of about twenty-six typed manuscripts of slightly different thicknesses on an oak table, blank covers, the paper edges catching raking light, the upper half of the frame left as a calm warm wall. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-saison-ouverture",
+   "fichier": "g-saison-ouverture-mobile.jpg",
+   "page": "La saison 25/26",
+   "emplacement": "Ouverture (téléphone)",
+   "format": "9:16",
+   "grok": "784×1168",
+   "priorite": "Indispensable",
+   "consigne": "A tall neat stack of about twenty-six typed manuscripts of slightly different thicknesses on an oak table, blank covers, the paper edges catching raking light, the upper half of the frame left as a calm warm wall. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, main subject in the lower half, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-saison-lectures",
+   "fichier": "g-saison-lectures.jpg",
+   "page": "La saison 25/26",
+   "emplacement": "Les lectures de juin (passées)",
+   "format": "3:2",
+   "grok": "1168×784",
+   "priorite": "Conseillée",
+   "consigne": "An empty small theatre just after a public reading: four reading desks with their lamps switched off, a few empty chairs, a handful of typed pages with blank lines left on the floor, dim warm work light, nobody. Landscape composition, aspect ratio 3:2, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, dim warm work light, tactile uncoated ivory paper, worn oak wood and graphite, set in a small contemporary theatre on a late spring evening, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. Pages completely blank, blank book spines, abstract unreadable marks, plain unmarked surfaces, dials with tick marks only and no numbers. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [
+    "texte parasite"
+   ],
+   "gabarit": "section-fond",
+   "role": "section-fond"
+  },
+  {
+   "nom": "g-appel-ouverture",
+   "fichier": "g-appel-ouverture.jpg",
+   "page": "L'appel à textes",
+   "emplacement": "Ouverture (page sombre) (ordinateur)",
+   "format": "16:9",
+   "grok": "1168×784",
+   "priorite": "Indispensable",
+   "consigne": "Night scene: a plain kraft envelope and a typed manuscript held by a black binder clip on a dark wooden desk, lit by a single warm desk lamp, deep ink-black shadows, the left half of the frame dark and empty, the manuscript lines blank and unreadable. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, generous empty space on the left third of the frame for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, a single warm desk lamp in deep darkness, tactile uncoated ivory paper, worn oak wood and graphite, set in a writer's room on a quiet autumn night, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-appel-ouverture",
+   "fichier": "g-appel-ouverture-mobile.jpg",
+   "page": "L'appel à textes",
+   "emplacement": "Ouverture (page sombre) (téléphone)",
+   "format": "9:16",
+   "grok": "784×1168",
+   "priorite": "Indispensable",
+   "consigne": "Night scene: a plain kraft envelope and a typed manuscript held by a black binder clip on a dark wooden desk, lit by a single warm desk lamp, deep ink-black shadows, the left half of the frame dark and empty, the manuscript lines blank and unreadable. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, main subject in the lower half, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, a single warm desk lamp in deep darkness, tactile uncoated ivory paper, worn oak wood and graphite, set in a writer's room on a quiet autumn night, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-appel-fiches",
+   "fichier": "g-appel-fiches.jpg",
+   "page": "L'appel à textes",
+   "emplacement": "Le parcours d'un texte (trois lecteurs)",
+   "format": "3:4",
+   "grok": "784×1168",
+   "priorite": "Conseillée",
+   "consigne": "Top-down view of three separate small stacks of blank index cards next to one typed manuscript with blank lines, a red pencil and a blue ballpoint pen, a few abstract red pencil strokes on the cards, oak table. Vertical composition, aspect ratio 3:4, main subject well inside the central area with generous margins on every side, so the image can be cropped. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "scene-metier",
+   "role": "galerie"
+  },
+  {
+   "nom": "g-hydre-ouverture",
+   "fichier": "g-hydre-ouverture.jpg",
+   "page": "L'Hydre",
+   "emplacement": "Ouverture (ordinateur)",
+   "format": "16:9",
+   "grok": "1168×784",
+   "priorite": "Indispensable",
+   "consigne": "Four reading lamps on a long dark wooden table at dusk, their necks bending in four different directions like four heads, each casting a warm pool of light on its own pile of typed manuscripts with blank lines, seen from the end of the table, the upper half of the frame dark and calm. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, four warm pools of lamp light in blue dusk, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on an autumn dusk, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-hydre-ouverture",
+   "fichier": "g-hydre-ouverture-mobile.jpg",
+   "page": "L'Hydre",
+   "emplacement": "Ouverture (téléphone)",
+   "format": "9:16",
+   "grok": "784×1168",
+   "priorite": "Indispensable",
+   "consigne": "Four reading lamps on a long dark wooden table at dusk, their necks bending in four different directions like four heads, each casting a warm pool of light on its own pile of typed manuscripts with blank lines, seen from the end of the table, the upper half of the frame dark and calm. Vertical composition, aspect ratio 9:16, highest resolution available, at least 1080 pixels wide, main subject well inside the central area with generous margins on every side, so the image can be cropped, main subject in the lower half, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, four warm pools of lamp light in blue dusk, tactile uncoated ivory paper, worn oak wood and graphite, set in a small reading room of a contemporary theatre on an autumn dusk, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "ouverture",
+   "role": "ouverture"
+  },
+  {
+   "nom": "g-hydre-marais",
+   "fichier": "g-hydre-marais.jpg",
+   "page": "L'Hydre",
+   "emplacement": "Le manifeste (fond)",
+   "format": "3:2",
+   "grok": "1168×784",
+   "priorite": "Conseillée",
+   "consigne": "A calm misty marsh at dawn, tall reeds and still dark water, soft blue and ivory light, very quiet, no buildings, nobody. Landscape composition, aspect ratio 3:2, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft diffuse blue dawn light, tactile uncoated ivory paper, worn oak wood and graphite, set in a quiet wetland on a misty autumn dawn, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "section-fond",
+   "role": "section-fond"
+  },
+  {
+   "nom": "g-contact-bandeau",
+   "fichier": "g-contact-bandeau.jpg",
+   "page": "Contact",
+   "emplacement": "Bandeau panoramique sous l'adresse",
+   "format": "2:1",
+   "grok": "1168×784",
+   "priorite": "Conseillée",
+   "consigne": "A wooden desk by a tall window with a neat pile of plain kraft envelopes without any writing, a fountain pen and a red pencil, soft daylight, panoramic composition with calm empty space on both sides. Panoramic composition, aspect ratio 2:1, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, soft raking window light from the left, tactile uncoated ivory paper, worn oak wood and graphite, set in a quiet office of a theatre on a calm autumn afternoon, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "section-fond",
+   "role": "section-fond"
+  },
+  {
+   "nom": "g-404",
+   "fichier": "g-404.jpg",
+   "page": "Page 404",
+   "emplacement": "En tête de page",
+   "format": "16:9",
+   "grok": "1168×784",
+   "priorite": "Conseillée",
+   "consigne": "A theatre ghost light, a single bare bulb on a simple metal stand, left alone in the middle of an empty dark stage, one blank sheet of paper on the floor beside it, faint haze, nobody, the upper half of the frame dark. Wide horizontal composition, aspect ratio 16:9, main subject well inside the central area with generous margins on every side, so the image can be cropped, quiet uncluttered area in the upper half for a title. Modern editorial documentary photograph, full-frame camera, 35mm lens, quiet, literary and warm mood, palette of warm ivory paper, deep ink black, a single touch of correction red and faded ballpoint blue, the bare light of a single bulb in darkness, tactile uncoated ivory paper, worn oak wood and graphite, set in a small contemporary theatre on a late night, fine film grain, shallow depth of field, calm and credible, clean composition with generous negative space. No readable headline, no newspaper title, no readable print, no screen content, no on-air sign with letters, no real journalist, no real place presented as news, no logo on microphones. No text, no letters, no numbers, no logos, no brand names, no signage, no watermark, no signature, no recognizable person, no visible face, no real or famous people, not a specific real building or landmark.",
+   "pieges": [],
+   "gabarit": "404",
+   "role": "404"
+  }
+ ]
+}

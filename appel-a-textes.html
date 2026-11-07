@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="fr" data-v="1" class="theme-encre">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>L’appel à textes 26/27 du QD2A : conditions et envoi</title>
+<meta name="description" content="Textes dramatiques en français, inédits, de trois ans au plus : l’appel à textes 26/27 du Quartier est ouvert, sans date limite.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://qd2a-maquette.vercel.app/appel-a-textes">
+<style>:root{--fond:#f4efe4;--texte:#16130f;--voile-fond:#ebe3d1;--ouverture-fond:#f4efe4;--menu-fond:#16130f}:root { --entete-h: 72px; --barres-h: 0px; } html { background: var(--fond); color: var(--texte); scrollbar-gutter: stable; } body { margin: 0; background: var(--fond); } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime] { opacity: 0; } html.js:not(.calme):not(.secours):not([data-arrivee="retour"]) [data-anime].vu { opacity: 1; } [data-voile] { position: fixed; inset: 0; z-index: 900; background: var(--voile-fond); transform: translateY(100%); visibility: hidden; pointer-events: none; } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) [data-voile] { transform: none; visibility: visible; } html.calme [data-voile], html.secours [data-voile] { visibility: hidden !important; } .ouverture-panneau { position: fixed; inset: 0; z-index: 850; display: none; place-content: center; justify-items: center; background: var(--ouverture-fond, var(--voile-fond)); color: var(--fond); text-align: center; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) .ouverture-panneau { display: grid; } html.defilement-bloque, html.defilement-bloque body, html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie), html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) body, html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours), html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) body { overflow: hidden; } html.js[data-arrivee="intro"]:not(.calme):not(.secours):not(.intro-finie) { background-color: var(--ouverture-fond, var(--voile-fond)); } html[data-arrivee="voile"]:not(.voile-leve):not(.calme):not(.secours) { background-color: var(--voile-fond); }</style>
+<script>(function () {
+var d = document.documentElement, ss = null, ls = null;
+try { ss = window.sessionStorage; ls = window.localStorage; } catch (e) {}
+d.classList.add('js');
+var calme = false;
+try { calme = !!ls && ls.getItem('socle:calme') === 'oui'; } catch (e) {}
+if (!calme && window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) calme = true;
+if (calme) d.classList.add('calme');
+var nav = performance.getEntriesByType ? performance.getEntriesByType('navigation')[0] : null;
+var type = nav ? nav.type : 'navigate';
+var depart = null;
+try { depart = JSON.parse(ss.getItem('socle:depart') || 'null'); ss.removeItem('socle:depart'); } catch (e) {}
+if (depart && !(Date.now() - depart.t < 15000)) depart = null;
+var retourSection = false;
+try { retourSection = !!ss.getItem('socle:calme-retour'); } catch (e) {}
+var mode = type === 'back_forward' || retourSection ? 'retour' : type === 'reload' ? 'intro' : depart ? 'voile' : 'intro';
+d.setAttribute('data-arrivee', mode);
+if (mode === 'voile' && depart.couleur) d.style.setProperty('--voile-fond', depart.couleur);
+if (type === 'reload' && 'scrollRestoration' in history) {
+if (!retourSection) history.scrollRestoration = 'manual';
+}
+try {
+var choisie = ls && ls.getItem('socle:langue');
+var langue = (d.lang || '').slice(0, 2);
+if (choisie && choisie !== langue && type === 'navigate' && !depart) {
+var alt = document.querySelector('link[rel="alternate"][hreflang="' + choisie + '"]');
+if (alt) location.replace(new URL(alt.href).pathname + location.search + location.hash);
+}
+} catch (e) {}
+setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
+})();</script>
+<link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/socle.css?v=1">
+<link rel="stylesheet" href="/assets/css/site.css?v=1">
+<link rel="modulepreload" href="/assets/js/site.js?v=1">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=1">
+<script src="/assets/vendor/gsap.min.js" defer></script>
+<script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/assets/vendor/SplitText.min.js" defer></script>
+<script type="module" src="/assets/js/site.js?v=1"></script>
+<meta name="theme-color" content="#f4efe4">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Le Quartier des Autrices et des Auteurs">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="L’appel à textes 26/27 du QD2A : conditions et envoi">
+<meta property="og:description" content="Textes dramatiques en français, inédits, de trois ans au plus : l’appel à textes 26/27 du Quartier est ouvert, sans date limite.">
+<meta property="og:url" content="https://qd2a-maquette.vercel.app/appel-a-textes">
+<meta property="og:image" content="https://qd2a-maquette.vercel.app/assets/partage/appel-fr.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="L’appel à textes 26/27 du QD2A : une enveloppe sous une lampe">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Le Quartier des Autrices et des Auteurs","alternateName":"QD2A","url":"https://qd2a-maquette.vercel.app/","email":"comiteqdaa@gmail.com","foundingDate":"2020-05","description":"Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry.","address":{"@type":"PostalAddress","streetAddress":"Manufacture des Œillets, 1 place Pierre Gosnat","postalCode":"94200","addressLocality":"Ivry-sur-Seine","addressCountry":"FR"},"sameAs":["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]}</script>
+</head>
+<body id="haut">
+<div data-voile data-forme="page" aria-hidden="true"><span class="voile-pli" aria-hidden="true"></span><span class="voile-lignes" aria-hidden="true"></span><div class="voile-contenu"><img src="/assets/images/logo.png" alt="" width="56" height="56"><span data-voile-libelle>L’appel à textes</span></div></div>
+<div class="ouverture-panneau" data-ouverture aria-hidden="true">
+  <div class="ouverture-feuille" data-ouverture-objet>
+    <p class="ouverture-tape"><span class="ouverture-car" style="--i:0">L</span><span class="ouverture-car" style="--i:1">e</span><span class="ouverture-car ouverture-espace" style="--i:2">&nbsp;</span><span class="ouverture-car" style="--i:3">Q</span><span class="ouverture-car" style="--i:4">u</span><span class="ouverture-car" style="--i:5">a</span><span class="ouverture-car" style="--i:6">r</span><span class="ouverture-car" style="--i:7">t</span><span class="ouverture-car" style="--i:8">i</span><span class="ouverture-car" style="--i:9">e</span><span class="ouverture-car" style="--i:10">r</span><span class="ouverture-car ouverture-espace" style="--i:11">&nbsp;</span><span class="ouverture-car" style="--i:12">d</span><span class="ouverture-car" style="--i:13">e</span><span class="ouverture-car" style="--i:14">s</span><span class="ouverture-car ouverture-espace" style="--i:15">&nbsp;</span><span class="ouverture-car" style="--i:16">A</span><span class="ouverture-car" style="--i:17">u</span><span class="ouverture-car" style="--i:18">t</span><span class="ouverture-car" style="--i:19">r</span><span class="ouverture-car" style="--i:20">i</span><span class="ouverture-car" style="--i:21">c</span><span class="ouverture-car" style="--i:22">e</span><span class="ouverture-car" style="--i:23">s</span><span class="ouverture-car ouverture-espace" style="--i:24">&nbsp;</span><span class="ouverture-car" style="--i:25">e</span><span class="ouverture-car" style="--i:26">t</span><span class="ouverture-car ouverture-espace" style="--i:27">&nbsp;</span><span class="ouverture-car" style="--i:28">d</span><span class="ouverture-car" style="--i:29">e</span><span class="ouverture-car" style="--i:30">s</span><span class="ouverture-car ouverture-espace" style="--i:31">&nbsp;</span><span class="ouverture-car" style="--i:32">A</span><span class="ouverture-car" style="--i:33">u</span><span class="ouverture-car" style="--i:34">t</span><span class="ouverture-car" style="--i:35">e</span><span class="ouverture-car" style="--i:36">u</span><span class="ouverture-car" style="--i:37">r</span><span class="ouverture-car" style="--i:38">s</span><span class="ouverture-curseur"></span></p>
+    <svg class="ouverture-souligne" viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M3 9 C 50 4, 120 12, 197 6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" pathLength="1"/></svg>
+    <p class="ouverture-ligne">Comité de lecture international</p>
+  </div>
+</div>
+<a class="evitement" href="#contenu">Aller au contenu</a>
+<header data-entete>
+  <div class="entete-rangee">
+    <a class="entete-logo" href="/" data-libelle="Accueil">
+      <img src="/assets/images/logo.png" alt="" width="40" height="40"><span aria-hidden="true">QD2A</span><span class="visuellement-cache">Le Quartier des Autrices et des Auteurs, accueil</span>
+    </a>
+    <nav data-nav aria-label="Navigation principale">
+      <ul><li><a href="/saison" data-libelle="La saison 25/26">La saison 25/26</a></li><li><a href="/appel-a-textes" data-libelle="L’appel à textes" aria-current="page">L’appel à textes</a></li><li><a href="/hydre" data-libelle="L’Hydre">L’Hydre</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div class="entete-actions">
+      <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
+      <button type="button" data-menu-bouton aria-controls="menu" aria-expanded="false" data-libelle-ouvrir="Menu" data-libelle-fermer="Fermer"><span data-libelle-bouton>Menu</span></button>
+      <a class="menu-sansjs" href="#menu" data-menu-lien>Menu</a>
+    </div>
+  </div>
+</header>
+<script>/* Avant le premier affichage : rangées de la navigation (même règle que ajusterNav dans assets/js/socle/entete.js)
+   et hauteur réelle de l'en-tête, pour que rien ne saute quand le JavaScript du site prend la main. */
+(function () {
+  var h = document.documentElement, u = document.querySelector('[data-nav] ul'), e = document.querySelector('[data-entete]');
+  if (u) {
+    var deborde = function () { return u.scrollWidth > u.clientWidth + 1; }, c = deborde();
+    if (c && window.matchMedia('(min-width: 900px)').matches) {
+      h.classList.add('nav-deux-rangees'); c = deborde();
+      if (c) { h.classList.add('nav-deux-lignes'); var a = u.querySelector('a'); c = !a || u.getBoundingClientRect().height > a.getBoundingClientRect().height * 2.5; }
+      if (c) h.classList.remove('nav-deux-rangees', 'nav-deux-lignes');
+    }
+    if (c) h.classList.add('nav-compacte');
+  }
+  if (e) h.style.setProperty('--entete-h', Math.round(e.getBoundingClientRect().height) + 'px');
+})();</script>
+<span id="menu-ferme" aria-hidden="true"></span>
+<div id="menu" data-menu role="dialog" aria-modal="true" aria-label="Menu">
+  <p class="menu-sansjs-fermer"><a href="#menu-ferme">Fermer</a></p>
+  <ul><li style="--i:0"><a href="/" class="menu-lien" data-libelle="Accueil">Accueil</a></li><li style="--i:1"><a href="/saison" class="menu-lien" data-libelle="La saison 25/26">La saison 25/26</a></li><li style="--i:2"><a href="/appel-a-textes" class="menu-lien" data-libelle="L’appel à textes" aria-current="page">L’appel à textes</a></li><li style="--i:3"><a href="/hydre" class="menu-lien" data-libelle="L’Hydre">L’Hydre</a></li><li style="--i:4"><a href="/contact" class="menu-lien" data-libelle="Contact">Contact</a></li></ul>
+  <p class="menu-actions"><a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a> <a class="menu-mail" href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
+  <p><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></p>
+</div>
+<main id="contenu" tabindex="-1">
+<div class="fil" data-grille="fil" data-effet="crayon" aria-hidden="true"><svg class="fil-svg"><path class="fil-trait" d=""/></svg><span class="fil-mine"></span></div>
+<section class="ouv ouv-appel ecran" id="debut">
+  <div class="appel-ouv conteneur">
+    <div class="ouv-texte">
+      <p class="surtitre masque-ecran-tres-bas" data-anime="gsap">Saison 26/27</p>
+      <h1 class="ouv-titre appel-titre" data-anime="lettres">L’appel à textes</h1>
+      <p class="ouv-intro masque-ecran-bas" data-anime="gsap">Autrices et auteurs de toutes nationalités, écrivant en français : le Quartier lit votre texte.</p>
+      <p class="ouv-actions" data-anime="gsap">
+        <a class="bouton" href="#deposer" data-action-principale data-survol="magnetique">Déposer un texte</a>
+        <span class="ouv-info" data-info-cle><span class="pastille" aria-hidden="true"></span>Ouvert sans date limite</span>
+      </p>
+      <p class="ouv-lien masque-ecran-tres-bas" data-anime="gsap"><a class="lien-fleche" href="https://3028e62e-0d54-43bc-897f-dc8b2bf3f9ef.filesusr.com/ugd/17efc3_eb2ab16afec24ccfbb98b40b9053f34f.pdf" target="_blank" rel="noopener" aria-label="Fiche de renseignements 26/27 (PDF) (nouvel onglet)">Fiche de renseignements 26/27 (PDF)</a></p>
+    </div>
+    <div class="lampe" data-lampe data-iris-centre data-effet="lampe" data-souris>
+      <figure class="media lampe-photo" data-grok style="--cadrage:62% 55%;--cadrage-mobile:55% 60%">
+  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/g-appel-ouverture-mobile-540.webp 540w, /assets/images/grok/g-appel-ouverture-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 50vw">
+    <img src="/assets/images/grok/g-appel-ouverture-1168.webp" srcset="/assets/images/grok/g-appel-ouverture-640.webp 640w, /assets/images/grok/g-appel-ouverture-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 50vw" alt="Enveloppe kraft et tapuscrit sous une lampe, la nuit" width="1168" height="784" fetchpriority="high" loading="eager" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+      <span class="lampe-ombre" aria-hidden="true"></span>
+      <p class="lampe-consigne souris-seulement masque-ecran-bas">Promenez la lampe sur la table</p>
+    </div>
+  </div>
+</section>
+<section class="cachets" id="conditions" aria-labelledby="conditions-h">
+  <div class="conteneur">
+    <p class="surtitre">Les conditions</p>
+    <h2 id="conditions-h" class="axes" data-axes data-grille="typo">Quatre cachets avant l’envoi</h2>
+    <ul class="cachets-liste" data-anime="cascade">
+      <li class="cachet-carte">
+        <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-1" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-1">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>1</b></span>
+        <h3>En français</h3>
+        <p>Écrit en langue française, sans traduction.</p>
+      </li><li class="cachet-carte">
+        <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-2" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-2">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>2</b></span>
+        <h3>Trois ans au plus</h3>
+        <p>Un texte dramatique, ou une libre adaptation théâtrale, de trois ans au plus.</p>
+      </li><li class="cachet-carte">
+        <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-3" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-3">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>3</b></span>
+        <h3>Inédit</h3>
+        <p>Pas encore édité au moment de l’envoi.</p>
+      </li><li class="cachet-carte">
+        <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-4" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-4">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>4</b></span>
+        <h3>Avec sa fiche</h3>
+        <p>Accompagné de la fiche de renseignements 26/27, en PDF à remplir.</p>
+      </li>
+    </ul>
+  </div>
+</section>
+<section class="route" id="parcours" data-scene data-grille="scene" data-entete-cache aria-labelledby="parcours-h">
+  <div class="route-cadre" data-collant>
+    <div class="route-texte conteneur-gauche">
+      <p class="surtitre">Le parcours d’un texte</p>
+      <h2 id="parcours-h">De votre boîte d’envoi à la scène</h2>
+      <ol class="route-etapes">
+        <li class="route-etape" data-etape="0"><span class="route-num">1</span><span><b>L’envoi</b> Par e-mail à Thierry Blanc, coordinateur du comité, avec la fiche remplie.</span></li><li class="route-etape" data-etape="1"><span class="route-num">2</span><span><b>Trois lecteurs</b> Trois lecteurs bénévoles lisent le texte et écrivent chacun une fiche.</span></li><li class="route-etape" data-etape="2"><span class="route-num">3</span><span><b>Deux avis favorables</b> Avec deux avis favorables, le texte entre en sélection finale.</span></li><li class="route-etape" data-etape="3"><span class="route-num">4</span><span><b>La sélection finale</b> Elle est relue par l’ensemble du comité, réuni une fois par mois.</span></li><li class="route-etape" data-etape="4"><span class="route-num">5</span><span><b>L’élection</b> Les têtes du comité élisent ensemble le lauréat ; chaque comité choisit son coup de cœur.</span></li><li class="route-etape" data-etape="5"><span class="route-num">6</span><span><b>La scène et le livre</b> Le lauréat reçoit un prix en numéraire (montant à compléter), une mise en lecture dans quatre pays et une édition chez Passage(s).</span></li>
+      </ol>
+    </div>
+    <div class="route-carte" data-effet="parcours" data-visuel aria-hidden="true">
+      <svg class="route-svg" viewBox="0 0 600 560" preserveAspectRatio="xMidYMid meet">
+        <path class="route-fond" d="M60 500 C 180 500, 120 380, 240 380 S 420 420, 450 300 S 300 200, 380 140 S 560 120, 540 50"/>
+        <path class="route-trait" data-route d="M60 500 C 180 500, 120 380, 240 380 S 420 420, 450 300 S 300 200, 380 140 S 560 120, 540 50"/>
+      </svg>
+      <span class="route-station" data-station="0"><b>1</b></span><span class="route-station" data-station="1"><b>2</b></span><span class="route-station" data-station="2"><b>3</b></span><span class="route-station" data-station="3"><b>4</b></span><span class="route-station" data-station="4"><b>5</b></span><span class="route-station" data-station="5"><b>6</b></span>
+      <span class="route-env" data-route-env><i></i></span>
+      <div class="route-livres" data-route-livres>
+        <figure class="media route-livre" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/couv-nombril-400.webp" srcset="/assets/images/site/couv-nombril-400.webp 400w" sizes="90px" alt="" width="400" height="622" loading="lazy" decoding="async">
+  </picture>
+</figure><figure class="media route-livre" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/couv-loin-des-hommes-400.webp" srcset="/assets/images/site/couv-loin-des-hommes-400.webp 400w" sizes="90px" alt="" width="400" height="622" loading="lazy" decoding="async">
+  </picture>
+</figure><figure class="media route-livre" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/couv-saison-2020-400.webp" srcset="/assets/images/site/couv-saison-2020-400.webp 400w" sizes="90px" alt="" width="400" height="622" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="fiche" id="fiche" aria-labelledby="fiche-h">
+  <div class="conteneur fiche-grille">
+    <figure class="media fiche-photo" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
+  <picture>
+    <img src="/assets/images/grok/g-appel-fiches-784.webp" srcset="/assets/images/grok/g-appel-fiches-480.webp 480w, /assets/images/grok/g-appel-fiches-784.webp 784w" sizes="(max-width: 760px) 100vw, 38vw" alt="Trois piles de fiches de lecture à côté d’un tapuscrit" width="784" height="1168" loading="lazy" decoding="async">
+  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
+</figure>
+    <div>
+      <p class="surtitre">Ce que vous recevez</p>
+      <h2 id="fiche-h" class="frappe" data-frappe data-effet="frappe">Une fiche, toujours</h2>
+      <p data-anime="mots">Chaque autrice et chaque auteur reçoit une fiche de lecture détaillée. Le comité accepte aussi de relire plusieurs versions d’un même texte, ce que peu de comités font.</p>
+      <p class="fiche-chiffre" data-anime><strong data-compteur="200">200</strong> Plus de 200 pièces reçues pour la saison 22/23.</p>
+    </div>
+  </div>
+</section>
+<section class="depot" id="deposer" aria-labelledby="deposer-h">
+  <div class="conteneur depot-grille">
+    <div class="depot-texte">
+      <p class="surtitre">Déposer</p>
+      <h2 id="deposer-h" data-anime="lignes">Glissez votre texte dans l’enveloppe</h2>
+      <p>Démonstration : sur ce site, rien n’est envoyé. Aujourd’hui, l’envoi se fait par e-mail à comiteqdaa@gmail.com, avec la fiche de renseignements.</p>
+      <div class="depot-visuel" data-grille="retour" data-effet="enveloppe" data-fx="vitesse" data-visuel><div class="enveloppe" data-enveloppe aria-hidden="true">
+  <div class="env-dos"></div>
+  <div class="env-feuille" data-env-feuille><i></i><i></i><i></i><i></i></div>
+  <div class="env-face"></div>
+  <div class="env-rabat" data-env-rabat></div>
+  <span class="env-tampon" data-env-tampon>Reçu</span>
+</div><p class="env-legende" data-env-legende>lu par trois lecteurs</p></div>
+    </div>
+    <form class="etapes" data-formulaire data-etapes-form novalidate aria-labelledby="deposer-h">
+      <p class="etapes-annonce" id="etapes-annonce">Trois étapes : vous, le texte, le récapitulatif.</p>
+      <ol class="etapes-fil" aria-hidden="true"><li class="actif">Vous</li><li>Le texte</li><li>Récapitulatif</li></ol>
+      <fieldset class="etape" data-etape-form="0">
+        <legend>Vous</legend>
+        <div class="champ"><label for="d-nom">Nom et prénom</label><input id="d-nom" name="nom" autocomplete="name" required></div>
+        <div class="champ"><label for="d-email">E-mail</label><input id="d-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="champ"><label for="d-pays">Pays</label><input id="d-pays" name="pays" autocomplete="country-name" required></div>
+        <p><button type="button" class="bouton" data-etape-suivante>Continuer</button></p>
+      </fieldset>
+      <fieldset class="etape" data-etape-form="1" hidden>
+        <legend>Le texte</legend>
+        <div class="champ"><label for="d-titre">Titre du texte</label><input id="d-titre" name="titre" required></div>
+        <div class="champ"><label for="d-annee">Année d’écriture</label><input id="d-annee" name="annee" inputmode="numeric" pattern="[0-9]{4}" required></div>
+        <div class="champ champ-fichier"><label for="d-fichier">Votre texte (PDF)</label><input id="d-fichier" name="fichier" type="file" accept=".pdf,application/pdf"><p class="champ-aide">Glissez le fichier ici ou choisissez-le. Démonstration : rien n’est envoyé.</p></div>
+        <div class="champ champ-fichier"><label for="d-fiche">La fiche de renseignements remplie (PDF)</label><input id="d-fiche" name="fiche" type="file" accept=".pdf,application/pdf"></div>
+        <div class="champ champ-case"><input id="d-fr" name="francais" type="checkbox" value="oui" required><label for="d-fr">Le texte est écrit en français, sans traduction</label></div>
+        <div class="champ champ-case"><input id="d-inedit" name="inedit" type="checkbox" value="oui" required><label for="d-inedit">Le texte n’est pas encore édité</label></div>
+        <p class="etapes-boutons"><button type="button" class="bouton bouton--contour" data-etape-precedente>Revenir</button> <button type="button" class="bouton" data-etape-suivante>Continuer</button></p>
+      </fieldset>
+      <fieldset class="etape" data-etape-form="2" hidden>
+        <legend>Récapitulatif</legend>
+        <dl class="recap" data-recap></dl>
+        <p class="mention-donnees">Vos données servent seulement à traiter votre envoi. Politique de confidentialité : à compléter.</p>
+        <p class="etapes-boutons"><button type="button" class="bouton bouton--contour" data-etape-precedente>Revenir</button> <button type="submit" class="bouton">Glisser dans l’enveloppe</button></p>
+      </fieldset>
+      <p data-message-envoi data-texte="Démonstration : rien n’a été envoyé. Sur le site final, votre texte partira vers le comité." tabindex="-1" hidden></p>
+    </form>
+  </div>
+</section>
+</main>
+<footer class="pied" id="pied">
+  <div class="conteneur pied-grille">
+    <div class="pied-identite">
+      <img class="pied-logo" src="/assets/images/logo-clair.png" alt="" width="64" height="64">
+      <p><strong>Le Quartier des Autrices et des Auteurs</strong></p>
+      <p class="pied-texte">Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.</p>
+    </div>
+    <div>
+      <p><strong>Nous trouver</strong></p>
+      <p>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne<br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
+      <p><a href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
+    </div>
+    <nav aria-label="Sommaire">
+      <p><strong>Sommaire</strong></p>
+      <ul><li><a href="/" data-libelle="Accueil">Accueil</a></li><li><a href="/saison" data-libelle="La saison 25/26">La saison 25/26</a></li><li><a href="/appel-a-textes" data-libelle="L’appel à textes" aria-current="page">L’appel à textes</a></li><li><a href="/hydre" data-libelle="L’Hydre">L’Hydre</a></li><li><a href="/contact" data-libelle="Contact">Contact</a></li></ul>
+    </nav>
+    <div>
+      <p><strong>Confort de lecture</strong></p>
+      <ul>
+        <li><button type="button" class="lien" data-calme-bascule data-libelle-reduire="Réduire les animations" data-libelle-retablir="Rétablir les animations" data-libelle-systeme="Animations réduites par le réglage de votre appareil"><span data-libelle-bouton>Réduire les animations</span></button></li>
+        <li><a href="#haut" data-sans-transition>Retour en haut</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le Quartier.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>© Le Quartier des Autrices et des Auteurs</p></div>
+</footer>
+<div data-barre-fixe>
+  <a class="bouton bouton--contour" href="mailto:comiteqdaa@gmail.com">E-mail</a>
+  <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
+</div>
+</body>
+</html>

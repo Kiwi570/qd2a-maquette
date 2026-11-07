@@ -1,0 +1,6 @@
+{
+  "siteActuel": "comiteqdaa.wixsite.com",
+  "pagesTypes": ["/", "/saison", "/appel-a-textes", "/hydre", "/contact"],
+  "effets": ["tapuscrit", "frappe", "crayon", "fiches", "pile", "enveloppe", "cous", "servante"],
+  "grille": { "dispenses": {} }
+}
