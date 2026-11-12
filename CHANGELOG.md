@@ -2,6 +2,20 @@
 
 Chaque version ajoute sa partie en tête de ce fichier, construite en comparant l'archive précédente et la nouvelle, jamais de mémoire.
 
+## v3 — un trajet d'un texte plus fluide (12 novembre 2026)
+
+Correction ciblée de l'accueil, comparée fichier par fichier à la v2 (page d'accueil, styles, script).
+
+- **« D'un e-mail à la scène »** :
+  - **Défilement** : la scène suit maintenant le défilement en douceur, sans à-coups. L'animation est liée au défilement, au lieu d'être recalée à chaque mouvement de la molette.
+  - **Le texte reçu** est dessiné à sa taille réelle, avec son titre et ses lignes, puis il se réduit jusqu'à sa place dans la sélection des 26. Ce n'est plus un petit feuillet agrandi trois fois, au cadre épais.
+  - **Tampons** : les « Favorable » se posent sur les visages des lecteurs et ne cachent plus « Fiche Lecteur 1 » ni « Fiche Lecteur 2 ».
+  - **Étapes** : la liste des six étapes ne change plus de hauteur. La description de l'étape en cours s'affiche dans un encadré de taille fixe, en fondu.
+- **Ouverture** : au défilement, le Q aux visages monte et recule d'un seul bloc. Il ne redessine plus ses six formes à chaque image.
+- **Le comité** : le dégradé du fond glisse comme un calque au lieu d'être repeint à chaque image.
+- **Fluidité mesurée sur l'accueil** : 0 % d'images lentes sur ordinateur ralenti et sur téléphone, contre 2 % en v2. Les tâches longues pendant le défilement ont disparu.
+- Les numéros de version passent de `?v=2` à `?v=3`.
+
 ## v2 — « Les visages du Q » (12 novembre 2026)
 
 Comparaison faite fichier par fichier avec l'archive de la v1 (pages, données, styles, scripts, images).

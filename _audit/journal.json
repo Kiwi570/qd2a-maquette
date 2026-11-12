@@ -245,6 +245,40 @@
       ],
       "notes": "L'audit complet de la v1 avec l'audit v10.10 a été arrêté en cours (mesures faites, films en cours) : les fichiers du site changeaient pendant la refonte. La v1 avait eu son audit complet le 7 novembre (0 échec).",
       "valideeLe": null
+    },
+    {
+      "version": 3,
+      "skill": "v10.10",
+      "perimetre": [
+        "accueil"
+      ],
+      "demande": "rendre la section « D'un e-mail à la scène » de l'accueil plus fluide et corriger ses petits défauts",
+      "etapes": [
+        {
+          "etape": "correction de la scène du trajet et fluidité de l'accueil",
+          "budget": 30,
+          "debut": "2026-11-12T17:15:00+01:00",
+          "fin": "2026-11-12T17:28:00+01:00"
+        }
+      ],
+      "attentes": [],
+      "allersRetours": 0,
+      "audit": {
+        "niveau": "ciblé sur l'accueil (fichiers, mesures, mouvement, fluidité, films)",
+        "echecs": 0,
+        "fluidite": "0 % d'images lentes (ordinateur ralenti et téléphone), contre 2 % avant"
+      },
+      "corrections": [
+        "timeline du trajet liée au défilement par GSAP (scrub) au lieu d'être recalée à chaque événement",
+        "document reçu dessiné à sa taille puis réduit jusqu'à sa place (plus de petit feuillet agrandi trois fois)",
+        "tampons « Favorable » posés sur les visages, plus sur le texte des fiches",
+        "description de l'étape active dans un panneau à hauteur fixe : la colonne ne saute plus",
+        "états de départ posés une fois, plus de réenregistrement au rafraîchissement",
+        "Q de l'ouverture déplacé d'un seul bloc au défilement, fond du comité glissé en calque"
+      ],
+      "effetsRetires": [
+        "écartement des formes du Q au défilement (remplacé par un mouvement d'ensemble)"
+      ]
     }
   ]
 }

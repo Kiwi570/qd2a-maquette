@@ -53,6 +53,7 @@ export default (c) => {
 </section>
 
 <section class="lecteurs" id="comite" aria-labelledby="lecteurs-h">
+  <div class="lecteurs-fond" data-lecteurs-fond aria-hidden="true"></div>
   <div class="conteneur lecteurs-grille">
     <div class="lecteurs-texte">
       <p class="surtitre">${c.t('accueil.lecteurs.surtitre')}</p>
@@ -82,20 +83,25 @@ export default (c) => {
       <ol class="trajet-etapes" data-etapes>
         ${[1, 2, 3, 4, 5, 6].map((n) => html`<li class="trajet-etape" data-etape="${n - 1}"><span class="trajet-num">${n}</span><span><b>${c.t(`accueil.trajet.e${n}t`)}</b> <span class="trajet-desc">${c.t(`accueil.trajet.e${n}`)}</span></span></li>`)}
       </ol>
+      <div class="trajet-detail" data-trajet-detail>
+        ${[1, 2, 3, 4, 5, 6].map((n) => html`<p data-detail="${n - 1}"${n > 1 ? brut(' hidden') : ''}>${c.t(`accueil.trajet.e${n}`)}</p>`)}
+      </div>
     </div>
     <div class="scene-trajet" data-effet="trajet" data-visuel data-trajet role="img" aria-label="${c.s('accueil.trajet.region')}">
       <div class="tr-grille" aria-hidden="true">
         ${sel.textes.map((t, i) => html`<span class="tr-texte${i === 13 ? ' tr-texte--recu' : ''}" data-tr-texte="${i}"><i></i><i></i><i></i></span>`)}
       </div>
       <span class="tr-libelle tr-libelle--selection" data-tr-selection aria-hidden="true">${c.t('accueil.trajet.selection')}</span>
-      <div class="tr-mail" data-tr-recu aria-hidden="true">
+      <div class="tr-mail" data-tr-mail aria-hidden="true">
         <p><b>${c.t('accueil.trajet.mailA')}</b> ${c.site.contact.email}</p>
         <p><b>${c.t('accueil.trajet.mailObjet')}</b> ${c.t('accueil.trajet.mailObjetTexte')}</p>
         <p><b>${c.t('accueil.trajet.mailPj')}</b> ${c.t('accueil.trajet.mailPjTexte')}</p>
       </div>
+      <div class="tr-doc" data-tr-doc aria-hidden="true"><b>${c.t('accueil.trajet.texteRecu')}</b><i></i><i></i><i></i><i></i><i></i><i></i></div>
       ${LECTEURS_TRAJET.map((img, i) => html`<div class="tr-lecteur tr-lecteur--${i}" data-tr-lecteur="${i}" aria-hidden="true">
         <img src="/assets/images/${img}-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async">
-        <span class="tr-fiche"><b>${c.t('accueil.trajet.fiche')}</b> ${c.t('accueil.trajet.lecteur', { n: i + 1 })}${i < 2 ? html`<em class="tr-tampon" data-tr-tampon>${c.t('accueil.trajet.favorable')}</em>` : ''}</span>
+        <span class="tr-fiche"><b>${c.t('accueil.trajet.fiche')}</b> ${c.t('accueil.trajet.lecteur', { n: i + 1 })}</span>
+        ${i < 2 ? html`<em class="tr-tampon" data-tr-tampon>${c.t('accueil.trajet.favorable')}</em>` : ''}
       </div>`)}
       <div class="tr-cinq" aria-hidden="true">
         ${cinq.map((x, i) => html`<figure class="tr-portrait${x.laureate ? ' tr-portrait--laureate' : ''}" data-tr-portrait="${i}">

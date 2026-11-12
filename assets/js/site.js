@@ -1,7 +1,7 @@
 /* Effets propres au QD2A (direction « Le Tapuscrit »). Le socle gère l'ouverture, le voile « page », l'en-tête,
    le menu, le mode calme, les boucles et la bibliothèque d'effets ; ici, seulement ce qui est propre au client.
    Effets du plan : hydre-q, visages, trajet, q-fil, tapuscrit, trois-lecteurs, pile, enveloppe, cous, servante (data-effet). */
-import { demarrer, boucle, etat, versObjet, quand } from './socle/index.js?v=2';
+import { demarrer, boucle, etat, versObjet, quand } from './socle/index.js?v=3';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;
@@ -111,12 +111,11 @@ function qVisages() {
     });
     zone.addEventListener('pointerleave', () => suivre.forEach((q) => { q.fx(0); q.fy(0); }));
   }
-  /* Au défilement, le Q se défait doucement : chaque forme s'écarte du centre. */
+  /* Au défilement, le Q entier monte et recule d'un seul bloc : une transformation du calque composé, sans redessiner
+     les formes découpées (les écarter une à une au défilement coûtait des images lentes sur un processeur ralenti). */
   if (ST) {
-    const sec = svg.closest('section');
-    ST.create({ trigger: sec, start: 'top top', end: 'bottom top', scrub: 0.4, onUpdate: (st) => {
-      pieces.forEach((p) => { const s = etats.get(p); const f = st.progress * 46 * s.prof; s.ex = s.dx * f; s.ey = s.dy * f; appliquer(p); });
-    } });
+    gsap.fromTo(svg, { yPercent: 0, scale: 1 }, { yPercent: -10, scale: 0.94, ease: 'none', immediateRender: false,
+      scrollTrigger: { trigger: svg.closest('section'), start: 'top top', end: 'bottom top', scrub: 0.4 } });
   }
   /* Une invitation, une fois l'ouverture finie : chaque forme s'écarte et revient, l'une après l'autre. */
   quand('pret', () => {
@@ -139,7 +138,8 @@ function mur() {
   }));
   if (calme() || !ST || !gsap) return;
   /* La lumière de la section glisse du violet vers l'orange des affiches du Quartier. */
-  gsap.fromTo(sec, { '--bgx': '0%' }, { '--bgx': '100%', ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true } });
+  const fond = $('[data-lecteurs-fond]', sec);
+  if (fond) gsap.fromTo(fond, { xPercent: 0 }, { xPercent: -18, ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true } });
   if (etat.arrivee === 'retour') return;
   const visages = $$('.visage', m), noms = $$('.mur-nom', m);
   /* Chaque visage part de la place d'un autre (mélange fixe), puis rejoint sa tête. Positions relatives
@@ -167,6 +167,8 @@ function troisLecteurs() {
     while (pris.has(k) && essais++ < 20) k = Math.floor(Math.random() * liste.length);
     pris.add(k);
     img.src = `/assets/images/${liste[k]}-320.webp`;
+    img.loading = 'eager';
+    if (img.decode) img.decode().catch(() => {});
   });
   if (!ST || calme() || !gsap || etat.arrivee === 'retour') return;
   gsap.fromTo($$('.trois-lecteur', bloc), { y: 30, rotate: (i) => [-6, 4, -3][i], opacity: 0 }, { y: 0, rotate: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'back.out(1.6)', scrollTrigger: { trigger: bloc, start: 'top 80%' } });
@@ -329,38 +331,64 @@ function curseurVivant() {
   });
 }
 
-/* ---------- Le trajet d'un texte : de l'e-mail à la scène (scène épinglée du métier : trier, choisir, lire) ---------- */
+/* ---------- Le trajet d'un texte : de l'e-mail à la scène (scène épinglée du métier : trier, choisir, lire) ----------
+   La timeline est liée au défilement par GSAP (scrub) : elle suit le doigt ou la molette en douceur, sans à-coups.
+   Le document reçu est dessiné à sa vraie taille, puis rejoint sa place dans la sélection en se réduisant (jamais
+   un petit feuillet agrandi). Les étapes ne changent jamais la hauteur de la colonne : la description de l'étape
+   active s'affiche dans un panneau à hauteur fixe. */
 function trajet() {
   const sec = $('#trajet');
   if (!sec || !gsap) return;
-  const etapes = $$('[data-etape]', sec);
-  const marquer = (k) => etapes.forEach((e, i) => e.classList.toggle('actif', i === k));
-  if (calme() || !ST) { etapes.forEach((e) => e.classList.add('actif')); return; }
+  const etapes = $$('[data-etape]', sec), details = $$('[data-detail]', sec);
+  let active = -1;
+  const marquer = (k) => {
+    if (k === active) return;
+    active = k;
+    etapes.forEach((e, i) => e.classList.toggle('actif', i === k));
+    details.forEach((d, i) => { d.hidden = i !== k; });
+  };
+  if (calme() || !ST) { etapes.forEach((e) => e.classList.add('actif')); details.forEach((d) => { d.hidden = false; }); return; }
   const scene = $('[data-trajet]', sec), grille = $('.tr-grille', scene);
   const textes = $$('[data-tr-texte]', scene), recu = $('.tr-texte--recu', scene), autres = textes.filter((t) => t !== recu);
+  const doc = $('[data-tr-doc]', scene), mail = $('[data-tr-mail]', scene);
   const lecteurs = $$('[data-tr-lecteur]', scene), tampons = $$('[data-tr-tampon]', scene);
   const portraits = $$('[data-tr-portrait]', scene), dates = $$('[data-tr-date]', scene);
-  const libSel = $('[data-tr-selection]', scene), libRecu = $('[data-tr-recu]', scene);
-  /* Le texte reçu arrive au milieu de la scène, en grand, avant de rejoindre sa place dans la sélection. */
-  const vers = () => ({ x: scene.offsetWidth / 2 - (grille.offsetLeft + recu.offsetLeft + recu.offsetWidth / 2), y: scene.offsetHeight * 0.41 - (grille.offsetTop + recu.offsetTop + recu.offsetHeight / 2), s: Math.max(2.2, Math.min(3.4, (scene.offsetWidth * 0.3) / Math.max(1, recu.offsetWidth))) });
-  let V = vers();
-  ST.addEventListener('refresh', () => { V = vers(); });
-  const tl = gsap.timeline({ paused: true, defaults: { ease: 'power2.out' } });
-  tl.fromTo(libRecu, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.35 }, 0)
-    .fromTo(recu, { x: () => V.x, y: () => V.y - 90, scale: () => V.s, rotate: -10, opacity: 0 }, { x: () => V.x, y: () => V.y, scale: () => V.s, rotate: -3, opacity: 1, duration: 0.6 }, 0.15)
-    .fromTo(lecteurs, { opacity: 0, y: 30, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.15 }, 1)
-    .fromTo(tampons, { opacity: 0, scale: 2.6, rotate: -30 }, { opacity: 1, scale: 1, rotate: -8, duration: 0.3, ease: 'back.out(2)', stagger: 0.3 }, 2)
-    .to([lecteurs, libRecu], { opacity: 0, duration: 0.3 }, 3)
-    .to(recu, { x: 0, y: 0, scale: 1, rotate: 0, duration: 0.6, ease: 'power3.inOut' }, 3)
-    .fromTo(autres, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, stagger: { each: 0.012, from: 13 } }, 3.2)
-    .fromTo(libSel, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 3.6)
-    .to([textes, libSel], { opacity: 0, scale: 0.85, duration: 0.4, stagger: { each: 0.006, from: 'random' } }, 4)
-    .fromTo(portraits, { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.1 }, 4.25)
-    .fromTo(dates, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.15 }, 5)
-    .to({}, { duration: 0.4 }, 5.6);
-  ST.create({ trigger: sec, start: 'top top', end: 'bottom bottom', scrub: 0.5, invalidateOnRefresh: true,
-    onRefresh: () => tl.invalidate(),
-    onUpdate: (s) => { tl.progress(s.progress); marquer(Math.min(5, Math.floor(s.progress * 6.15))); } });
+  const libSel = $('[data-tr-selection]', scene);
+  /* Où le document va se poser : la place du texte reçu dans la grille, en variables CSS (--tx, --ty, --ts) mises à
+     jour à chaque rafraîchissement ; la timeline n'anime que --p (0 à 1) : rien à réenregistrer, rien qui saute. */
+  const poserCible = () => {
+    const cx = grille.offsetLeft + recu.offsetLeft + recu.offsetWidth / 2, cy = grille.offsetTop + recu.offsetTop + recu.offsetHeight / 2;
+    const dx = doc.offsetLeft + doc.offsetWidth / 2, dy = doc.offsetTop + doc.offsetHeight / 2;
+    doc.style.setProperty('--tx', `${(cx - dx).toFixed(1)}px`);
+    doc.style.setProperty('--ty', `${(cy - dy).toFixed(1)}px`);
+    doc.style.setProperty('--ts', (recu.offsetWidth / Math.max(1, doc.offsetWidth)).toFixed(4));
+  };
+  poserCible();
+  ST.addEventListener('refresh', poserCible);
+  /* États de départ posés une fois ; chaque tween porte ses deux bornes (fromTo sans rendu immédiat) : la
+     timeline se lit dans les deux sens au défilement, sans jamais réenregistrer de valeurs. */
+  gsap.set([mail, lecteurs, tampons, autres, recu, libSel, portraits, dates], { opacity: 0 });
+  gsap.set(doc, { opacity: 0, '--e': 0, '--p': 0 });
+  const ft = (cibles, de, a, t) => tl.fromTo(cibles, de, { ...a, immediateRender: false }, t);
+  const tl = gsap.timeline({
+    defaults: { ease: 'power2.out' },
+    scrollTrigger: { trigger: sec, start: 'top top', end: 'bottom bottom', scrub: 0.8, onToggle: (st) => scene.classList.toggle('en-mouvement', st.isActive) },
+    onUpdate: () => marquer(Math.min(5, Math.floor(tl.progress() * 6.05))),
+  });
+  ft(mail, { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.4 }, 0);
+  ft(doc, { opacity: 0, '--e': 0 }, { opacity: 1, '--e': 1, duration: 0.6 }, 0.2);
+  ft(lecteurs, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.14 }, 1);
+  ft(tampons, { opacity: 0, scale: 2.2, rotate: -26 }, { opacity: 1, scale: 1, rotate: -8, duration: 0.3, ease: 'back.out(1.8)', stagger: 0.28 }, 2);
+  ft([lecteurs, mail], { opacity: 1, y: 0 }, { opacity: 0, y: 12, duration: 0.35, ease: 'power1.in' }, 3);
+  ft(doc, { '--p': 0 }, { '--p': 1, duration: 0.65, ease: 'power3.inOut' }, 3);
+  ft(autres, { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.45, stagger: { each: 0.01, from: 13 } }, 3.25);
+  ft(recu, { opacity: 0 }, { opacity: 1, duration: 0.1 }, 3.62);
+  ft(doc, { opacity: 1 }, { opacity: 0, duration: 0.1 }, 3.65);
+  ft(libSel, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.3 }, 3.6);
+  ft([textes, libSel], { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.9, duration: 0.4, stagger: { each: 0.005, from: 'random' }, ease: 'power1.in' }, 4);
+  ft(portraits, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.09 }, 4.25);
+  ft(dates, { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.14 }, 5);
+  tl.to({}, { duration: 0.5 }, 5.5);
   marquer(0);
 }
 

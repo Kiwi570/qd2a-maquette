@@ -229,6 +229,7 @@ html.curseur-vivant :is(.tapuscrit, .q-piece) { cursor: grab; }
 .q-zone { position: relative; display: grid; justify-items: center; gap: 12px; }
 .q { height: clamp(300px, calc(100svh - var(--entete-h, 64px) - 190px), 600px); width: auto; max-width: 100%; aspect-ratio: 366 / 456; overflow: visible; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
 .q-piece { cursor: grab; outline: none; }
+html.js:not(.calme) .q { will-change: transform; }
 .q-piece.saisi { cursor: grabbing; }
 .q-bouge { transform-box: fill-box; transform-origin: 50% 50%; }
 .q-voile { opacity: .5; transition: opacity .45s var(--courbe); }
@@ -247,7 +248,9 @@ html.curseur-vivant :is(.tapuscrit, .q-piece) { cursor: grab; }
 .q-consigne { margin: 0; font-size: .82rem; color: var(--texte-doux); }
 
 /* Le comité : 46 visages qui se regroupent par tête au défilement (recomposition), filtres par comité. */
-.lecteurs { background: linear-gradient(135deg, #2b1530 0%, #3b1d40 48%, #5a2a3c 78%, #8a4430 100%); color: #f6efe4; --texte: #f6efe4; --texte-doux: rgba(246, 239, 228, .8); --accent: #e9b058; --accent-texte: #f0b968; --fond: #2b1530; background-size: 140% 140%; background-position: var(--bgx, 0%) 50%; }
+.lecteurs { background: #2b1530; color: #f6efe4; --texte: #f6efe4; --texte-doux: rgba(246, 239, 228, .8); --accent: #e9b058; --accent-texte: #f0b968; --fond: #2b1530; isolation: isolate; }
+.lecteurs-fond { position: absolute; z-index: -1; top: 0; bottom: 0; left: -30%; width: 160%; pointer-events: none; background: linear-gradient(110deg, #2b1530 0%, #3b1d40 40%, #5a2a3c 70%, #8a4430 100%); }
+html.js:not(.calme) .lecteurs-fond { will-change: transform; }
 .lecteurs-grille { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: clamp(28px, 5vw, 72px); align-items: center; }
 .lecteurs-texte h2 { margin-bottom: .4em; }
 .mur-filtres { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 10px; }
@@ -272,31 +275,47 @@ html.js:not(.calme):not(.secours) .trajet { height: 340svh; }
 .trajet-cadre { height: 100svh; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); align-items: center; gap: clamp(12px, 3vw, 48px); overflow: hidden; padding-block: 18px calc(var(--barres-h) + 12px); }
 html.js:not(.calme):not(.secours) .trajet-cadre { position: sticky; top: 0; }
 .trajet-texte h2 { font-size: clamp(1.9rem, min(4vw, 7vh), 3.6rem); line-height: 1.05; margin-bottom: .45em; }
-.trajet-etapes { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.trajet-etapes { list-style: none; padding: 0; margin: 0; display: grid; gap: 6px; }
 .trajet-etape { display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; align-items: start; font-size: clamp(.92rem, .86rem + .2vw, 1.04rem); line-height: 1.42; }
 .trajet-etape b { display: block; font-family: var(--police-titres); font-weight: 600; font-size: 1.1em; }
-html.js:not(.calme):not(.secours) .trajet-etape { opacity: .62; transition: opacity .35s; }
+html.js:not(.calme):not(.secours) .trajet-etape { opacity: .55; transition: opacity .3s; }
+html.js:not(.calme):not(.secours) .trajet-desc { display: none; }
+.trajet-detail { display: none; }
+html.js:not(.calme):not(.secours) .trajet-detail { display: grid; margin-top: 14px; padding: 12px 16px; border-left: 4px solid var(--accent); background: #efe7da; border-radius: 0 6px 6px 0; max-width: 46ch; }
+.trajet-detail p { grid-area: 1 / 1; margin: 0; font-size: clamp(.92rem, .86rem + .2vw, 1.04rem); line-height: 1.45; }
+html.js .trajet-detail p { transition: opacity .3s, visibility .3s; }
+html.js .trajet-detail p[hidden] { display: block; visibility: hidden; opacity: 0; }
+.trajet-num { transition: background-color .3s, color .3s; }
 html.js:not(.calme):not(.secours) .trajet-etape.actif { opacity: 1; }
 .trajet-num { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50% 40% 55% 45%; background: #e9e1d3; color: var(--encre); font-weight: 800; font-variant-numeric: tabular-nums; }
 .trajet-etape.actif .trajet-num { background: var(--accent); color: #fff; }
 .scene-trajet { position: relative; height: min(78svh, 640px); width: min(100%, 640px); justify-self: center; }
 .tr-grille { position: absolute; left: 4%; right: 4%; top: 10%; height: 56%; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); grid-template-rows: repeat(4, minmax(0, 1fr)); gap: 3%; }
-.tr-texte { position: relative; display: block; height: 100%; aspect-ratio: 210 / 297; justify-self: center; background: #fffdf8; box-shadow: 0 1px 0 rgba(22, 19, 15, .08), 0 8px 16px -10px rgba(22, 19, 15, .5); padding: 14% 12%; }
+.tr-texte { position: relative; display: block; height: 100%; aspect-ratio: 210 / 297; justify-self: center; background: #fffdf8; box-shadow: 0 1px 3px rgba(22, 19, 15, .2); padding: 14% 12%; }
 .tr-texte i { display: block; height: 2px; margin-bottom: 18%; background: rgba(22, 19, 15, .16); }
+.tr-grille, .tr-cinq, .tr-dates, .tr-lecteur, .tr-doc, .tr-mail { contain: layout; }
+.scene-trajet.en-mouvement :is(.tr-texte, .tr-portrait, .tr-date, .tr-lecteur, .tr-doc, .tr-mail, .tr-tampon) { will-change: transform, opacity; }
 .tr-texte i:nth-child(2) { width: 70%; }
-.tr-texte--recu { z-index: 3; box-shadow: 0 0 0 2px var(--accent), 0 14px 26px -12px rgba(22, 19, 15, .55); }
+.tr-texte--recu { z-index: 3; box-shadow: 0 0 0 2px var(--accent); }
+.tr-doc { --dw: min(25%, 170px); position: absolute; z-index: 4; left: calc(50% - var(--dw) / 2); top: 24%; width: var(--dw); aspect-ratio: 210 / 297; padding: 9% 7%; background: #fffdf8; border-top: 5px solid var(--accent); border-radius: 2px; box-shadow: 0 20px 40px -22px rgba(22, 19, 15, .6); transform-origin: 50% 50%;
+  --tx: 0px; --ty: 0px; --ts: 1; --p: 0; --e: 1;
+  transform: translate(calc(var(--tx) * var(--p)), calc(var(--ty) * var(--p) - (1 - var(--e)) * 44px)) rotate(calc(-2deg * (1 - var(--p)) - 5deg * (1 - var(--e)))) scale(calc(1 + (var(--ts) - 1) * var(--p))); }
+.tr-doc b { display: block; margin-bottom: 14%; font-family: var(--police-titres); font-weight: 600; font-size: .9rem; }
+.tr-doc i { display: block; height: 3px; margin-bottom: 11%; border-radius: 2px; background: rgba(22, 19, 15, .14); }
+.tr-doc i:nth-of-type(3n) { width: 64%; }
 .tr-libelle { position: absolute; left: 50%; transform: translateX(-50%); padding: 6px 12px; border-radius: 999px; background: var(--encre); color: var(--fond); font-weight: 700; font-size: .85rem; white-space: nowrap; z-index: 4; }
 .tr-libelle--selection { top: 69%; }
-.tr-mail { position: absolute; left: 50%; top: 2%; transform: translateX(-50%); width: min(92%, 420px); padding: 12px 14px; background: #fffdf8; border-radius: 6px; box-shadow: 0 14px 30px -18px rgba(22, 19, 15, .6); border-top: 4px solid var(--aubergine); z-index: 4; }
+.tr-mail { position: absolute; left: calc(50% - min(46%, 210px)); top: 2%; width: min(92%, 420px); padding: 12px 14px; background: #fffdf8; border-radius: 6px; box-shadow: 0 14px 30px -18px rgba(22, 19, 15, .6); border-top: 4px solid var(--aubergine); z-index: 4; }
 .tr-mail p { margin: 0; font-size: .85rem; line-height: 1.45; overflow-wrap: anywhere; }
 .tr-mail b { display: inline-block; min-width: 7.5em; color: var(--texte-doux); font-weight: 600; }
 @media (max-width: 760px) { .tr-mail b { min-width: 0; margin-right: .4em; } .tr-mail p { font-size: .78rem; } }
 .tr-lecteur { position: absolute; width: 27%; display: grid; justify-items: center; gap: 8px; z-index: 5; }
+.tr-lecteur > img { grid-row: 1; grid-column: 1; }
 .tr-lecteur img { width: 56%; aspect-ratio: 1; object-fit: cover; border-radius: 30% 46% 38% 50%; box-shadow: 0 10px 24px -14px rgba(22, 19, 15, .6); }
 .tr-lecteur--0 { left: 2%; top: 64%; } .tr-lecteur--1 { left: 36.5%; top: 72%; } .tr-lecteur--2 { right: 2%; top: 64%; }
 .tr-fiche { position: relative; display: block; width: 100%; padding: 8px 10px; background: #fffdf8; border-left: 4px solid var(--c-france); font-size: .8rem; line-height: 1.3; box-shadow: 0 8px 16px -10px rgba(22, 19, 15, .5); }
 .tr-lecteur--1 .tr-fiche { border-left-color: var(--c-cameroun); } .tr-lecteur--2 .tr-fiche { border-left-color: var(--c-belgique); }
-.tr-tampon { position: absolute; right: -6px; top: -14px; padding: 2px 8px; border: 2px solid #2f6b3c; color: #2f6b3c; background: #fffdf8; font-style: normal; font-weight: 800; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; transform: rotate(-8deg); border-radius: 3px; }
+.tr-tampon { grid-row: 1; grid-column: 1; align-self: end; justify-self: end; margin: 0 2% 6% 0; padding: 2px 8px; border: 2px solid #2f6b3c; color: #2f6b3c; background: #fffdf8; font-style: normal; font-weight: 800; font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; border-radius: 3px; transform: rotate(-8deg); z-index: 2; }
 .tr-cinq { position: absolute; left: 0; right: 0; top: 4%; height: 66%; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) minmax(0, 1fr); gap: 10px 3%; z-index: 6; }
 .tr-portrait { margin: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; gap: 6px; min-height: 0; }
 .tr-titre-texte { display: grid; align-items: end; min-height: 0; min-width: 0; padding: 10px 12px; border-radius: 4px; background: #fffdf8; border-left: 5px solid #993b35; box-shadow: 0 12px 26px -16px rgba(22, 19, 15, .55); font-family: var(--police-titres); font-size: clamp(.95rem, .7rem + .7vw, 1.35rem); line-height: 1.15; overflow-wrap: anywhere; }
@@ -315,7 +334,7 @@ html.js:not(.calme):not(.secours) .trajet-etape.actif { opacity: 1; }
 .tr-date em { font-style: normal; font-size: .8rem; }
 .tr-date:nth-child(1) { background: #b55a26; } .tr-date:nth-child(2) { background: #3f5c36; } .tr-date:nth-child(3) { background: #3e6f66; }
 /* Sans JavaScript ou en mode calme : la scène montre son état final (les cinq textes et les trois lectures). */
-:is(html.calme, html.secours, html:not(.js)) :is(.tr-grille, .tr-lecteur, .tr-libelle, .tr-mail) { display: none; }
+:is(html.calme, html.secours, html:not(.js)) :is(.tr-grille, .tr-lecteur, .tr-libelle, .tr-mail, .tr-doc) { display: none; }
 :is(html.calme, html.secours, html:not(.js)) .scene-trajet { height: auto; max-height: none; display: grid; gap: 16px; }
 :is(html.calme, html.secours, html:not(.js)) .tr-cinq { position: relative; inset: auto; height: auto; grid-template-rows: auto auto; }
 :is(html.calme, html.secours, html:not(.js)) .tr-titre-texte { min-height: 3.2em; }
@@ -734,8 +753,9 @@ html:not(.js) .route-station, html:not(.js) .route-env { display: none; }
 /* ============ v2 : accueil sur tablette, téléphone et écrans bas ============ */
 @media (max-width: 1000px) {
   .trajet-cadre { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); align-content: start; padding-top: 14px; gap: 10px; }
-  html.js:not(.calme):not(.secours) .trajet-etape:not(.actif) .trajet-desc { display: none; }
-  .trajet-etapes { gap: 4px; }
+  .trajet-etapes { gap: 3px; }
+  html.js:not(.calme):not(.secours) .trajet-detail { margin-top: 8px; padding: 8px 12px; }
+  .trajet-detail p { font-size: .88rem; }
   .trajet-etape { grid-template-columns: 28px minmax(0, 1fr); gap: 10px; font-size: .9rem; }
   .trajet-num { width: 26px; height: 26px; font-size: .8rem; }
   .scene-trajet { height: 100%; max-height: 52svh; min-height: 0; }
@@ -751,7 +771,8 @@ html:not(.js) .route-station, html:not(.js) .route-env { display: none; }
   .mur-nom b { font-size: 1.1rem; }
   .trajet-texte h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); margin-bottom: .3em; }
   .tr-fiche { font-size: .75rem; padding: 6px 7px; }
-  .tr-tampon { font-size: .75rem; }
+  .tr-tampon { font-size: .75rem; padding: 1px 5px; margin: 0 -6% 4% 0; }
+  .tr-doc b { font-size: .75rem; }
   .tr-date { padding: 7px 8px; column-gap: 6px; }
   .tr-date b { font-size: 1.6rem; }
   .tr-date span, .tr-date em { font-size: .75rem; }
@@ -766,14 +787,13 @@ html:not(.js) .route-station, html:not(.js) .route-env { display: none; }
 }
 @media (max-height: 820px) and (min-width: 761px) {
   .trajet-etape { font-size: .88rem; line-height: 1.35; }
-  html.js:not(.calme):not(.secours) .trajet-etape:not(.actif) .trajet-desc { display: none; }
 }
 @media (max-height: 500px) and (min-width: 761px) {
   .q { height: calc(100svh - 96px); }
   .q-legende, .q-consigne { display: none; }
   .trajet-texte h2 { font-size: 1.4rem; margin-bottom: .2em; }
   .trajet-cadre .surtitre { display: none; }
-  html.js:not(.calme):not(.secours) .trajet-etape:not(.actif) { display: none; }
+  html.js:not(.calme):not(.secours) .trajet-etapes { display: none; }
   .scene-trajet { height: 84svh; }
 }
 
