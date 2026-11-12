@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="3">
+<html lang="fr" data-v="4">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=3">
-<link rel="stylesheet" href="/assets/css/site.css?v=3">
-<link rel="modulepreload" href="/assets/js/site.js?v=3">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=3">
+<link rel="stylesheet" href="/assets/css/socle.css?v=4">
+<link rel="stylesheet" href="/assets/css/site.css?v=4">
+<link rel="modulepreload" href="/assets/js/site.js?v=4">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=4">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=3"></script>
+<script type="module" src="/assets/js/site.js?v=4"></script>
 <meta name="theme-color" content="#f4efe4">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -60,7 +60,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <meta property="og:image" content="https://qd2a-maquette.vercel.app/assets/partage/accueil-fr.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Le Quartier des Autrices et des Auteurs : un tapuscrit sur une table de lecture">
+<meta property="og:image:alt" content="Le Quartier des Autrices et des Auteurs : le Q du logo fait des visages du comité">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Le Quartier des Autrices et des Auteurs","alternateName":"QD2A","url":"https://qd2a-maquette.vercel.app/","email":"comiteqdaa@gmail.com","foundingDate":"2020-05","description":"Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry.","address":{"@type":"PostalAddress","streetAddress":"Manufacture des Œillets, 1 place Pierre Gosnat","postalCode":"94200","addressLocality":"Ivry-sur-Seine","addressCountry":"FR"},"sameAs":["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]}</script>
 </head>
@@ -127,9 +127,10 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 </figure>
   <div class="conteneur introuvable-texte">
     <p class="surtitre" data-info-cle><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:0" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p q-fil-nouvelle" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>404 · Page introuvable</p>
-    <h1 data-anime="lignes" data-grille="typo" class="titre-axes" data-axes>La servante est restée allumée</h1>
-    <p data-anime>Cette page n’existe pas ou plus. Au théâtre, on laisse une lampe sur le plateau vide pour que personne ne s’y perde : suivez-la jusqu’à l’accueil.</p>
-    <p><a href="/" class="bouton" data-libelle="Accueil" data-action-principale>Revenir à l’accueil</a></p>
+    <h1 data-anime="lignes" data-grille="typo" class="introuvable-titre titre-axes" data-axes>La servante est restée allumée</h1>
+    <p data-anime>Cette page n’existe pas ou plus. Au théâtre, on laisse une lampe sur le plateau vide pour que personne ne s’y perde : suivez-la.</p>
+    <p class="introuvable-actions"><a href="/" class="bouton" data-libelle="Accueil" data-action-principale>Revenir à l’accueil</a></p>
+    <p class="introuvable-liens">Ou bien : <a href="/saison" class="lien-fleche" data-libelle="La saison 25/26">La saison 25/26</a> <a href="/appel-a-textes" class="lien-fleche" data-libelle="L’appel à textes">L’appel à textes</a></p>
   </div>
 </section>
 </main>
@@ -141,7 +142,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="pied-texte">Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.</p>
     </div>
     <div>
-      <p><strong>Nous trouver</strong></p>
+      <p><strong>Adresse</strong></p>
       <p>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne<br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
       <p><a href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
     </div>
@@ -159,8 +160,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   </div>
   <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le Quartier.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>© Le Quartier des Autrices et des Auteurs</p></div>
 </footer>
-<div data-barre-fixe>
-  <a class="bouton bouton--contour" href="mailto:comiteqdaa@gmail.com">E-mail</a>
+<div data-barre-fixe class="barre-une">
   <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
 </div>
 </body>

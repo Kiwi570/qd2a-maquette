@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="3">
+<html lang="fr" data-v="4">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=3">
-<link rel="stylesheet" href="/assets/css/site.css?v=3">
-<link rel="modulepreload" href="/assets/js/site.js?v=3">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=3">
+<link rel="stylesheet" href="/assets/css/socle.css?v=4">
+<link rel="stylesheet" href="/assets/css/site.css?v=4">
+<link rel="modulepreload" href="/assets/js/site.js?v=4">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=4">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=3"></script>
+<script type="module" src="/assets/js/site.js?v=4"></script>
 <meta name="theme-color" content="#f4efe4">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -60,7 +60,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <meta property="og:image" content="https://qd2a-maquette.vercel.app/assets/partage/contact-fr.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Écrire au QD2A : des enveloppes sur un bureau">
+<meta property="og:image:alt" content="Écrire au QD2A : le Q du logo fait des visages du comité">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Le Quartier des Autrices et des Auteurs","alternateName":"QD2A","url":"https://qd2a-maquette.vercel.app/","email":"comiteqdaa@gmail.com","foundingDate":"2020-05","description":"Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry.","address":{"@type":"PostalAddress","streetAddress":"Manufacture des Œillets, 1 place Pierre Gosnat","postalCode":"94200","addressLocality":"Ivry-sur-Seine","addressCountry":"FR"},"sameAs":["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]}</script>
 </head>
@@ -124,8 +124,8 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <div class="ouv-texte">
       <p class="surtitre masque-ecran-tres-bas" data-anime="gsap"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:0" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p q-fil-nouvelle" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Contact</p>
       <h1 class="ouv-titre"><span class="ligne-masque"><span class="ouv-ligne" data-anime="gsap">Écrire au Quartier</span></span></h1>
-      <p class="ouv-intro masque-ecran-tres-bas" data-anime="gsap">Une question sur l’appel, une lecture, un partenariat : écrivez au comité.</p>
-      <p class="ouv-actions" data-anime="gsap"><a class="bouton" href="#formulaire" data-action-principale data-survol="magnetique">Écrire un message</a> <a class="ouv-info ouv-mail" href="mailto:comiteqdaa@gmail.com" data-info-cle>comiteqdaa@gmail.com</a></p>
+      <p class="ouv-intro masque-ecran-tres-bas" data-anime="gsap">Une question sur l’appel, une lecture, un partenariat : écrivez au comité, il vous répond par e-mail.</p>
+      <p class="ouv-actions" data-anime="gsap"><a class="bouton" href="mailto:comiteqdaa@gmail.com?subject=Message%20au%20Quartier" data-action-principale data-survol="magnetique">Écrire au Quartier</a> <a class="ouv-info ouv-mail" href="mailto:comiteqdaa@gmail.com" data-info-cle>comiteqdaa@gmail.com</a></p>
     </div>
     <div class="lettre" data-iris-centre data-effet="lettre" data-visuel>
       <p class="lettre-a" aria-hidden="true">Au Quartier des Autrices et des Auteurs</p>
@@ -136,60 +136,36 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     </div>
   </div>
 </section>
-<section class="ecrire" id="formulaire" aria-labelledby="formulaire-h">
-  <div class="conteneur ecrire-grille">
-    <form class="ecrire-form" data-formulaire data-form-lettre novalidate aria-labelledby="formulaire-h">
-      <h2 id="formulaire-h" class="titre-axes" data-axes data-grille="typo">Votre message</h2>
-      <p>Démonstration : rien n’est envoyé depuis ce site.</p>
-      <div class="champ"><label for="c-nom">Nom</label><input id="c-nom" name="nom" autocomplete="name" required></div>
-      <div class="champ"><label for="c-email">E-mail</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>
-      <div class="champ"><label for="c-objet">Objet</label><select id="c-objet" name="objet" required>
-        <option value="texte">L’envoi d’un texte</option><option value="lecture">Une lecture</option><option value="partenariat">Un partenariat</option><option value="autre">Autre chose</option>
-      </select></div>
-      <div class="champ"><label for="c-message">Message</label><textarea id="c-message" name="message" rows="5" required></textarea></div>
-      <p class="mention-donnees">Vos données servent seulement à vous répondre. Politique de confidentialité : à compléter.</p>
-      <p><button type="submit" class="bouton">Plier et envoyer</button></p>
-      <p data-message-envoi data-texte="Démonstration : rien n’a été envoyé. Sur le site final, votre message partira vers le comité." tabindex="-1" hidden></p>
-    </form>
-    <div class="ecrire-visuel" data-grille="retour" data-effet="enveloppe" data-fx="vitesse" data-visuel><div class="enveloppe enveloppe--poste" data-enveloppe aria-hidden="true">
-  <div class="env-dos"></div>
-  <div class="env-feuille" data-env-feuille><i></i><i></i><i></i><i></i></div>
-  <div class="env-face"></div>
-  <div class="env-rabat" data-env-rabat></div>
-  <span class="env-tampon" data-env-tampon>Reçu</span>
-</div></div>
+<section class="objets" id="objets" aria-labelledby="objets-h">
+  <div class="conteneur">
+    <h2 id="objets-h" class="titre-axes" data-axes data-grille="typo">Choisissez l’objet</h2>
+    <p>Votre messagerie s’ouvre avec l’adresse et l’objet déjà remplis.</p>
+    <ul class="objets-liste" data-anime="cascade" data-visuel>
+      <li style="--c:#d9783c"><a href="/appel-a-textes#deposer" class="objet" data-libelle="L’appel à textes"><b>L’envoi d’un texte</b><span>Conditions, fiche et adresse : tout est sur l’appel à textes.</span></a></li><li style="--c:#5f9c8f"><a class="objet" href="mailto:comiteqdaa@gmail.com?subject=Une%20lecture"><b>Une lecture</b><span>Accueillir une lecture, y assister, la relayer.</span></a></li><li style="--c:#557a49"><a class="objet" href="mailto:comiteqdaa@gmail.com?subject=Un%20partenariat"><b>Un partenariat</b><span>Théâtre, festival, maison d’édition, institution.</span></a></li><li style="--c:#e9b058"><a class="objet" href="mailto:comiteqdaa@gmail.com?subject=Une%20question"><b>Autre chose</b><span>Toute autre question au comité.</span></a></li>
+    </ul>
   </div>
 </section>
 <section class="lieu" id="lieu" aria-labelledby="lieu-h">
   <div class="conteneur lieu-grille">
     <div>
-      <h2 id="lieu-h" data-anime="lignes">Le Quartier habite au théâtre</h2>
-      <p>Le comité est accueilli au Théâtre des Quartiers d’Ivry, Centre Dramatique National du Val-de-Marne.</p>
-      <p class="lieu-adresse"><b>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne</b><br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine</p>
-      <h3>Accès</h3>
-      <ul class="liste-coches" data-anime="cascade"><li>Métro ligne 7 : Mairie d’Ivry</li><li>RER C : Ivry-sur-Seine</li></ul>
+      <h2 id="lieu-h" data-anime="lignes">Une adresse, pas un guichet</h2>
+      <p>Le comité est accueilli au Théâtre des Quartiers d’Ivry, Centre Dramatique National du Val-de-Marne. Il n’a pas de lieu ouvert au public : écrivez-lui.</p>
+      <p class="lieu-adresse"><b>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne</b><br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
       <p><a class="lien-fleche" href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
     </div>
-    <figure class="plan" data-visuel>
-      <svg viewBox="0 0 480 360" role="img" aria-label="Plan schématique, non à l’échelle" data-fx="trace">
-        <path class="plan-rue" d="M0 250 C 120 240, 260 260, 480 230"/>
-        <path class="plan-rue" d="M210 0 C 220 120, 200 220, 230 360"/>
-        <path class="plan-rue fine" d="M0 120 C 140 130, 300 100, 480 120"/>
-        <path class="plan-chemin" d="M215 245 C 260 230, 300 200, 330 160"/>
-      </svg>
-      <span class="plan-point plan-point--metro" data-repere>M</span><span class="plan-etiquette plan-etiquette--metro">Mairie d’Ivry</span>
-      <span class="plan-point plan-point--tqi" data-repere></span><span class="plan-etiquette plan-etiquette--tqi">Manufacture des Œillets</span>
-      <figcaption>Plan schématique, non à l’échelle</figcaption>
+    <figure class="facade">
+      <figure class="media facade-photo" data-anime="rideau" style="--cadrage:50% 50%">
+  <picture>
+    <img src="/assets/images/site/facade-tqi-719.webp" srcset="/assets/images/site/facade-tqi-719.webp 719w" sizes="(max-width: 760px) 100vw, 719px" alt="Façade de la Manufacture des Œillets la nuit, enseigne du Théâtre des Quartiers d’Ivry" width="719" height="240" loading="lazy" decoding="async">
+  </picture>
+</figure>
+      <figcaption class="credit">La Manufacture des Œillets, la nuit : le Théâtre des Quartiers d’Ivry</figcaption>
     </figure>
   </div>
 </section>
 <section class="bandeau" id="bandeau" aria-labelledby="bandeau-h">
-  <figure class="media bandeau-photo" data-grok data-fx="parallaxe" style="--cadrage:50% 60%">
-  <picture>
-    <img src="/assets/images/grok/g-contact-bandeau-1168.webp" srcset="/assets/images/grok/g-contact-bandeau-640.webp 640w, /assets/images/grok/g-contact-bandeau-1168.webp 1168w" sizes="100vw" alt="Bureau près d’une fenêtre, pile d’enveloppes kraft" width="1168" height="784" loading="lazy" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
-</figure>
   <div class="conteneur bandeau-texte">
+    <ul class="quatre-visages" data-visuel aria-label="Un visage de chacun des quatre comités"><li style="--c:#d9783c;--i:0"><img src="/assets/images/site/lecteurs/france-09-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#5f9c8f;--i:1"><img src="/assets/images/site/lecteurs/belgique-08-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#557a49;--i:2"><img src="/assets/images/site/lecteurs/cameroun-06-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#e9b058;--i:3"><img src="/assets/images/site/lecteurs/canada-02-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li></ul>
     <h2 id="bandeau-h" data-anime="lignes">Et pour envoyer un texte ?</h2>
     <p data-anime>Passez par l’appel à textes : conditions, fiche et parcours d’un texte.</p>
     <p data-anime><a href="/appel-a-textes" class="bouton" data-libelle="L’appel à textes" data-survol="magnetique">Voir l’appel à textes</a></p>
@@ -204,7 +180,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="pied-texte">Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.</p>
     </div>
     <div>
-      <p><strong>Nous trouver</strong></p>
+      <p><strong>Adresse</strong></p>
       <p>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne<br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
       <p><a href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
     </div>
@@ -222,8 +198,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   </div>
   <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le Quartier.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>© Le Quartier des Autrices et des Auteurs</p></div>
 </footer>
-<div data-barre-fixe>
-  <a class="bouton bouton--contour" href="mailto:comiteqdaa@gmail.com">E-mail</a>
+<div data-barre-fixe class="barre-une">
   <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
 </div>
 </body>

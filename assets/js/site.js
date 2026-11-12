@@ -1,7 +1,7 @@
 /* Effets propres au QD2A (direction « Le Tapuscrit »). Le socle gère l'ouverture, le voile « page », l'en-tête,
    le menu, le mode calme, les boucles et la bibliothèque d'effets ; ici, seulement ce qui est propre au client.
    Effets du plan : hydre-q, visages, trajet, q-fil, tapuscrit, trois-lecteurs, pile, enveloppe, cous, servante (data-effet). */
-import { demarrer, boucle, etat, versObjet, quand } from './socle/index.js?v=3';
+import { demarrer, boucle, etat, versObjet, quand } from './socle/index.js?v=4';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;
@@ -124,7 +124,7 @@ function qVisages() {
   });
 }
 
-/* ---------- Le comité : les 46 visages se regroupent par tête au défilement (recomposition), filtres ---------- */
+/* ---------- Le comité : les 52 visages se regroupent par tête au défilement (recomposition), filtres ---------- */
 function mur() {
   const m = $('[data-mur]');
   if (!m) return;
@@ -154,24 +154,40 @@ function mur() {
     .fromTo(noms, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.08 }, 0.65);
 }
 
-/* ---------- Trois lecteurs tirés au hasard : ceux qui pourraient lire votre texte ---------- */
+/* ---------- Trois lecteurs tirés au hasard : ceux qui pourraient lire votre texte (accueil, appel).
+   « Tirer trois autres lecteurs » retourne les trois cartes et en montre trois autres (objet manipulable). ---------- */
 function troisLecteurs() {
-  const bloc = $('[data-trois-lecteurs]');
-  if (!bloc) return;
-  let liste = [];
-  try { liste = JSON.parse($('[data-lecteurs-liste]', bloc).textContent); } catch { return; }
-  const imgs = $$('[data-lecteur-img]', bloc);
-  const pris = new Set();
-  imgs.forEach((img) => {
-    let k = Math.floor(Math.random() * liste.length), essais = 0;
-    while (pris.has(k) && essais++ < 20) k = Math.floor(Math.random() * liste.length);
-    pris.add(k);
-    img.src = `/assets/images/${liste[k]}-320.webp`;
-    img.loading = 'eager';
-    if (img.decode) img.decode().catch(() => {});
+  $$('[data-trois-lecteurs]').forEach((bloc) => {
+    let liste = [];
+    try { liste = JSON.parse($('[data-lecteurs-liste]', bloc).textContent); } catch { return; }
+    const imgs = $$('[data-lecteur-img]', bloc), cartes = $$('.trois-lecteur', bloc);
+    let vus = new Set();
+    const tirage = () => {
+      const pris = [];
+      imgs.forEach(() => {
+        let k = Math.floor(Math.random() * liste.length), essais = 0;
+        while ((pris.includes(k) || vus.has(k)) && essais++ < 40) k = Math.floor(Math.random() * liste.length);
+        pris.push(k);
+      });
+      vus = new Set(pris);
+      return pris.map((k) => `/assets/images/${liste[k]}-320.webp`);
+    };
+    const poser = (srcs) => imgs.forEach((img, i) => { img.src = srcs[i]; img.loading = 'eager'; if (img.decode) img.decode().catch(() => {}); });
+    poser(tirage());
+    const bouton = $('[data-tirer]', bloc);
+    if (bouton) bouton.addEventListener('click', () => {
+      const srcs = tirage();
+      /* Les nouvelles images se chargent pendant que les cartes tournent : pas de visage vide. */
+      srcs.forEach((s) => { const im = new Image(); im.src = s; });
+      if (calme() || !gsap) { poser(srcs); return; }
+      gsap.timeline()
+        .to(cartes, { rotateY: 90, duration: 0.22, ease: 'power2.in', stagger: 0.08 })
+        .add(() => poser(srcs))
+        .fromTo(cartes, { rotateY: -90 }, { rotateY: 0, duration: 0.5, ease: 'back.out(1.8)', stagger: 0.08, clearProps: 'transform' });
+    });
+    if (!ST || calme() || !gsap || etat.arrivee === 'retour' || bloc.closest('.ouv')) return;
+    gsap.fromTo(cartes, { y: 30, rotate: (i) => [-6, 4, -3][i], opacity: 0 }, { y: 0, rotate: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'back.out(1.6)', scrollTrigger: { trigger: bloc, start: 'top 80%' } });
   });
-  if (!ST || calme() || !gsap || etat.arrivee === 'retour') return;
-  gsap.fromTo($$('.trois-lecteur', bloc), { y: 30, rotate: (i) => [-6, 4, -3][i], opacity: 0 }, { y: 0, rotate: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'back.out(1.6)', scrollTrigger: { trigger: bloc, start: 'top 80%' } });
 }
 
 /* ---------- Typographie qui bouge : axe CASL de Recursive, de la machine à la main (point 5) ---------- */
@@ -403,7 +419,7 @@ function tetes() {
 const entrees = [];
 window.addEventListener('pagehide', () => entrees.forEach((g) => g.progress(1)));
 
-/* ---------- Saison : la pile de l'ouverture, la pile des 26 à feuilleter, les filtres, les statuts ---------- */
+/* ---------- Saison : la pile de l'ouverture, le sommaire des 26 et son filtre, les statuts ---------- */
 function pileOuverture(tl, t0) {
   const traits = $$('.saison-26-pile i'), compte = $('[data-pile-compte]');
   if (!traits.length) return;
@@ -414,54 +430,33 @@ function pileOuverture(tl, t0) {
   entrees.push(g);
   if (tl) tl.add(g, t0); else g.delay(0.15);
 }
-function pileSelection() {
-  const sec = $('#selection');
-  if (!sec) return;
-  const items = $$('.tapu', sec), num = $('[data-pile-num]', sec), total = $('[data-pile-total]', sec), vide = $('[data-pile-vide]', sec);
-  const boutons = $$('[data-filtre]', sec);
-  let visibles = items, c = 0, trig = null;
-  const rendre = () => {
-    const m = visibles.length;
-    visibles.forEach((it, j) => {
-      const r = j - c;
-      let tr, op, vis = true;
-      if (r < 0) { const f = Math.min(1, -r); tr = `translate3d(0, ${(-f * 18).toFixed(1)}%, ${(f * 120).toFixed(0)}px) rotateX(${(-f * 78).toFixed(1)}deg)`; op = borne(1 - (f - 0.25) * 2.2, 0, 1); vis = op > 0.02; }
-      else { tr = `translate3d(0, ${(-r * 12).toFixed(1)}px, ${(-r * 34).toFixed(1)}px) rotate(${(r % 2 ? 1 : -1) * Math.min(r, 3) * 0.8}deg)`; op = r < 6 ? 1 : 0; vis = r < 6.5; }
-      it.style.transform = tr; it.style.opacity = op.toFixed(3); it.style.zIndex = String(200 - j); it.style.visibility = vis ? '' : 'hidden';
-    });
-    if (num) num.textContent = String(Math.min(m, Math.round(c) + 1)).padStart(2, '0');
-  };
+/* Sommaire des 26 : le filtre par pays range les titres ; ceux qui restent glissent à leur nouvelle place
+   (FLIP : on mesure avant et après, puis chaque titre part de son ancienne position). Retour physique du filtre. */
+function sommaire() {
+  const liste = $('[data-sommaire]');
+  if (!liste) return;
+  const sec = liste.closest('section'), items = $$('.som', liste), boutons = $$('[data-filtre]', sec), vide = $('[data-pile-vide]', sec);
   const filtrer = (pays, pousser = true) => {
     boutons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.filtre === pays)));
-    items.forEach((it) => { it.hidden = pays !== 'tous' && !it.dataset.pays.split(' ').includes(pays); it.style.cssText = it.getAttribute('style').split(';').filter((x) => x.trim().startsWith('--i')).join(';'); });
-    visibles = items.filter((it) => !it.hidden);
-    if (total) total.textContent = String(visibles.length).padStart(2, '0');
-    vide.hidden = visibles.length > 0;
-    sec.style.setProperty('--n', Math.max(2, visibles.length));
-    c = 0;
+    const avant = new Map(items.filter((it) => !it.hidden).map((it) => [it, it.getBoundingClientRect()]));
+    items.forEach((it) => { it.hidden = pays !== 'tous' && !it.dataset.pays.split(' ').includes(pays); });
+    vide.hidden = items.some((it) => !it.hidden);
     if (pousser) {
       const u = new URL(location.href);
       if (pays === 'tous') u.searchParams.delete('pays'); else u.searchParams.set('pays', pays);
       history.replaceState(history.state, '', u);
     }
-    if (!calme() && ST) {
-      rendre();
-      ST.refresh();
-      if (trig && pousser && window.scrollY > trig.start) window.scrollTo({ top: trig.start, behavior: 'auto' });
-    }
+    if (calme() || !gsap || !pousser) { if (ST) ST.refresh(); return; }
+    items.filter((it) => !it.hidden).forEach((it, k) => {
+      const r0 = avant.get(it), r1 = it.getBoundingClientRect();
+      if (r0) gsap.fromTo(it, { x: r0.left - r1.left, y: r0.top - r1.top }, { x: 0, y: 0, duration: 0.6, ease: 'power3.out', clearProps: 'transform' });
+      else gsap.fromTo(it, { opacity: 0, scale: 0.9, y: 16 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, delay: 0.1 + k * 0.02, ease: 'back.out(1.6)', clearProps: 'transform,opacity' });
+    });
+    if (ST) ST.refresh();
   };
   boutons.forEach((b) => b.addEventListener('click', () => filtrer(b.dataset.filtre)));
   const depart = new URLSearchParams(location.search).get('pays');
   if (depart && boutons.some((b) => b.dataset.filtre === depart)) filtrer(depart, false);
-  if (calme() || !ST) return;
-  trig = ST.create({ trigger: sec, start: 'top top', end: 'bottom bottom', snap: { snapTo: (v) => { const m = Math.max(1, visibles.length - 1); return Math.round(v * m) / m; }, duration: { min: 0.15, max: 0.45 }, delay: 0.12, ease: 'power2.out' }, onUpdate: (s) => { c = s.progress * Math.max(0, visibles.length - 1); rendre(); } });
-  const zone = $('[data-pile-zone]', sec);
-  zone.addEventListener('keydown', (e) => {
-    const pas = (trig.end - trig.start) / Math.max(1, visibles.length - 1);
-    if (['ArrowDown', 'ArrowRight'].includes(e.key)) { e.preventDefault(); window.scrollBy({ top: pas }); }
-    if (['ArrowUp', 'ArrowLeft'].includes(e.key)) { e.preventDefault(); window.scrollBy({ top: -pas }); }
-  });
-  rendre();
 }
 function statuts() {
   const jour = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Paris' }).format(new Date());
@@ -471,7 +466,7 @@ function statuts() {
   });
 }
 
-/* ---------- Lampe et servante : une lumière qui suit le pointeur (souris), ou le défilement (doigt) ---------- */
+/* ---------- Servante (404) : une lumière qui suit le pointeur (souris), ou le défilement (doigt) ---------- */
 function lampes() {
   $$('[data-lampe], [data-effet="servante"]').forEach((el) => {
     const def = el.matches('[data-lampe]') ? [62, 46] : [30, 46];
@@ -494,97 +489,6 @@ function lampes() {
   });
 }
 
-/* ---------- Parcours d'un texte : l'enveloppe suit la route, les étapes s'allument ---------- */
-function route() {
-  const sec = $('#parcours');
-  if (!sec) return;
-  const carte = $('.route-carte', sec), chemin = $('[data-route]', sec), env = $('[data-route-env]', sec), livres = $('[data-route-livres]', sec);
-  const stations = $$('[data-station]', sec), etapes = $$('[data-etape]', sec);
-  let L = 0, table = [], ech = 1, ox = 0, oy = 0;
-  const mesurer = () => {
-    L = chemin.getTotalLength();
-    const w = carte.clientWidth, h = carte.clientHeight;
-    ech = Math.min(w / 600, h / 560); ox = (w - 600 * ech) / 2; oy = (h - 560 * ech) / 2;
-    table = Array.from({ length: 61 }, (_, i) => chemin.getPointAtLength((L * i) / 60));
-    chemin.style.strokeDasharray = `${L} ${L}`;
-    stations.forEach((s, i) => { const p = table[Math.round((i / 5) * 60)]; s.style.setProperty('--x', `${(ox + p.x * ech).toFixed(1)}px`); s.style.setProperty('--y', `${(oy + p.y * ech).toFixed(1)}px`); });
-  };
-  const poser = (p) => {
-    chemin.style.strokeDashoffset = String(L * (1 - p));
-    const f = p * 60, i = Math.min(59, Math.floor(f)), a = table[i], b = table[i + 1], k = f - i;
-    if (a && b) { env.style.setProperty('--ex', `${(ox + (a.x + (b.x - a.x) * k) * ech).toFixed(1)}px`); env.style.setProperty('--ey', `${(oy + (a.y + (b.y - a.y) * k) * ech).toFixed(1)}px`); }
-    const n = Math.min(5, Math.floor(p * 6.05));
-    stations.forEach((s, j) => s.classList.toggle('allumee', j <= n));
-    etapes.forEach((e, j) => e.classList.toggle('actif', j === n));
-    livres.classList.toggle('visibles', n >= 5);
-  };
-  mesurer();
-  if (calme() || !ST) { poser(1); etapes.forEach((e) => e.classList.add('actif')); return; }
-  ST.addEventListener('refresh', mesurer);
-  ST.create({ trigger: sec, start: 'top top', end: 'bottom bottom', scrub: 0.4, onUpdate: (s) => poser(s.progress) });
-  poser(0);
-}
-
-/* ---------- Formulaires : étapes du dépôt, récapitulatif, enveloppe qui part (point 7) ---------- */
-const MSG = { requis: 'Ce champ est à remplir.', email: 'Adresse e-mail à vérifier (exemple : nom@domaine.fr).', annee: 'Année à quatre chiffres (exemple : 2025).' };
-function erreurChamp(champ, message) {
-  const id = 'erreur-' + champ.id;
-  let p = document.getElementById(id);
-  if (!message) { if (p) p.textContent = ''; champ.removeAttribute('aria-invalid'); return; }
-  if (!p) { p = document.createElement('p'); p.id = id; p.className = 'champ-erreur'; p.setAttribute('aria-live', 'polite'); champ.closest('.champ').appendChild(p); champ.setAttribute('aria-describedby', id); }
-  p.textContent = message; champ.setAttribute('aria-invalid', 'true');
-}
-function verifierChamp(c) {
-  const v = (c.value || '').trim();
-  if (c.required && (c.type === 'checkbox' ? !c.checked : !v)) return MSG.requis;
-  if (v && c.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return MSG.email;
-  if (v && c.pattern && !new RegExp(`^${c.pattern}$`).test(v)) return MSG.annee;
-  return '';
-}
-function envoiPhysique(form, visuel) {
-  form.addEventListener('submit', () => {
-    requestAnimationFrame(() => {
-      if (form.querySelector('[aria-invalid="true"]')) return;
-      const r = visuel.getBoundingClientRect();
-      if (r.bottom < 0 || r.top > innerHeight) visuel.scrollIntoView({ behavior: calme() ? 'auto' : 'smooth', block: 'center' });
-      visuel.classList.add('envoye');
-    });
-  });
-}
-function depot() {
-  const form = $('[data-etapes-form]');
-  if (form) {
-    const etapes = $$('[data-etape-form]', form), fil = $$('.etapes-fil li', form), recap = $('[data-recap]', form);
-    let k = 0;
-    const montrer = (i) => {
-      etapes.forEach((e, j) => { e.hidden = j !== i; });
-      fil.forEach((f, j) => f.classList.toggle('actif', j <= i));
-      k = i;
-      if (i === 2) {
-        const v = (n) => form.elements[n]?.value || '';
-        recap.innerHTML = '';
-        [['Nom', v('nom')], ['E-mail', v('email')], ['Pays', v('pays')], ['Titre', v('titre')], ['Année', v('annee')]].forEach(([d, t]) => { const dt = document.createElement('dt'); dt.textContent = d; const dd = document.createElement('dd'); dd.textContent = t; recap.append(dt, dd); });
-      }
-      const leg = $('legend', etapes[i]); leg.tabIndex = -1; leg.focus({ preventScroll: true });
-      if (gsap && !calme()) gsap.fromTo(etapes[i], { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', clearProps: 'transform,opacity' });
-      if (window.ScrollTrigger) ST.refresh();
-    };
-    form.addEventListener('click', (e) => {
-      if (e.target.closest('[data-etape-suivante]')) {
-        const champs = $$('input, select, textarea', etapes[k]);
-        let premier = null;
-        champs.forEach((c) => { const m = verifierChamp(c); erreurChamp(c, m); if (m && !premier) premier = c; });
-        if (premier) { premier.focus(); return; }
-        montrer(Math.min(2, k + 1));
-      }
-      if (e.target.closest('[data-etape-precedente]')) montrer(Math.max(0, k - 1));
-    });
-    envoiPhysique(form, $('.depot-visuel'));
-  }
-  const lettre = $('[data-form-lettre]');
-  if (lettre) envoiPhysique(lettre, $('.ecrire-visuel'));
-}
-
 /* ---------- Hydre : les quatre cous, le dessin qui monte au défilement ---------- */
 function cous(tl, t0) {
   const c = $$('[data-cou]'), tetes = $$('[data-tete]'), noms = $$('[data-tete-nom]');
@@ -592,7 +496,7 @@ function cous(tl, t0) {
   const g = gsap.timeline();
   g.fromTo(c, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: 0.9, ease: 'power2.inOut', stagger: 0.12 }, 0)
     .fromTo(tetes, { scale: 0, transformOrigin: '50% 50%' }, { scale: 1, duration: 0.4, ease: 'back.out(3)', stagger: 0.12 }, 0.75)
-    .fromTo(noms, { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.1 }, 0.9);
+    .fromTo(noms, { opacity: 0 }, { opacity: 1, duration: 0.4, stagger: 0.1 }, 0.9); /* opacité seule : la position des noms reste celle du CSS */
   entrees.push(g);
   if (tl) tl.add(g, t0); else g.delay(0.1);
 }
@@ -621,7 +525,7 @@ demarrer({
     qFil(); axes(); motAMot();
     auPassage('[data-coches]', 'vu', 0.4);
     qVisages(); mur(); trajet(); troisLecteurs();
-    tapuscrit(); curseurVivant(); pileSelection(); statuts(); lampes(); route(); depot();
+    tapuscrit(); curseurVivant(); sommaire(); statuts(); lampes();
     tetes();
     /* Au défilement : le dessin de l'Hydre et le « 26 » s'éloignent. */
     if (ST && !calme()) {
@@ -650,7 +554,8 @@ demarrer({
     effacer('.ouv-ligne, .ouv [data-anime="gsap"], .lettre-cachet', { clearProps: 'transform,opacity' });
     effacer('[data-cou]', { strokeDashoffset: 0 });
     effacer('[data-tete]', { clearProps: 'transform' });
-    effacer('[data-tete-nom], .saison-26-pile i', { clearProps: 'opacity,transform' });
+    effacer('[data-tete-nom]', { clearProps: 'opacity' });
+    effacer('.saison-26-pile i', { clearProps: 'opacity,transform' });
   },
   arrivee() {
     if (!gsap) return;

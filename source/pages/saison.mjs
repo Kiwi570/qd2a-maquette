@@ -1,9 +1,10 @@
-/* La saison 25/26 : ouverture centrée sur un « 26 » géant et la pile qui se forme ; la lauréate (titre tapé) ;
-   la pile des 26 tapuscrits à feuilleter au défilement, filtrable par pays (scène du métier) ; les coups de cœur
-   tamponnés par leur comité ; les lectures de juin (statut calculé) ; les 12 pays en bandeaux géants. */
-import { html } from '../../outils/gabarit.mjs';
+/* La saison 25/26 : ouverture centrée sur un « 26 » géant et la pile qui se forme ; la lauréate ;
+   le sommaire des 26 textes d'un coup d'œil, trié par pays (les titres se rangent : retour physique du filtre) ;
+   les coups de cœur ; les lectures de juin avec les visages des textes lus ce soir-là ; les 12 pays. */
+import { html, brut } from '../../outils/gabarit.mjs';
+import { quatreVisages } from './appel.mjs';
 
-export const page = { cle: 'saison', fichier: 'saison', imagePartage: 'grok/g-saison-ouverture-1168.webp' };
+export const page = { cle: 'saison', fichier: 'saison', imagePartage: 'site/mazunya-640.webp' };
 
 const DATE = (iso) => {
   const [a, m, j] = iso.split('-').map(Number);
@@ -57,32 +58,28 @@ export default (c) => {
   </div>
 </section>
 
-<section class="pile-scene" id="selection" data-scene data-grille="scene" data-entete-cache aria-labelledby="selection-h" style="--n:${sel.textes.length}">
-  <div class="pile-cadre" data-collant>
-    <div class="pile-tete conteneur">
+<section class="sommaire" id="selection" aria-labelledby="selection-h">
+  <div class="conteneur">
+    <div class="sommaire-tete">
       <div>
         <p class="surtitre">${c.t('saison.selection.surtitre')}</p>
-        <h2 id="selection-h" data-anime="lignes">${c.t('saison.selection.titre')}</h2>
-        <p class="masque-ecran-bas">${c.t('saison.selection.texte')}</p>
+        <h2 id="selection-h" class="titre-axes" data-axes>${c.t('saison.selection.titre')}</h2>
+        <p>${c.t('saison.selection.texte')}</p>
       </div>
-      <div class="pile-filtres" role="group" aria-label="${c.s('saison.selection.filtres')}" data-filtres>
+      <div class="sommaire-filtres" role="group" aria-label="${c.s('saison.selection.filtres')}" data-filtres>
         <button type="button" class="filtre" data-filtre="tous" aria-pressed="true">${c.t('saison.selection.tous')} <span>${sel.textes.length}</span></button>
         ${paysOrdre.map((p) => html`<button type="button" class="filtre" data-filtre="${p}" aria-pressed="false">${sel.pays[p]} <span>${paysCompte[p]}</span></button>`)}
       </div>
-      <p class="pile-compteur" aria-live="polite"><b data-pile-num>01</b> / <span data-pile-total>${sel.textes.length}</span></p>
     </div>
-    <div class="pile-zone" data-effet="feuilleter" data-visuel data-pile-zone role="region" aria-label="${c.s('saison.selection.region')}" tabindex="0">
-      <ol class="pile" data-pile>
-        ${sel.textes.map((t, i) => html`<li class="tapu${t.distinction ? ' tapu--distingue' : ''}" data-pays="${t.pays.join(' ')}" style="--i:${i}">
-          <span class="tapu-num">${String(i + 1).padStart(2, '0')}</span>
-          <h3 class="tapu-titre">${t.titre}</h3>
-          <p class="tapu-auteur">${t.prenom} ${t.nom}</p>
-          <p class="tapu-pays">${t.pays.map((p) => sel.pays[p]).join(' · ')}</p>
-          ${t.distinction ? html`<span class="tapu-tampon">${t.distinction}</span>` : ''}
-        </li>`)}
-      </ol>
-      <p class="pile-vide" data-pile-vide hidden>${c.t('saison.selection.aucun')}</p>
-    </div>
+    <ol class="sommaire-liste" data-sommaire data-effet="sommaire" data-grille="retour" data-visuel aria-label="${c.s('saison.selection.region')}">
+      ${sel.textes.map((t, i) => html`<li class="som${t.distinction ? ' som--distingue' : ''}" data-pays="${t.pays.join(' ')}"${t.distinction ? brut(` style="--c:${t.distinction.startsWith('Laur') ? '#4f2045' : '#993b35'}"`) : ''}>
+        <span class="som-num">${String(i + 1).padStart(2, '0')}</span>
+        <h3 class="som-titre">${t.titre}</h3>
+        <p class="som-auteur">${t.prenom} ${t.nom} <span>${t.pays.map((p) => sel.pays[p]).join(' · ')}</span></p>
+        ${t.distinction ? html`<p class="som-marque"><span class="som-point" aria-hidden="true"></span>${t.distinction}</p>` : ''}
+      </li>`)}
+    </ol>
+    <p class="pile-vide" data-pile-vide hidden>${c.t('saison.selection.aucun')}</p>
   </div>
 </section>
 
@@ -104,21 +101,18 @@ export default (c) => {
 </section>
 
 <section class="lectures" id="lectures" aria-labelledby="lectures-h">
-  <div class="conteneur lectures-grille">
-    <div>
-      <p class="surtitre">${c.t('saison.lectures.surtitre')}</p>
-      <h2 id="lectures-h" data-anime="lignes">${c.t('saison.lectures.titre')}</h2>
-      <p>${c.t('saison.lectures.texte')}</p>
-      <ol class="agenda" data-anime="cascade">
-        ${s.lectures.map((l) => html`<li class="agenda-date" data-date="${l.date}">
-          <p class="agenda-jour"><time datetime="${l.date}">${DATE(l.date)}</time> <span class="statut" data-statut data-termine="${c.s('saison.lectures.termine')}" data-avenir="${c.s('saison.lectures.aVenir')}">${l.date < aujourdhui ? c.t('saison.lectures.termine') : c.t('saison.lectures.aVenir')}</span></p>
-          <h3>${l.comite}</h3>
-          ${l.lieu ? html`<p class="agenda-lieu">${l.lieu}</p>` : ''}
-          <ul>${l.textes.map((t) => html`<li>${t}</li>`)}</ul>
-        </li>`)}
-      </ol>
-    </div>
-    ${c.media({ nom: 'grok/g-saison-lectures', alt: c.s('saison.lectures.alt'), classe: 'lectures-photo', sizes: '(max-width: 760px) 100vw, 45vw', attrs: 'data-fx="parallaxe"' })}
+  <div class="conteneur">
+    <p class="surtitre">${c.t('saison.lectures.surtitre')}</p>
+    <h2 id="lectures-h" data-anime="lignes">${c.t('saison.lectures.titre')}</h2>
+    <p class="lectures-intro">${c.t('saison.lectures.texte')}</p>
+    <ol class="agenda" data-anime="cascade">
+      ${s.lectures.map((l) => html`<li class="agenda-date" data-date="${l.date}" style="--c:${l.couleur}">
+        <p class="agenda-jour"><time datetime="${l.date}">${DATE(l.date)}</time> <span class="statut" data-statut data-termine="${c.s('saison.lectures.termine')}" data-avenir="${c.s('saison.lectures.aVenir')}">${l.date < aujourdhui ? c.t('saison.lectures.termine') : c.t('saison.lectures.aVenir')}</span></p>
+        <h3>${l.comite}</h3>
+        ${l.lieu ? html`<p class="agenda-lieu">${l.lieu}</p>` : ''}
+        <ul class="agenda-textes">${l.textes.map((t, k) => html`<li>${l.portraits && l.portraits[k] ? html`<img src="/assets/images/${l.portraits[k][0]}-480.webp" alt="${c.s('saison.lectures.alt', { nom: l.portraits[k][1] })}" width="96" height="96" loading="lazy" decoding="async">` : ''}<span>${t}</span></li>`)}</ul>
+      </li>`)}
+    </ol>
   </div>
 </section>
 
@@ -129,12 +123,13 @@ export default (c) => {
     <ol class="pays-grille" data-anime="cascade" data-visuel>
       ${paysOrdre.map((p) => html`<li><b>${paysCompte[p]}</b><span>${sel.pays[p]}</span><em>${paysCompte[p] > 1 ? c.t('saison.pays.unites') : c.t('saison.pays.unite')}</em></li>`)}
     </ol>
+    <p class="pays-note">${c.t('saison.pays.note')}</p>
   </div>
 </section>
 
 <section class="fin" id="fin" aria-labelledby="fin-h">
   <div class="conteneur fin-grille">
-    <div class="fin-pile" data-visuel data-fx="vitesse" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i></div>
+    ${quatreVisages(c, 'data-fx="vitesse"')}
     <h2 id="fin-h" data-anime="lignes">${c.t('saison.fin.titre')}</h2>
     <p data-anime>${c.t('saison.fin.texte')}</p>
     <p data-anime>${c.lien('appel', { ancre: 'deposer', classe: 'bouton', texte: c.t('saison.fin.action'), attrs: 'data-survol="magnetique"' })}</p>

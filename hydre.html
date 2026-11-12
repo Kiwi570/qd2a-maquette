@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="3" class="theme-bleu">
+<html lang="fr" data-v="4" class="theme-bleu">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=3">
-<link rel="stylesheet" href="/assets/css/site.css?v=3">
-<link rel="modulepreload" href="/assets/js/site.js?v=3">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=3">
+<link rel="stylesheet" href="/assets/css/socle.css?v=4">
+<link rel="stylesheet" href="/assets/css/site.css?v=4">
+<link rel="modulepreload" href="/assets/js/site.js?v=4">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=4">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=3"></script>
+<script type="module" src="/assets/js/site.js?v=4"></script>
 <meta name="theme-color" content="#f4efe4">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -60,7 +60,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <meta property="og:image" content="https://qd2a-maquette.vercel.app/assets/partage/hydre-fr.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="L’Hydre de Lerne du QD2A : quatre lampes de lecture">
+<meta property="og:image:alt" content="L’Hydre de Lerne du QD2A : le Q du logo fait des visages des quatre comités">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Le Quartier des Autrices et des Auteurs","alternateName":"QD2A","url":"https://qd2a-maquette.vercel.app/","email":"comiteqdaa@gmail.com","foundingDate":"2020-05","description":"Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry.","address":{"@type":"PostalAddress","streetAddress":"Manufacture des Œillets, 1 place Pierre Gosnat","postalCode":"94200","addressLocality":"Ivry-sur-Seine","addressCountry":"FR"},"sameAs":["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]}</script>
 </head>
@@ -120,19 +120,15 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 </div>
 <main id="contenu" tabindex="-1">
 <section class="ouv ouv-hydre ecran" id="debut">
-  <figure class="media hydre-fond" data-grok data-fx="parallaxe" data-fx-force="8" style="--cadrage:50% 70%">
-  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/g-hydre-ouverture-mobile-540.webp 540w, /assets/images/grok/g-hydre-ouverture-mobile-784.webp 784w" sizes="100vw">
-    <img src="/assets/images/grok/g-hydre-ouverture-1168.webp" srcset="/assets/images/grok/g-hydre-ouverture-640.webp 640w, /assets/images/grok/g-hydre-ouverture-1168.webp 1168w" sizes="100vw" alt="Quatre lampes de lecture sur une longue table, chacune sur sa pile de textes" width="1168" height="784" fetchpriority="high" loading="eager" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
-</figure>
   <div class="hydre-ouv conteneur">
     <div class="hydre-dessin" data-iris-centre data-effet="cous" data-visuel aria-hidden="true">
       <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
-        <path class="cou" data-cou d="M300,384 C300,250 84,258 84,88" pathLength="1" style="--c:#de7943"/><path class="cou" data-cou d="M300,384 C300,238 228,202 228,32" pathLength="1" style="--c:#6aa699"/><path class="cou" data-cou d="M300,384 C300,226 372,202 372,32" pathLength="1" style="--c:#57814e"/><path class="cou" data-cou d="M300,384 C300,214 516,258 516,88" pathLength="1" style="--c:#e9b058"/>
-        <circle class="tete" data-tete cx="84" cy="88" r="11" style="--c:#de7943"/><circle class="tete" data-tete cx="228" cy="32" r="11" style="--c:#6aa699"/><circle class="tete" data-tete cx="372" cy="32" r="11" style="--c:#57814e"/><circle class="tete" data-tete cx="516" cy="88" r="11" style="--c:#e9b058"/>
+        <defs><clipPath id="tete-0"><circle cx="72" cy="136" r="40"/></clipPath><clipPath id="tete-1"><circle cx="210" cy="80" r="40"/></clipPath><clipPath id="tete-2"><circle cx="390" cy="80" r="40"/></clipPath><clipPath id="tete-3"><circle cx="528" cy="136" r="40"/></clipPath></defs>
+        <path class="cou" data-cou d="M300,384 C300,250 72,306 72,136" pathLength="1" style="--c:#de7943"/><path class="cou" data-cou d="M300,384 C300,238 210,250 210,80" pathLength="1" style="--c:#6aa699"/><path class="cou" data-cou d="M300,384 C300,226 390,250 390,80" pathLength="1" style="--c:#57814e"/><path class="cou" data-cou d="M300,384 C300,214 528,306 528,136" pathLength="1" style="--c:#e9b058"/>
+        <g class="tete" data-tete style="--c:#de7943"><circle class="tete-anneau" cx="72" cy="136" r="46"/><image href="/assets/images/site/lecteurs/france-09-160.webp" x="32" y="96" width="80" height="80" clip-path="url(#tete-0)" preserveAspectRatio="xMidYMid slice"/></g><g class="tete" data-tete style="--c:#6aa699"><circle class="tete-anneau" cx="210" cy="80" r="46"/><image href="/assets/images/site/lecteurs/belgique-08-160.webp" x="170" y="40" width="80" height="80" clip-path="url(#tete-1)" preserveAspectRatio="xMidYMid slice"/></g><g class="tete" data-tete style="--c:#57814e"><circle class="tete-anneau" cx="390" cy="80" r="46"/><image href="/assets/images/site/lecteurs/cameroun-06-160.webp" x="350" y="40" width="80" height="80" clip-path="url(#tete-2)" preserveAspectRatio="xMidYMid slice"/></g><g class="tete" data-tete style="--c:#e9b058"><circle class="tete-anneau" cx="528" cy="136" r="46"/><image href="/assets/images/site/lecteurs/canada-02-160.webp" x="488" y="96" width="80" height="80" clip-path="url(#tete-3)" preserveAspectRatio="xMidYMid slice"/></g>
         <circle class="corps" cx="300" cy="384" r="7"/>
       </svg>
-      <span class="tete-nom" data-tete-nom style="--x:14%;--y:22%">France</span><span class="tete-nom" data-tete-nom style="--x:38%;--y:8%">Belgique</span><span class="tete-nom" data-tete-nom style="--x:62%;--y:8%">Cameroun</span><span class="tete-nom" data-tete-nom style="--x:86%;--y:22%">Canada</span>
+      <span class="tete-nom" data-tete-nom style="--x:12%;--y:21.5%;--c:#de7943">France</span><span class="tete-nom" data-tete-nom style="--x:35%;--y:7.5%;--c:#6aa699">Belgique</span><span class="tete-nom" data-tete-nom style="--x:65%;--y:7.5%;--c:#57814e">Cameroun</span><span class="tete-nom" data-tete-nom style="--x:88%;--y:21.5%;--c:#e9b058">Canada</span>
       <span class="tete-nom tete-nom--ivry" style="--x:50%;--y:96%">Ivry</span>
     </div>
     <p class="surtitre" data-anime="gsap"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:0" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p q-fil-nouvelle" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Le comité international</p>
@@ -145,16 +141,21 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   </div>
 </section>
 <section class="marais" id="manifeste" aria-labelledby="manifeste-h">
-  <figure class="media marais-fond" data-grok data-fx="parallaxe" data-fx-force="12" style="--cadrage:50% 50%">
-  <picture>
-    <img src="/assets/images/grok/g-hydre-marais-1168.webp" srcset="/assets/images/grok/g-hydre-marais-640.webp 640w, /assets/images/grok/g-hydre-marais-1168.webp 1168w" sizes="100vw" alt="Marais calme dans la brume du matin" width="1168" height="784" loading="lazy" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
-</figure>
-  <div class="conteneur marais-texte">
+  <div class="conteneur marais-grille">
+  <div class="marais-texte">
     <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:1" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p q-fil-nouvelle" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Le manifeste international</p>
     <h2 id="manifeste-h" class="titre-axes" data-axes data-grille="typo">Des ponts plutôt que des murs</h2>
-    <p class="manifeste-texte" data-mot-a-mot data-effet="mot-a-mot">Le Quartier s’est ouvert à l’international pour faire ce qu’il voulait depuis toujours : partager ce qui relie le théâtre de langue française partout dans le monde, et donner le pouvoir de choisir à des pays qui, longtemps, n’ont fait que fournir des textes.</p>
-    <blockquote class="citation" data-anime><p>« un monde où les ponts sont plus puissants que les murs »</p><footer>Manifeste de l’Hydre de Lerne internationale</footer></blockquote>
+    <blockquote class="citation citation--grande" data-anime><p>« un monde où les ponts sont plus puissants que les murs »</p><footer>Laëtitia Ajanohun, manifeste de l’Hydre de Lerne</footer></blockquote>
+    <p class="manifeste-texte">Le Quartier s’est ouvert à l’international pour faire ce qu’il voulait depuis toujours : partager ce qui relie le théâtre de langue française partout dans le monde, et donner le pouvoir de choisir à des pays qui, longtemps, n’ont fait que fournir des textes.</p>
+  </div>
+  <figure class="marais-peinture">
+    <figure class="media peinture" data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:443 / 448">
+  <picture>
+    <img src="/assets/images/site/akakpo-peche-443.webp" srcset="/assets/images/site/akakpo-peche-443.webp 443w" sizes="(max-width: 760px) 80vw, 443px" alt="Peinture : une longue file de personnes tire ensemble une corde au bord de la mer" width="443" height="448" loading="lazy" decoding="async">
+  </picture>
+</figure>
+    <figcaption class="credit">« La pêche miraculeuse », peinture reprise du site du Quartier (légendée Gustave Akakpo)</figcaption>
+  </figure>
   </div>
 </section>
 <section class="tetes" id="comites" aria-labelledby="comites-h">
@@ -178,9 +179,10 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       </li><li class="tete-col" style="--c:#e9b058;--i:3" data-tete-col>
         <h3><span class="tete-pastille" aria-hidden="true"></span>QD2A Canada</h3>
         <p class="tete-depuis">Arrivé à la rentrée 25/26</p>
-        <ul class="tete-visages" aria-label="Membres du QD2A Canada"><li><img src="/assets/images/site/lecteurs/canada-02-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-03-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li></ul>
+        <ul class="tete-visages" aria-label="Membres du QD2A Canada"><li><img src="/assets/images/site/lecteurs/canada-02-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-03-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-04-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-05-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-06-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-07-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-08-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li><img src="/assets/images/site/lecteurs/canada-09-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li></ul>
       </li>
     </ul>
+    <p class="tetes-note">Six de ces visages viennent de l’affiche du comité canadien, publiée par le Quartier.</p>
   </div>
 </section>
 <section class="choix" id="fonctionnement" aria-labelledby="choix-h">
@@ -196,7 +198,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:3" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p est-pose" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p q-fil-nouvelle" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Comment l’Hydre choisit</p>
       <h2 id="choix-h" data-anime="lignes">En commun, et chacun sa singularité</h2>
       <div class="choix-cols" data-anime="cascade">
-        <div><h3>En commun</h3><p>Tout au long de l’année, les têtes choisissent ensemble le texte lauréat, puis l’élisent ensemble. Il est lu dans chaque pays par une équipe différente.</p></div>
+        <div><h3>En commun</h3><p>Tout au long de l’année, les têtes choisissent ensemble le texte lauréat, puis l’élisent ensemble. Il est lu en public en France, au Cameroun et en Belgique.</p></div>
         <div><h3>Une singularité</h3><p>Chaque comité ajoute son coup de cœur, lu le même soir que le lauréat.</p></div>
       </div>
     </div>
@@ -242,7 +244,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 </section>
 <section class="fin" id="fin" aria-labelledby="fin-h">
   <div class="conteneur fin-grille">
-    <div class="fin-pile" data-visuel data-fx="vitesse" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i></div>
+    <ul class="quatre-visages" data-visuel aria-label="Un visage de chacun des quatre comités" data-fx="vitesse"><li style="--c:#d9783c;--i:0"><img src="/assets/images/site/lecteurs/france-09-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#5f9c8f;--i:1"><img src="/assets/images/site/lecteurs/belgique-08-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#557a49;--i:2"><img src="/assets/images/site/lecteurs/cameroun-06-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#e9b058;--i:3"><img src="/assets/images/site/lecteurs/canada-02-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li></ul>
     <h2 id="fin-h" data-anime="lignes">Une cinquième voix ?</h2>
     <p data-anime>La vôtre : envoyez votre texte, il sera lu par trois lecteurs du comité.</p>
     <p data-anime><a href="/appel-a-textes#deposer" class="bouton" data-libelle="L’appel à textes" data-survol="magnetique">Envoyer un texte</a></p>
@@ -257,7 +259,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="pied-texte">Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.</p>
     </div>
     <div>
-      <p><strong>Nous trouver</strong></p>
+      <p><strong>Adresse</strong></p>
       <p>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne<br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
       <p><a href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
     </div>
@@ -275,8 +277,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   </div>
   <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le Quartier.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>© Le Quartier des Autrices et des Auteurs</p></div>
 </footer>
-<div data-barre-fixe>
-  <a class="bouton bouton--contour" href="mailto:comiteqdaa@gmail.com">E-mail</a>
+<div data-barre-fixe class="barre-une">
   <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
 </div>
 </body>

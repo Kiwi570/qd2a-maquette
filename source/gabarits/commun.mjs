@@ -122,9 +122,9 @@ function pied(c) {
 
 function barre(c) {
   const a = c.site.actionEntete;
-  return html`<div data-barre-fixe>
-  <a class="bouton bouton--contour" href="mailto:${c.site.contact.email}">${c.t('commun.ecrire')}</a>
-  ${a ? html`<a class="bouton" href="${c.url(a.page, a.ancre || '')}" data-libelle="${c.libelle(a.page)}">${c.t('commun.actionEntete')}</a>` : ''}
+  /* Un seul bouton, sur une ligne : l'envoi d'un texte (l'e-mail et la fiche sont sur l'appel, section Envoyer). */
+  return html`<div data-barre-fixe class="barre-une">
+  ${a ? html`<a class="bouton" href="${c.url(a.page, a.ancre || '')}" data-libelle="${c.libelle(a.page)}">${c.t('commun.actionEntete')}</a>` : html`<a class="bouton" href="mailto:${c.site.contact.email}">${c.t('commun.ecrire')}</a>`}
 </div>`;
 }
 

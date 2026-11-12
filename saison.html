@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="3">
+<html lang="fr" data-v="4">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=3">
-<link rel="stylesheet" href="/assets/css/site.css?v=3">
-<link rel="modulepreload" href="/assets/js/site.js?v=3">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=3">
+<link rel="stylesheet" href="/assets/css/socle.css?v=4">
+<link rel="stylesheet" href="/assets/css/site.css?v=4">
+<link rel="modulepreload" href="/assets/js/site.js?v=4">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=4">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=3"></script>
+<script type="module" src="/assets/js/site.js?v=4"></script>
 <meta name="theme-color" content="#f4efe4">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -60,7 +60,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <meta property="og:image" content="https://qd2a-maquette.vercel.app/assets/partage/saison-fr.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="La saison 25/26 du QD2A : une pile de tapuscrits">
+<meta property="og:image:alt" content="La saison 25/26 du QD2A : Stephie Mazunya, lauréate internationale">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Le Quartier des Autrices et des Auteurs","alternateName":"QD2A","url":"https://qd2a-maquette.vercel.app/","email":"comiteqdaa@gmail.com","foundingDate":"2020-05","description":"Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry.","address":{"@type":"PostalAddress","streetAddress":"Manufacture des Œillets, 1 place Pierre Gosnat","postalCode":"94200","addressLocality":"Ivry-sur-Seine","addressCountry":"FR"},"sameAs":["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]}</script>
 </head>
@@ -128,7 +128,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     </div>
     <h1 class="ouv-titre"><span class="ligne-masque"><span class="ouv-ligne" data-anime="gsap">La saison 25/26</span></span></h1>
     <p class="ouv-intro masque-ecran-bas" data-anime="gsap">26 textes en sélection finale, venus de 12 pays. Une lauréate internationale, quatre coups de cœur, trois lectures en juin.</p>
-    <p class="ouv-actions" data-anime="gsap"><a class="bouton" href="#selection" data-action-principale data-survol="magnetique">Feuilleter les 26 textes</a></p>
+    <p class="ouv-actions" data-anime="gsap"><a class="bouton" href="#selection" data-action-principale data-survol="magnetique">Voir les 26 textes</a></p>
   </div>
 </section>
 <section class="laureat" id="laureat" aria-labelledby="laureat-h">
@@ -160,161 +160,132 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     </div>
   </div>
 </section>
-<section class="pile-scene" id="selection" data-scene data-grille="scene" data-entete-cache aria-labelledby="selection-h" style="--n:26">
-  <div class="pile-cadre" data-collant>
-    <div class="pile-tete conteneur">
+<section class="sommaire" id="selection" aria-labelledby="selection-h">
+  <div class="conteneur">
+    <div class="sommaire-tete">
       <div>
         <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:2" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p q-fil-nouvelle" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Sélection finale</p>
-        <h2 id="selection-h" data-anime="lignes">Les 26 textes</h2>
-        <p class="masque-ecran-bas">Faites défiler pour feuilleter la pile, ou choisissez un pays.</p>
+        <h2 id="selection-h" class="titre-axes" data-axes>Les 26 textes</h2>
+        <p>Les 26 textes de la sélection finale, d’un coup d’œil. Choisissez un pays pour les trier.</p>
       </div>
-      <div class="pile-filtres" role="group" aria-label="Filtrer par pays" data-filtres>
+      <div class="sommaire-filtres" role="group" aria-label="Filtrer par pays" data-filtres>
         <button type="button" class="filtre" data-filtre="tous" aria-pressed="true">Tous <span>26</span></button>
         <button type="button" class="filtre" data-filtre="france" aria-pressed="false">France <span>9</span></button><button type="button" class="filtre" data-filtre="canada" aria-pressed="false">Canada <span>8</span></button><button type="button" class="filtre" data-filtre="rdc" aria-pressed="false">RD Congo <span>2</span></button><button type="button" class="filtre" data-filtre="angleterre" aria-pressed="false">Angleterre <span>1</span></button><button type="button" class="filtre" data-filtre="benin" aria-pressed="false">Bénin <span>1</span></button><button type="button" class="filtre" data-filtre="burundi" aria-pressed="false">Burundi <span>1</span></button><button type="button" class="filtre" data-filtre="guinee" aria-pressed="false">Guinée <span>1</span></button><button type="button" class="filtre" data-filtre="haiti" aria-pressed="false">Haïti <span>1</span></button><button type="button" class="filtre" data-filtre="italie" aria-pressed="false">Italie <span>1</span></button><button type="button" class="filtre" data-filtre="japon" aria-pressed="false">Japon <span>1</span></button><button type="button" class="filtre" data-filtre="suisse" aria-pressed="false">Suisse <span>1</span></button><button type="button" class="filtre" data-filtre="turquie" aria-pressed="false">Turquie <span>1</span></button>
       </div>
-      <p class="pile-compteur" aria-live="polite"><b data-pile-num>01</b> / <span data-pile-total>26</span></p>
     </div>
-    <div class="pile-zone" data-effet="feuilleter" data-visuel data-pile-zone role="region" aria-label="Pile des tapuscrits de la sélection finale" tabindex="0">
-      <ol class="pile" data-pile>
-        <li class="tapu" data-pays="guinee" style="--i:0">
-          <span class="tapu-num">01</span>
-          <h3 class="tapu-titre">Petit père vient de</h3>
-          <p class="tapu-auteur">Souleymane Bah</p>
-          <p class="tapu-pays">Guinée</p>
-        </li><li class="tapu" data-pays="canada" style="--i:1">
-          <span class="tapu-num">02</span>
-          <h3 class="tapu-titre">Le traitement de la nuit</h3>
-          <p class="tapu-auteur">Evelyne de la Chenelière</p>
-          <p class="tapu-pays">Canada</p>
-        </li><li class="tapu" data-pays="france" style="--i:2">
-          <span class="tapu-num">03</span>
-          <h3 class="tapu-titre">Un style inimitable</h3>
-          <p class="tapu-auteur">Baptiste Dezerces</p>
-          <p class="tapu-pays">France</p>
-        </li><li class="tapu" data-pays="france" style="--i:3">
-          <span class="tapu-num">04</span>
-          <h3 class="tapu-titre">Les petits garçons ne rêvent pas d’être dealer</h3>
-          <p class="tapu-auteur">Karine Fellous</p>
-          <p class="tapu-pays">France</p>
-        </li><li class="tapu" data-pays="canada" style="--i:4">
-          <span class="tapu-num">05</span>
-          <h3 class="tapu-titre">Manipuler avec soin</h3>
-          <p class="tapu-auteur">Carolanne Foucher</p>
-          <p class="tapu-pays">Canada</p>
-        </li><li class="tapu" data-pays="france" style="--i:5">
-          <span class="tapu-num">06</span>
-          <h3 class="tapu-titre">Vent de bout</h3>
-          <p class="tapu-auteur">Tiphaine Guitton</p>
-          <p class="tapu-pays">France</p>
-        </li><li class="tapu" data-pays="france" style="--i:6">
-          <span class="tapu-num">07</span>
-          <h3 class="tapu-titre">Les inversions terrestres</h3>
-          <p class="tapu-auteur">Marie Haerrig</p>
-          <p class="tapu-pays">France</p>
-        </li><li class="tapu" data-pays="canada" style="--i:7">
-          <span class="tapu-num">08</span>
-          <h3 class="tapu-titre">Rose</h3>
-          <p class="tapu-auteur">Isabelle Hubert</p>
-          <p class="tapu-pays">Canada</p>
-        </li><li class="tapu" data-pays="suisse" style="--i:8">
-          <span class="tapu-num">09</span>
-          <h3 class="tapu-titre">Et il,</h3>
-          <p class="tapu-auteur">Salomé Joly</p>
-          <p class="tapu-pays">Suisse</p>
-        </li><li class="tapu" data-pays="japon" style="--i:9">
-          <span class="tapu-num">10</span>
-          <h3 class="tapu-titre">Virages noirs</h3>
-          <p class="tapu-auteur">Shiho Kasahara</p>
-          <p class="tapu-pays">Japon</p>
-        </li><li class="tapu" data-pays="canada" style="--i:10">
-          <span class="tapu-num">11</span>
-          <h3 class="tapu-titre">Akuteu</h3>
-          <p class="tapu-auteur">Soleil Launière</p>
-          <p class="tapu-pays">Canada</p>
-        </li><li class="tapu" data-pays="canada" style="--i:11">
-          <span class="tapu-num">12</span>
-          <h3 class="tapu-titre">Lichen</h3>
-          <p class="tapu-auteur">Mishka Lavigne</p>
-          <p class="tapu-pays">Canada</p>
-        </li><li class="tapu" data-pays="canada" style="--i:12">
-          <span class="tapu-num">13</span>
-          <h3 class="tapu-titre">Tsunami</h3>
-          <p class="tapu-auteur">Mélanie Léger</p>
-          <p class="tapu-pays">Canada</p>
-        </li><li class="tapu tapu--distingue" data-pays="burundi canada" style="--i:13">
-          <span class="tapu-num">14</span>
-          <h3 class="tapu-titre">Chronologies</h3>
-          <p class="tapu-auteur">Stephie Mazunya</p>
-          <p class="tapu-pays">Burundi · Canada</p>
-          <span class="tapu-tampon">Lauréate internationale</span>
-        </li><li class="tapu" data-pays="rdc" style="--i:14">
-          <span class="tapu-num">15</span>
-          <h3 class="tapu-titre">On dit, oui</h3>
-          <p class="tapu-auteur">Djo Ngeleka</p>
-          <p class="tapu-pays">RD Congo</p>
-        </li><li class="tapu tapu--distingue" data-pays="haiti" style="--i:15">
-          <span class="tapu-num">16</span>
-          <h3 class="tapu-titre">Boukan</h3>
-          <p class="tapu-auteur">Alexandro Christi Nicolas</p>
-          <p class="tapu-pays">Haïti</p>
-          <span class="tapu-tampon">Coup de cœur</span>
-        </li><li class="tapu tapu--distingue" data-pays="rdc" style="--i:16">
-          <span class="tapu-num">17</span>
-          <h3 class="tapu-titre">Clipping</h3>
-          <p class="tapu-auteur">Israël Nzila</p>
-          <p class="tapu-pays">RD Congo</p>
-          <span class="tapu-tampon">Coup de cœur</span>
-        </li><li class="tapu tapu--distingue" data-pays="france" style="--i:17">
-          <span class="tapu-num">18</span>
-          <h3 class="tapu-titre">SP 98</h3>
-          <p class="tapu-auteur">Esteban Okbi</p>
-          <p class="tapu-pays">France</p>
-          <span class="tapu-tampon">Coup de cœur</span>
-        </li><li class="tapu" data-pays="benin" style="--i:18">
-          <span class="tapu-num">19</span>
-          <h3 class="tapu-titre">Les litiges</h3>
-          <p class="tapu-auteur">Gemain Oussou</p>
-          <p class="tapu-pays">Bénin</p>
-        </li><li class="tapu" data-pays="italie" style="--i:19">
-          <span class="tapu-num">20</span>
-          <h3 class="tapu-titre">Paternò, une histoire sicilienne</h3>
-          <p class="tapu-auteur">Mariella Parisi</p>
-          <p class="tapu-pays">Italie</p>
-        </li><li class="tapu tapu--distingue" data-pays="france" style="--i:20">
-          <span class="tapu-num">21</span>
-          <h3 class="tapu-titre">Sans retour</h3>
-          <p class="tapu-auteur">Nicolas Porcher Jouve</p>
-          <p class="tapu-pays">France</p>
-          <span class="tapu-tampon">Coup de cœur</span>
-        </li><li class="tapu" data-pays="france" style="--i:21">
-          <span class="tapu-num">22</span>
-          <h3 class="tapu-titre">La prise de la Bastille</h3>
-          <p class="tapu-auteur">Anna Schmutz</p>
-          <p class="tapu-pays">France</p>
-        </li><li class="tapu" data-pays="angleterre france" style="--i:22">
-          <span class="tapu-num">23</span>
-          <h3 class="tapu-titre">$anctuaire</h3>
-          <p class="tapu-auteur">Marion Stenton</p>
-          <p class="tapu-pays">Angleterre · France</p>
-        </li><li class="tapu" data-pays="canada" style="--i:23">
-          <span class="tapu-num">24</span>
-          <h3 class="tapu-titre">Retour à Laval</h3>
-          <p class="tapu-auteur">Olivier Sylvestre</p>
-          <p class="tapu-pays">Canada</p>
-        </li><li class="tapu" data-pays="france" style="--i:24">
-          <span class="tapu-num">25</span>
-          <h3 class="tapu-titre">La nuit est une aventure</h3>
-          <p class="tapu-auteur">Lydie Tamisier</p>
-          <p class="tapu-pays">France</p>
-        </li><li class="tapu" data-pays="turquie" style="--i:25">
-          <span class="tapu-num">26</span>
-          <h3 class="tapu-titre">Réductions sauvages</h3>
-          <p class="tapu-auteur">Sultan Ulutas Alopé</p>
-          <p class="tapu-pays">Turquie</p>
-        </li>
-      </ol>
-      <p class="pile-vide" data-pile-vide hidden>Aucun texte pour ce pays.</p>
-    </div>
+    <ol class="sommaire-liste" data-sommaire data-effet="sommaire" data-grille="retour" data-visuel aria-label="Sommaire des 26 textes de la sélection finale">
+      <li class="som" data-pays="guinee">
+        <span class="som-num">01</span>
+        <h3 class="som-titre">Petit père vient de</h3>
+        <p class="som-auteur">Souleymane Bah <span>Guinée</span></p>
+      </li><li class="som" data-pays="canada">
+        <span class="som-num">02</span>
+        <h3 class="som-titre">Le traitement de la nuit</h3>
+        <p class="som-auteur">Evelyne de la Chenelière <span>Canada</span></p>
+      </li><li class="som" data-pays="france">
+        <span class="som-num">03</span>
+        <h3 class="som-titre">Un style inimitable</h3>
+        <p class="som-auteur">Baptiste Dezerces <span>France</span></p>
+      </li><li class="som" data-pays="france">
+        <span class="som-num">04</span>
+        <h3 class="som-titre">Les petits garçons ne rêvent pas d’être dealer</h3>
+        <p class="som-auteur">Karine Fellous <span>France</span></p>
+      </li><li class="som" data-pays="canada">
+        <span class="som-num">05</span>
+        <h3 class="som-titre">Manipuler avec soin</h3>
+        <p class="som-auteur">Carolanne Foucher <span>Canada</span></p>
+      </li><li class="som" data-pays="france">
+        <span class="som-num">06</span>
+        <h3 class="som-titre">Vent de bout</h3>
+        <p class="som-auteur">Tiphaine Guitton <span>France</span></p>
+      </li><li class="som" data-pays="france">
+        <span class="som-num">07</span>
+        <h3 class="som-titre">Les inversions terrestres</h3>
+        <p class="som-auteur">Marie Haerrig <span>France</span></p>
+      </li><li class="som" data-pays="canada">
+        <span class="som-num">08</span>
+        <h3 class="som-titre">Rose</h3>
+        <p class="som-auteur">Isabelle Hubert <span>Canada</span></p>
+      </li><li class="som" data-pays="suisse">
+        <span class="som-num">09</span>
+        <h3 class="som-titre">Et il,</h3>
+        <p class="som-auteur">Salomé Joly <span>Suisse</span></p>
+      </li><li class="som" data-pays="japon">
+        <span class="som-num">10</span>
+        <h3 class="som-titre">Virages noirs</h3>
+        <p class="som-auteur">Shiho Kasahara <span>Japon</span></p>
+      </li><li class="som" data-pays="canada">
+        <span class="som-num">11</span>
+        <h3 class="som-titre">Akuteu</h3>
+        <p class="som-auteur">Soleil Launière <span>Canada</span></p>
+      </li><li class="som" data-pays="canada">
+        <span class="som-num">12</span>
+        <h3 class="som-titre">Lichen</h3>
+        <p class="som-auteur">Mishka Lavigne <span>Canada</span></p>
+      </li><li class="som" data-pays="canada">
+        <span class="som-num">13</span>
+        <h3 class="som-titre">Tsunami</h3>
+        <p class="som-auteur">Mélanie Léger <span>Canada</span></p>
+      </li><li class="som som--distingue" data-pays="burundi canada" style="--c:#4f2045">
+        <span class="som-num">14</span>
+        <h3 class="som-titre">Chronologies</h3>
+        <p class="som-auteur">Stephie Mazunya <span>Burundi · Canada</span></p>
+        <p class="som-marque"><span class="som-point" aria-hidden="true"></span>Lauréate internationale</p>
+      </li><li class="som" data-pays="rdc">
+        <span class="som-num">15</span>
+        <h3 class="som-titre">On dit, oui</h3>
+        <p class="som-auteur">Djo Ngeleka <span>RD Congo</span></p>
+      </li><li class="som som--distingue" data-pays="haiti" style="--c:#993b35">
+        <span class="som-num">16</span>
+        <h3 class="som-titre">Boukan</h3>
+        <p class="som-auteur">Alexandro Christi Nicolas <span>Haïti</span></p>
+        <p class="som-marque"><span class="som-point" aria-hidden="true"></span>Coup de cœur</p>
+      </li><li class="som som--distingue" data-pays="rdc" style="--c:#993b35">
+        <span class="som-num">17</span>
+        <h3 class="som-titre">Clipping</h3>
+        <p class="som-auteur">Israël Nzila <span>RD Congo</span></p>
+        <p class="som-marque"><span class="som-point" aria-hidden="true"></span>Coup de cœur</p>
+      </li><li class="som som--distingue" data-pays="france" style="--c:#993b35">
+        <span class="som-num">18</span>
+        <h3 class="som-titre">SP 98</h3>
+        <p class="som-auteur">Esteban Okbi <span>France</span></p>
+        <p class="som-marque"><span class="som-point" aria-hidden="true"></span>Coup de cœur</p>
+      </li><li class="som" data-pays="benin">
+        <span class="som-num">19</span>
+        <h3 class="som-titre">Les litiges</h3>
+        <p class="som-auteur">Gemain Oussou <span>Bénin</span></p>
+      </li><li class="som" data-pays="italie">
+        <span class="som-num">20</span>
+        <h3 class="som-titre">Paternò, une histoire sicilienne</h3>
+        <p class="som-auteur">Mariella Parisi <span>Italie</span></p>
+      </li><li class="som som--distingue" data-pays="france" style="--c:#993b35">
+        <span class="som-num">21</span>
+        <h3 class="som-titre">Sans retour</h3>
+        <p class="som-auteur">Nicolas Porcher Jouve <span>France</span></p>
+        <p class="som-marque"><span class="som-point" aria-hidden="true"></span>Coup de cœur</p>
+      </li><li class="som" data-pays="france">
+        <span class="som-num">22</span>
+        <h3 class="som-titre">La prise de la Bastille</h3>
+        <p class="som-auteur">Anna Schmutz <span>France</span></p>
+      </li><li class="som" data-pays="angleterre france">
+        <span class="som-num">23</span>
+        <h3 class="som-titre">$anctuaire</h3>
+        <p class="som-auteur">Marion Stenton <span>Angleterre · France</span></p>
+      </li><li class="som" data-pays="canada">
+        <span class="som-num">24</span>
+        <h3 class="som-titre">Retour à Laval</h3>
+        <p class="som-auteur">Olivier Sylvestre <span>Canada</span></p>
+      </li><li class="som" data-pays="france">
+        <span class="som-num">25</span>
+        <h3 class="som-titre">La nuit est une aventure</h3>
+        <p class="som-auteur">Lydie Tamisier <span>France</span></p>
+      </li><li class="som" data-pays="turquie">
+        <span class="som-num">26</span>
+        <h3 class="som-titre">Réductions sauvages</h3>
+        <p class="som-auteur">Sultan Ulutas Alopé <span>Turquie</span></p>
+      </li>
+    </ol>
+    <p class="pile-vide" data-pile-vide hidden>Aucun texte pour ce pays.</p>
   </div>
 </section>
 <section class="coups" id="coups-de-coeur" aria-labelledby="coups-h">
@@ -366,33 +337,26 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   </div>
 </section>
 <section class="lectures" id="lectures" aria-labelledby="lectures-h">
-  <div class="conteneur lectures-grille">
-    <div>
-      <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:4" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p est-pose" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p est-pose" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p q-fil-nouvelle" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Agenda</p>
-      <h2 id="lectures-h" data-anime="lignes">Les lectures de juin</h2>
-      <p>Le texte lauréat lu dans les pays du comité, avec le coup de cœur de chacun.</p>
-      <ol class="agenda" data-anime="cascade">
-        <li class="agenda-date" data-date="2026-06-03">
-          <p class="agenda-jour"><time datetime="2026-06-03">3 juin 2026</time> <span class="statut" data-statut data-termine="Terminé" data-avenir="À venir">Terminé</span></p>
-          <h3>QD2A France</h3>
-          <p class="agenda-lieu">Ivry-sur-Seine</p>
-          <ul><li>Chronologies, Stephie Mazunya (lauréate internationale)</li><li>Boukan, Alexandro Christi Nicolas (coup de cœur France)</li></ul>
-        </li><li class="agenda-date" data-date="2026-06-06">
-          <p class="agenda-jour"><time datetime="2026-06-06">6 juin 2026</time> <span class="statut" data-statut data-termine="Terminé" data-avenir="À venir">Terminé</span></p>
-          <h3>QD2A Cameroun</h3>
-          <ul><li>Chronologies, Stephie Mazunya (lauréate internationale)</li><li>Clipping, Israël Nzila (coup de cœur Cameroun)</li></ul>
-        </li><li class="agenda-date" data-date="2026-06-12">
-          <p class="agenda-jour"><time datetime="2026-06-12">12 juin 2026</time> <span class="statut" data-statut data-termine="Terminé" data-avenir="À venir">Terminé</span></p>
-          <h3>QD2A Belgique</h3>
-          <ul><li>Chronologies, Stephie Mazunya (lauréate internationale)</li><li>Sans retour, Nicolas Porcher Jouve (coup de cœur Belgique)</li></ul>
-        </li>
-      </ol>
-    </div>
-    <figure class="media lectures-photo" data-grok data-fx="parallaxe" style="--cadrage:50% 50%">
-  <picture>
-    <img src="/assets/images/grok/g-saison-lectures-1168.webp" srcset="/assets/images/grok/g-saison-lectures-640.webp 640w, /assets/images/grok/g-saison-lectures-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 45vw" alt="Petite salle après une lecture publique, pupitres éteints" width="1168" height="784" loading="lazy" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
-</figure>
+  <div class="conteneur">
+    <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:4" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p est-pose" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p est-pose" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p q-fil-nouvelle" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Agenda</p>
+    <h2 id="lectures-h" data-anime="lignes">Les lectures de juin</h2>
+    <p class="lectures-intro">Le texte lauréat lu en public dans trois pays du comité, avec le coup de cœur de chacun.</p>
+    <ol class="agenda" data-anime="cascade">
+      <li class="agenda-date" data-date="2026-06-03" style="--c:#d9783c">
+        <p class="agenda-jour"><time datetime="2026-06-03">3 juin 2026</time> <span class="statut" data-statut data-termine="Terminé" data-avenir="À venir">Terminé</span></p>
+        <h3>QD2A France</h3>
+        <p class="agenda-lieu">Ivry-sur-Seine</p>
+        <ul class="agenda-textes"><li><img src="/assets/images/site/mazunya-portrait-480.webp" alt="Portrait de Stephie Mazunya" width="96" height="96" loading="lazy" decoding="async"><span>Chronologies, Stephie Mazunya (lauréate internationale)</span></li><li><img src="/assets/images/site/nicolas-480.webp" alt="Portrait de Alexandro Christi Nicolas" width="96" height="96" loading="lazy" decoding="async"><span>Boukan, Alexandro Christi Nicolas (coup de cœur France)</span></li></ul>
+      </li><li class="agenda-date" data-date="2026-06-06" style="--c:#557a49">
+        <p class="agenda-jour"><time datetime="2026-06-06">6 juin 2026</time> <span class="statut" data-statut data-termine="Terminé" data-avenir="À venir">Terminé</span></p>
+        <h3>QD2A Cameroun</h3>
+        <ul class="agenda-textes"><li><img src="/assets/images/site/mazunya-portrait-480.webp" alt="Portrait de Stephie Mazunya" width="96" height="96" loading="lazy" decoding="async"><span>Chronologies, Stephie Mazunya (lauréate internationale)</span></li><li><img src="/assets/images/site/nzila-480.webp" alt="Portrait de Israël Nzila" width="96" height="96" loading="lazy" decoding="async"><span>Clipping, Israël Nzila (coup de cœur Cameroun)</span></li></ul>
+      </li><li class="agenda-date" data-date="2026-06-12" style="--c:#5f9c8f">
+        <p class="agenda-jour"><time datetime="2026-06-12">12 juin 2026</time> <span class="statut" data-statut data-termine="Terminé" data-avenir="À venir">Terminé</span></p>
+        <h3>QD2A Belgique</h3>
+        <ul class="agenda-textes"><li><img src="/assets/images/site/mazunya-portrait-480.webp" alt="Portrait de Stephie Mazunya" width="96" height="96" loading="lazy" decoding="async"><span>Chronologies, Stephie Mazunya (lauréate internationale)</span></li><li><img src="/assets/images/site/porcher-jouve-480.webp" alt="Portrait de Nicolas Porcher Jouve" width="96" height="96" loading="lazy" decoding="async"><span>Sans retour, Nicolas Porcher Jouve (coup de cœur Belgique)</span></li></ul>
+      </li>
+    </ol>
   </div>
 </section>
 <section class="pays-liste" id="pays" aria-labelledby="pays-h">
@@ -402,11 +366,12 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <ol class="pays-grille" data-anime="cascade" data-visuel>
       <li><b>9</b><span>France</span><em>textes</em></li><li><b>8</b><span>Canada</span><em>textes</em></li><li><b>2</b><span>RD Congo</span><em>textes</em></li><li><b>1</b><span>Angleterre</span><em>texte</em></li><li><b>1</b><span>Bénin</span><em>texte</em></li><li><b>1</b><span>Burundi</span><em>texte</em></li><li><b>1</b><span>Guinée</span><em>texte</em></li><li><b>1</b><span>Haïti</span><em>texte</em></li><li><b>1</b><span>Italie</span><em>texte</em></li><li><b>1</b><span>Japon</span><em>texte</em></li><li><b>1</b><span>Suisse</span><em>texte</em></li><li><b>1</b><span>Turquie</span><em>texte</em></li>
     </ol>
+    <p class="pays-note">Deux textes comptent pour deux pays : Chronologies (Canada · Burundi) et $anctuaire (Angleterre · France). D’où 28 mentions pour 26 textes.</p>
   </div>
 </section>
 <section class="fin" id="fin" aria-labelledby="fin-h">
   <div class="conteneur fin-grille">
-    <div class="fin-pile" data-visuel data-fx="vitesse" aria-hidden="true"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i></div>
+    <ul class="quatre-visages" data-visuel aria-label="Un visage de chacun des quatre comités" data-fx="vitesse"><li style="--c:#d9783c;--i:0"><img src="/assets/images/site/lecteurs/france-09-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#5f9c8f;--i:1"><img src="/assets/images/site/lecteurs/belgique-08-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#557a49;--i:2"><img src="/assets/images/site/lecteurs/cameroun-06-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li><li style="--c:#e9b058;--i:3"><img src="/assets/images/site/lecteurs/canada-02-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li></ul>
     <h2 id="fin-h" data-anime="lignes">La saison 26/27 se lit déjà</h2>
     <p data-anime>L’appel est ouvert toute l’année : votre texte peut être dans la prochaine pile.</p>
     <p data-anime><a href="/appel-a-textes#deposer" class="bouton" data-libelle="L’appel à textes" data-survol="magnetique">Envoyer un texte</a></p>
@@ -421,7 +386,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="pied-texte">Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.</p>
     </div>
     <div>
-      <p><strong>Nous trouver</strong></p>
+      <p><strong>Adresse</strong></p>
       <p>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne<br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
       <p><a href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
     </div>
@@ -439,8 +404,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   </div>
   <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le Quartier.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>© Le Quartier des Autrices et des Auteurs</p></div>
 </footer>
-<div data-barre-fixe>
-  <a class="bouton bouton--contour" href="mailto:comiteqdaa@gmail.com">E-mail</a>
+<div data-barre-fixe class="barre-une">
   <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
 </div>
 </body>

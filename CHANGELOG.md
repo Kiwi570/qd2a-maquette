@@ -2,6 +2,67 @@
 
 Chaque version ajoute sa partie en tête de ce fichier, construite en comparant l'archive précédente et la nouvelle, jamais de mémoire.
 
+## v4 — tout le site sur les visages, un seul geste d'envoi (12 novembre 2026)
+
+Audit complet de tout le site et regard neuf page par page (`_suivi/regard-neuf-v4.md`), puis comparaison fichier par fichier avec l'archive de la v3 (pages, données, textes, styles, script, images).
+
+**Pourquoi** : l'accueil avait trouvé l'identité du Quartier en v2, mais les pages intérieures revenaient au tapuscrit sous la lampe, une direction écartée dès la v1 : sept illustrations générées, dont quatre avec une lampe. Le bouton « Envoyer un texte » menait à un formulaire factice. Des phrases se contredisaient d'une page à l'autre. Moyenne du regard neuf : 3,17 sur 5 (appel 2,38).
+
+**Sur toutes les pages**
+- **Un seul geste d'envoi, le vrai** : les deux formulaires de démonstration (dépôt d'un texte, contact) et « Déposer en ligne (démonstration) » sont supprimés. « Envoyer un texte » mène partout à la section « Envoyer » de l'appel, qui ouvre la messagerie avec l'adresse du comité et l'objet « Envoi d'un texte, appel 26/27 », fiche 26/27 juste à côté.
+- **Un seul bouton** : prune sur le crème, orange du logo sur les fonds sombres. Le jaune de l'Hydre et le corail du contact disparaissent.
+- **Téléphone** : la barre fixe n'a plus qu'un bouton, « Envoyer un texte », sur une ligne.
+- **Pied de page** : « Nous trouver » devient « Adresse », car le comité n'a pas de lieu ouvert au public.
+
+**Les faits remis d'aplomb**
+- Appel, étape 6 : « une mise en lecture dans quatre pays » et « un prix en numéraire » deviennent « lu en public dans les pays du comité (en juin 2026 : France, Cameroun, Belgique) et édité chez Passage(s) ».
+- Appel : le compteur « 191 / 192 » à côté de « Plus de 200 pièces reçues pour la saison 22/23 » devient un seul chiffre fixe, « Environ 200 textes reçus par saison ». « Ce que peu de comités font » est retiré.
+- Hydre : « Il est lu dans chaque pays » devient « Il est lu en public en France, au Cameroun et en Belgique ». La citation est signée « Laëtitia Ajanohun, manifeste de l'Hydre de Lerne », comme sur l'accueil.
+- Saison : sous « Douze pays », une note explique les 28 mentions pour 26 textes (Chronologies et $anctuaire comptent pour deux pays).
+
+**L'appel à textes** (refait)
+- La page quitte le brun-noir pour le crème du site.
+- Ouverture : « Votre texte sera lu par trois d'entre eux », trois vrais visages du comité tirés au sort. Le bouton « Tirer trois autres lecteurs » retourne les cartes et en montre trois autres.
+- Supprimés : la lampe à promener, le tapuscrit à pince, les fiches gribouillées (images générées) et le chemin épinglé avec son enveloppe, qui refaisait le trajet de l'accueil sur quatre écrans.
+- Le parcours devient six étapes fixes aux couleurs du logo, avec les trois couvertures Passage(s) en grand (200 px au lieu de 85).
+- « Envoyer » : remplir la fiche, joindre le texte, écrire au comité, puis un grand bouton qui ouvre la messagerie. À côté, l'aperçu de l'e-mail à envoyer : adresse, objet, pièces jointes.
+- La page passe de 8 à 5 écrans sur ordinateur, et de 12 à 8 sur téléphone.
+
+**La saison 25/26**
+- La pile épinglée des 26 tapuscrits devient un sommaire : les 26 titres d'un coup d'œil, sur trois colonnes. Les filtres par pays rangent les titres, qui glissent à leur nouvelle place. La lauréate et les coups de cœur sont marqués à leur couleur.
+- Lectures de juin : l'image générée (pupitres et feuilles au sol) est retirée. Chaque date porte la couleur de son comité et les visages des deux textes lus ce soir-là.
+- Coups de cœur : le tampon du comité passe sous la photo, au lieu de couvrir le haut du visage ; deux portraits par rangée sur téléphone.
+- En fin de page, la petite pile dessinée laisse la place à quatre visages, un par comité.
+- La page passe de 12 à 7,5 écrans sur ordinateur, et de 18 à 13 sur téléphone.
+
+**L'Hydre**
+- Ouverture sans la salle de lecture générée : le dessin des quatre cous s'agrandit, et chaque tête est un visage du comité de ce pays, bordé de sa couleur. Les noms des pays ne mordent plus sur les têtes.
+- Manifeste sans les herbes générées : un aplat, la citation en grand et signée, le paragraphe lisible d'emblée, et à côté « La pêche miraculeuse », une peinture reprise du site du Quartier (une longue file qui tire ensemble la même corde).
+- Comité canadien : six visages de plus, découpés dans l'affiche du comité publiée par le Quartier (`outils/canada-affiche.py`). Il en montre huit, au lieu de deux.
+- La photo de la soirée, très sombre, est affichée plus petite et éclaircie. Les cartes des partenaires ont toutes la même largeur. En fin de page, la petite pile dessinée laisse la place à quatre visages, un par comité.
+- La page passe de 7 à 6 écrans sur ordinateur, et de 10 à 9 sur téléphone.
+
+**Contact**
+- Le formulaire factice, le plan aux rues inventées, la rubrique « Accès » et la seconde enveloppe sont retirés.
+- « Choisissez l'objet » : quatre cartes qui ouvrent la messagerie avec l'objet rempli (l'envoi d'un texte mène à l'appel).
+- « Une adresse, pas un guichet » : le comité est accueilli au Théâtre des Quartiers d'Ivry mais n'a pas de lieu ouvert au public. La vraie façade de la Manufacture des Œillets, la nuit, prise sur le site du Quartier, remplace la bannière générée.
+- La bannière d'enveloppes générée devient un aplat prune, avec quatre visages, un par comité.
+
+**404**
+- Le titre prend la taille des autres ouvertures et se tient à droite de la servante, sans plus la traverser. Sur téléphone, il passe sous l'ampoule.
+- « La saison 25/26 » et « L'appel à textes » s'ajoutent à « Revenir à l'accueil ».
+
+**Accueil**
+- La rangée « Et les quatre coups de cœur », qui répétait l'étape 5 du trajet, est retirée.
+- Le bouton « Déposer en ligne (démonstration) » est retiré.
+- Le mur du comité compte 52 visages, dont 8 pour le Canada.
+
+**Images** : six illustrations générées ne sont plus utilisées et sont retirées (ouverture et fiches de l'appel, ouverture et marais de l'Hydre, lectures de la saison, bannière du contact). Seule la servante de la 404 reste générée. Ajouts, tous repris du site du Quartier : la façade de la Manufacture des Œillets, la peinture « La pêche miraculeuse » et six visages du comité canadien.
+
+**Script** : la pile, la route de l'appel et les formulaires simulés sont supprimés. S'ajoutent le tirage des trois lecteurs et le sommaire filtrable. Les numéros de version passent de `?v=3` à `?v=4`.
+
+**Audit complet** (14 formats, sans JavaScript, mode calme, films, fluidité) : 29 échecs au premier passage, 0 après corrections et quatre relances ciblées. Il s'agissait surtout des sections restées sans visuel après le retrait des images générées, de textes trop petits sur téléphone et d'un bouton hors du premier écran sur les écrans bas. Fluidité : 0 % d'images lentes sur toutes les pages. Safari reste à vérifier sur le Mac.
+
 ## v3 — un trajet d'un texte plus fluide (12 novembre 2026)
 
 Correction ciblée de l'accueil, comparée fichier par fichier à la v2 (page d'accueil, styles, script).

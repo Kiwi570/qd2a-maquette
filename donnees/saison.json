@@ -1,103 +1,136 @@
 {
- "laureat": {
-  "titre": "Chronologies",
-  "autrice": "Stephie Mazunya",
-  "pays": "Canada · Burundi",
-  "image": "site/mazunya",
-  "credit": "Photo : Jules Bédard",
-  "resume": "Deux jeunes femmes, Muco et Kaneza, dont les vies se croisent puis s’éloignent. Muco a grandi au Canada, fille d’une réfugiée burundaise ; Kaneza a quitté le Burundi adolescente pour fuir la guerre. Le texte suit leur éveil intellectuel, leur rapport à l’écriture et l’épreuve du retour au pays. Antoinette, figure maternelle, y fait entendre une troisième voix : ses désirs face à ce qu’on attend d’elle.",
-  "bio": "Comédienne et autrice canadienne d’origine burundaise, diplômée de l’École nationale de théâtre du Canada en 2019. Elle travaille pour le théâtre, la télévision et le web, a coécrit les recueils Ma première fois et 21 Black Futures, publié les pièces S’enjailler et Chronologies, écrit pour Le Devoir et développe la websérie Sans transit.",
-  "distinctions": [
-   "Lauréate internationale du QD2A, saison 25/26",
-   "Finaliste du prix Michel-Tremblay pour Chronologies",
-   "Prix du public du CTD’A pour Chronologies et S’enjailler",
-   "Prix Nouvel Apport de Metropolis Bleu pour S’enjailler"
+  "laureat": {
+    "titre": "Chronologies",
+    "autrice": "Stephie Mazunya",
+    "pays": "Canada · Burundi",
+    "image": "site/mazunya",
+    "credit": "Photo : Jules Bédard",
+    "resume": "Deux jeunes femmes, Muco et Kaneza, dont les vies se croisent puis s’éloignent. Muco a grandi au Canada, fille d’une réfugiée burundaise ; Kaneza a quitté le Burundi adolescente pour fuir la guerre. Le texte suit leur éveil intellectuel, leur rapport à l’écriture et l’épreuve du retour au pays. Antoinette, figure maternelle, y fait entendre une troisième voix : ses désirs face à ce qu’on attend d’elle.",
+    "bio": "Comédienne et autrice canadienne d’origine burundaise, diplômée de l’École nationale de théâtre du Canada en 2019. Elle travaille pour le théâtre, la télévision et le web, a coécrit les recueils Ma première fois et 21 Black Futures, publié les pièces S’enjailler et Chronologies, écrit pour Le Devoir et développe la websérie Sans transit.",
+    "distinctions": [
+      "Lauréate internationale du QD2A, saison 25/26",
+      "Finaliste du prix Michel-Tremblay pour Chronologies",
+      "Prix du public du CTD’A pour Chronologies et S’enjailler",
+      "Prix Nouvel Apport de Metropolis Bleu pour S’enjailler"
+    ],
+    "personnages": [
+      {
+        "nom": "Muco",
+        "desc": "a grandi au Canada, fille d’une réfugiée burundaise"
+      },
+      {
+        "nom": "Kaneza",
+        "desc": "a quitté le Burundi adolescente"
+      },
+      {
+        "nom": "Antoinette",
+        "desc": "figure maternelle, une troisième voix"
+      }
+    ]
+  },
+  "coups": [
+    {
+      "titre": "Boukan",
+      "auteur": "Alexandro Christi Nicolas",
+      "pays": "Haïti",
+      "comites": [
+        "France",
+        "Canada (ex aequo)"
+      ],
+      "image": "site/nicolas",
+      "credit": "Photo : Heberson Edmé"
+    },
+    {
+      "titre": "SP 98",
+      "auteur": "Esteban Okbi",
+      "pays": "France",
+      "comites": [
+        "Canada (ex aequo)"
+      ],
+      "image": "site/okbi",
+      "credit": "Photo : Hélène Marx"
+    },
+    {
+      "titre": "Clipping",
+      "auteur": "Israël Nzila",
+      "pays": "RD Congo",
+      "comites": [
+        "Cameroun"
+      ],
+      "image": "site/nzila",
+      "credit": ""
+    },
+    {
+      "titre": "Sans retour",
+      "auteur": "Nicolas Porcher Jouve",
+      "pays": "France",
+      "comites": [
+        "Belgique"
+      ],
+      "image": "site/porcher-jouve",
+      "credit": ""
+    }
   ],
-  "personnages": [
-   {
-    "nom": "Muco",
-    "desc": "a grandi au Canada, fille d’une réfugiée burundaise"
-   },
-   {
-    "nom": "Kaneza",
-    "desc": "a quitté le Burundi adolescente"
-   },
-   {
-    "nom": "Antoinette",
-    "desc": "figure maternelle, une troisième voix"
-   }
+  "lectures": [
+    {
+      "date": "2026-06-03",
+      "comite": "QD2A France",
+      "lieu": "Ivry-sur-Seine",
+      "textes": [
+        "Chronologies, Stephie Mazunya (lauréate internationale)",
+        "Boukan, Alexandro Christi Nicolas (coup de cœur France)"
+      ],
+      "couleur": "#d9783c",
+      "portraits": [
+        [
+          "site/mazunya-portrait",
+          "Stephie Mazunya"
+        ],
+        [
+          "site/nicolas",
+          "Alexandro Christi Nicolas"
+        ]
+      ]
+    },
+    {
+      "date": "2026-06-06",
+      "comite": "QD2A Cameroun",
+      "lieu": "",
+      "textes": [
+        "Chronologies, Stephie Mazunya (lauréate internationale)",
+        "Clipping, Israël Nzila (coup de cœur Cameroun)"
+      ],
+      "couleur": "#557a49",
+      "portraits": [
+        [
+          "site/mazunya-portrait",
+          "Stephie Mazunya"
+        ],
+        [
+          "site/nzila",
+          "Israël Nzila"
+        ]
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "comite": "QD2A Belgique",
+      "lieu": "",
+      "textes": [
+        "Chronologies, Stephie Mazunya (lauréate internationale)",
+        "Sans retour, Nicolas Porcher Jouve (coup de cœur Belgique)"
+      ],
+      "couleur": "#5f9c8f",
+      "portraits": [
+        [
+          "site/mazunya-portrait",
+          "Stephie Mazunya"
+        ],
+        [
+          "site/porcher-jouve",
+          "Nicolas Porcher Jouve"
+        ]
+      ]
+    }
   ]
- },
- "coups": [
-  {
-   "titre": "Boukan",
-   "auteur": "Alexandro Christi Nicolas",
-   "pays": "Haïti",
-   "comites": [
-    "France",
-    "Canada (ex aequo)"
-   ],
-   "image": "site/nicolas",
-   "credit": "Photo : Heberson Edmé"
-  },
-  {
-   "titre": "SP 98",
-   "auteur": "Esteban Okbi",
-   "pays": "France",
-   "comites": [
-    "Canada (ex aequo)"
-   ],
-   "image": "site/okbi",
-   "credit": "Photo : Hélène Marx"
-  },
-  {
-   "titre": "Clipping",
-   "auteur": "Israël Nzila",
-   "pays": "RD Congo",
-   "comites": [
-    "Cameroun"
-   ],
-   "image": "site/nzila",
-   "credit": ""
-  },
-  {
-   "titre": "Sans retour",
-   "auteur": "Nicolas Porcher Jouve",
-   "pays": "France",
-   "comites": [
-    "Belgique"
-   ],
-   "image": "site/porcher-jouve",
-   "credit": ""
-  }
- ],
- "lectures": [
-  {
-   "date": "2026-06-03",
-   "comite": "QD2A France",
-   "lieu": "Ivry-sur-Seine",
-   "textes": [
-    "Chronologies, Stephie Mazunya (lauréate internationale)",
-    "Boukan, Alexandro Christi Nicolas (coup de cœur France)"
-   ]
-  },
-  {
-   "date": "2026-06-06",
-   "comite": "QD2A Cameroun",
-   "lieu": "",
-   "textes": [
-    "Chronologies, Stephie Mazunya (lauréate internationale)",
-    "Clipping, Israël Nzila (coup de cœur Cameroun)"
-   ]
-  },
-  {
-   "date": "2026-06-12",
-   "comite": "QD2A Belgique",
-   "lieu": "",
-   "textes": [
-    "Chronologies, Stephie Mazunya (lauréate internationale)",
-    "Sans retour, Nicolas Porcher Jouve (coup de cœur Belgique)"
-   ]
-  }
- ]
 }

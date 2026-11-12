@@ -4,6 +4,7 @@
    Puis : le comité en 46 visages qui se regroupent par tête (recomposition) ; le trajet d'un texte, de l'e-mail à la
    scène (scène épinglée du métier : trier) ; la Une de la saison avec le tapuscrit de Chronologies à feuilleter ;
    le manifeste ; l'appel à textes et les trois lecteurs qui vous liront ; les partenaires. */
+import { troisLecteurs } from './appel.mjs';
 import { html, brut } from '../../outils/gabarit.mjs';
 import { qVisages } from '../gabarits/q.mjs';
 
@@ -145,17 +146,6 @@ export default (c) => {
       </div>
     </div>
   </div>
-  <div class="conteneur une-coups">
-    <h3>${c.t('accueil.saison.coupsTitre')}</h3>
-    <ul class="coups-ligne" data-anime="cascade">
-      ${s.coups.map((x) => html`<li class="coup-carte">
-        ${c.media({ nom: COUPS_IMG[x.titre], alt: c.s('saison.coups.alt', { nom: x.auteur }), classe: 'coup-carte-photo', sizes: '(max-width: 760px) 44vw, 16vw', ratio: '4 / 5', cadrage: '50% 30%' })}
-        <p class="coup-comites">${x.comites.map((k) => { const cle = k.split(' ')[0].toLowerCase(); return html`<span class="tag-${cle}" style="--c:${couleur[cle] || couleur.coups}">${k}</span>`; })}</p>
-        <h4>${c.lien('saison', { ancre: 'coups-de-coeur', texte: x.titre })}</h4>
-        <p>${x.auteur} · ${x.pays}</p>
-      </li>`)}
-    </ul>
-  </div>
 </section>
 
 <section class="manifeste" id="manifeste" aria-labelledby="manifeste-h">
@@ -185,18 +175,10 @@ export default (c) => {
       </ul>
       <p class="appel-actions">
         <a class="bouton" href="mailto:${c.site.contact.email}?subject=${encodeURIComponent(c.s('accueil.appel.mailSujet'))}" data-survol="magnetique">${c.t('accueil.appel.mail')}</a>
-        ${c.lien('appel', { ancre: 'deposer', classe: 'bouton bouton--contour', texte: c.t('accueil.appel.deposer') })}
         <a class="lien-fleche" href="${c.site.contact.fiche}" target="_blank" rel="noopener" aria-label="${c.s('commun.fiche')} ${c.s('commun.nouvelOnglet')}">${c.t('commun.fiche')}</a>
       </p>
     </div>
-    <div class="trois-lecteurs" data-trois-lecteurs data-effet="trois-lecteurs" data-visuel>
-      <p class="trois-titre">${c.t('accueil.appel.lecteursTitre')}</p>
-      <ul>
-        ${[0, 1, 2].map((i) => html`<li class="trois-lecteur" style="--i:${i}"><img src="/assets/images/${lecteurs[[3, 22, 40][i]].image}-320.webp" alt="${c.s('accueil.appel.lecteurAlt')}" width="320" height="320" loading="lazy" decoding="async" data-lecteur-img><span>${c.t('accueil.trajet.lecteur', { n: i + 1 })}</span></li>`)}
-      </ul>
-      <p class="trois-note">${c.t('accueil.appel.lecteursNote')}</p>
-      <script type="application/json" data-lecteurs-liste>${brut(JSON.stringify(lecteurs.map((x) => x.image)))}</script>
-    </div>
+    ${troisLecteurs(c, { titre: c.t('accueil.appel.lecteursTitre'), note: c.t('accueil.appel.lecteursNote') })}
   </div>
 </section>
 

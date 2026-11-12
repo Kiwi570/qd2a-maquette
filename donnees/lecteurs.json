@@ -1,210 +1,240 @@
 {
- "comites": [
-  {
-   "cle": "france",
-   "nom": "France",
-   "couleur": "#d9783c"
-  },
-  {
-   "cle": "belgique",
-   "nom": "Belgique",
-   "couleur": "#5f9c8f"
-  },
-  {
-   "cle": "cameroun",
-   "nom": "Cameroun",
-   "couleur": "#557a49"
-  },
-  {
-   "cle": "canada",
-   "nom": "Canada",
-   "couleur": "#5a2148"
-  }
- ],
- "lecteurs": [
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-04"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-05"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-06"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-07"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-08"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-09"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-10"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-11"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-12"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-13"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-14"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-15"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-16"
-  },
-  {
-   "pays": "belgique",
-   "image": "site/lecteurs/belgique-17"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-02"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-03"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-04"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-05"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-06"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-07"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-08"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-09"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-10"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-11"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-12"
-  },
-  {
-   "pays": "cameroun",
-   "image": "site/lecteurs/cameroun-13"
-  },
-  {
-   "pays": "canada",
-   "image": "site/lecteurs/canada-02"
-  },
-  {
-   "pays": "canada",
-   "image": "site/lecteurs/canada-03"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-02"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-03"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-04"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-05"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-06"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-07"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-08"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-09"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-10"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-11"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-12"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-13"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-14"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-15"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-16"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-17"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-18"
-  },
-  {
-   "pays": "france",
-   "image": "site/lecteurs/france-19"
-  }
- ]
+  "comites": [
+    {
+      "cle": "france",
+      "nom": "France",
+      "couleur": "#d9783c"
+    },
+    {
+      "cle": "belgique",
+      "nom": "Belgique",
+      "couleur": "#5f9c8f"
+    },
+    {
+      "cle": "cameroun",
+      "nom": "Cameroun",
+      "couleur": "#557a49"
+    },
+    {
+      "cle": "canada",
+      "nom": "Canada",
+      "couleur": "#5a2148"
+    }
+  ],
+  "lecteurs": [
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-04"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-05"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-06"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-07"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-08"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-09"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-10"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-11"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-12"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-13"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-14"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-15"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-16"
+    },
+    {
+      "pays": "belgique",
+      "image": "site/lecteurs/belgique-17"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-02"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-03"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-04"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-05"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-06"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-07"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-08"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-09"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-10"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-11"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-12"
+    },
+    {
+      "pays": "cameroun",
+      "image": "site/lecteurs/cameroun-13"
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-02"
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-03"
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-04",
+      "affiche": true
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-05",
+      "affiche": true
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-06",
+      "affiche": true
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-07",
+      "affiche": true
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-08",
+      "affiche": true
+    },
+    {
+      "pays": "canada",
+      "image": "site/lecteurs/canada-09",
+      "affiche": true
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-02"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-03"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-04"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-05"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-06"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-07"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-08"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-09"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-10"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-11"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-12"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-13"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-14"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-15"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-16"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-17"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-18"
+    },
+    {
+      "pays": "france",
+      "image": "site/lecteurs/france-19"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr" data-v="3" class="theme-encre">
+<html lang="fr" data-v="4">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -40,14 +40,14 @@ if (alt) location.replace(new URL(alt.href).pathname + location.search + locatio
 setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('secours'); }, 2000);
 })();</script>
 <link rel="preload" href="/assets/fonts/fraunces.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/socle.css?v=3">
-<link rel="stylesheet" href="/assets/css/site.css?v=3">
-<link rel="modulepreload" href="/assets/js/site.js?v=3">
-<link rel="modulepreload" href="/assets/js/socle/index.js?v=3">
+<link rel="stylesheet" href="/assets/css/socle.css?v=4">
+<link rel="stylesheet" href="/assets/css/site.css?v=4">
+<link rel="modulepreload" href="/assets/js/site.js?v=4">
+<link rel="modulepreload" href="/assets/js/socle/index.js?v=4">
 <script src="/assets/vendor/gsap.min.js" defer></script>
 <script src="/assets/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/assets/vendor/SplitText.min.js" defer></script>
-<script type="module" src="/assets/js/site.js?v=3"></script>
+<script type="module" src="/assets/js/site.js?v=4"></script>
 <meta name="theme-color" content="#f4efe4">
 <link rel="icon" href="/assets/images/favicon.png" type="image/png">
 <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
@@ -60,7 +60,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
 <meta property="og:image" content="https://qd2a-maquette.vercel.app/assets/partage/appel-fr.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="L’appel à textes 26/27 du QD2A : une enveloppe sous une lampe">
+<meta property="og:image:alt" content="L’appel à textes 26/27 du QD2A : le Q du logo fait des visages du comité">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Le Quartier des Autrices et des Auteurs","alternateName":"QD2A","url":"https://qd2a-maquette.vercel.app/","email":"comiteqdaa@gmail.com","foundingDate":"2020-05","description":"Comité de lecture international des écritures dramatiques contemporaines de langue française, accueilli au Théâtre des Quartiers d'Ivry.","address":{"@type":"PostalAddress","streetAddress":"Manufacture des Œillets, 1 place Pierre Gosnat","postalCode":"94200","addressLocality":"Ivry-sur-Seine","addressCountry":"FR"},"sameAs":["https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/"]}</script>
 </head>
@@ -123,23 +123,23 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   <div class="appel-ouv conteneur">
     <div class="ouv-texte">
       <p class="surtitre masque-ecran-tres-bas" data-anime="gsap"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:0" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p q-fil-nouvelle" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Saison 26/27</p>
-      <h1 class="ouv-titre appel-titre" data-anime="lettres">L’appel à textes</h1>
-      <p class="ouv-intro masque-ecran-bas" data-anime="gsap">Autrices et auteurs de toutes nationalités, écrivant en français : le Quartier lit votre texte.</p>
+      <h1 class="ouv-titre"><span class="ligne-masque"><span class="ouv-ligne" data-anime="gsap">L’appel à textes</span></span></h1>
+      <p class="ouv-intro" data-anime="gsap">Autrices et auteurs de toutes nationalités, écrivant en français : envoyez votre texte, il sera lu par trois membres du comité.</p>
       <p class="ouv-actions" data-anime="gsap">
-        <a class="bouton" href="#deposer" data-action-principale data-survol="magnetique">Déposer un texte</a>
+        <a class="bouton" href="#deposer" data-action-principale data-survol="magnetique">Envoyer un texte</a>
         <span class="ouv-info" data-info-cle><span class="pastille" aria-hidden="true"></span>Ouvert sans date limite</span>
       </p>
       <p class="ouv-lien masque-ecran-tres-bas" data-anime="gsap"><a class="lien-fleche" href="https://3028e62e-0d54-43bc-897f-dc8b2bf3f9ef.filesusr.com/ugd/17efc3_eb2ab16afec24ccfbb98b40b9053f34f.pdf" target="_blank" rel="noopener" aria-label="Fiche de renseignements 26/27 (PDF) (nouvel onglet)">Fiche de renseignements 26/27 (PDF)</a></p>
     </div>
-    <div class="lampe" data-lampe data-iris-centre data-effet="lampe" data-souris>
-      <figure class="media lampe-photo" data-grok style="--cadrage:62% 55%;--cadrage-mobile:55% 60%">
-  <picture><source media="(max-width: 760px) and (orientation: portrait)" srcset="/assets/images/grok/g-appel-ouverture-mobile-540.webp 540w, /assets/images/grok/g-appel-ouverture-mobile-784.webp 784w" sizes="(max-width: 760px) 100vw, 50vw">
-    <img src="/assets/images/grok/g-appel-ouverture-1168.webp" srcset="/assets/images/grok/g-appel-ouverture-640.webp 640w, /assets/images/grok/g-appel-ouverture-1168.webp 1168w" sizes="(max-width: 760px) 100vw, 50vw" alt="Enveloppe kraft et tapuscrit sous une lampe, la nuit" width="1168" height="784" fetchpriority="high" loading="eager" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
-</figure>
-      <span class="lampe-ombre" aria-hidden="true"></span>
-      <p class="lampe-consigne souris-seulement masque-ecran-bas">Promenez la lampe sur la table</p>
-    </div>
+    <div class="trois-lecteurs trois-lecteurs--grand" data-trois-lecteurs data-effet="trois-lecteurs" data-visuel data-iris-centre>
+  <p class="trois-titre">Votre texte sera lu par trois d’entre eux</p>
+  <ul>
+    <li class="trois-lecteur" style="--i:0"><img src="/assets/images/site/lecteurs/belgique-07-320.webp" alt="Une lectrice ou un lecteur du comité" width="320" height="320" decoding="async" data-lecteur-img><span>Lecteur 1</span></li><li class="trois-lecteur" style="--i:1"><img src="/assets/images/site/lecteurs/cameroun-10-320.webp" alt="Une lectrice ou un lecteur du comité" width="320" height="320" decoding="async" data-lecteur-img><span>Lecteur 2</span></li><li class="trois-lecteur" style="--i:2"><img src="/assets/images/site/lecteurs/france-10-320.webp" alt="Une lectrice ou un lecteur du comité" width="320" height="320" decoding="async" data-lecteur-img><span>Lecteur 3</span></li>
+  </ul>
+  <p class="trois-actions"><button type="button" class="bouton bouton--contour" data-tirer data-grille="manipuler">Tirer trois autres lecteurs</button></p>
+  <p class="trois-note">Trois membres du comité, tirés au hasard parmi les visages publiés par le Quartier.</p>
+  <script type="application/json" data-lecteurs-liste>["site/lecteurs/belgique-04","site/lecteurs/belgique-05","site/lecteurs/belgique-06","site/lecteurs/belgique-07","site/lecteurs/belgique-08","site/lecteurs/belgique-09","site/lecteurs/belgique-10","site/lecteurs/belgique-11","site/lecteurs/belgique-12","site/lecteurs/belgique-13","site/lecteurs/belgique-14","site/lecteurs/belgique-15","site/lecteurs/belgique-16","site/lecteurs/belgique-17","site/lecteurs/cameroun-02","site/lecteurs/cameroun-03","site/lecteurs/cameroun-04","site/lecteurs/cameroun-05","site/lecteurs/cameroun-06","site/lecteurs/cameroun-07","site/lecteurs/cameroun-08","site/lecteurs/cameroun-09","site/lecteurs/cameroun-10","site/lecteurs/cameroun-11","site/lecteurs/cameroun-12","site/lecteurs/cameroun-13","site/lecteurs/canada-02","site/lecteurs/canada-03","site/lecteurs/france-02","site/lecteurs/france-03","site/lecteurs/france-04","site/lecteurs/france-05","site/lecteurs/france-06","site/lecteurs/france-07","site/lecteurs/france-08","site/lecteurs/france-09","site/lecteurs/france-10","site/lecteurs/france-11","site/lecteurs/france-12","site/lecteurs/france-13","site/lecteurs/france-14","site/lecteurs/france-15","site/lecteurs/france-16","site/lecteurs/france-17","site/lecteurs/france-18","site/lecteurs/france-19"]</script>
+</div>
   </div>
 </section>
 <section class="cachets" id="conditions" aria-labelledby="conditions-h">
@@ -147,19 +147,19 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:1" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p q-fil-nouvelle" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Les conditions</p>
     <h2 id="conditions-h" class="titre-axes" data-axes data-grille="typo">Quatre cachets avant l’envoi</h2>
     <ul class="cachets-liste" data-anime="cascade">
-      <li class="cachet-carte">
+      <li class="cachet-carte" style="--c:#d9783c">
         <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-1" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-1">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>1</b></span>
         <h3>En français</h3>
         <p>Écrit en langue française, sans traduction.</p>
-      </li><li class="cachet-carte">
+      </li><li class="cachet-carte" style="--c:#5f9c8f">
         <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-2" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-2">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>2</b></span>
         <h3>Trois ans au plus</h3>
         <p>Un texte dramatique, ou une libre adaptation théâtrale, de trois ans au plus.</p>
-      </li><li class="cachet-carte">
+      </li><li class="cachet-carte" style="--c:#557a49">
         <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-3" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-3">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>3</b></span>
         <h3>Inédit</h3>
         <p>Pas encore édité au moment de l’envoi.</p>
-      </li><li class="cachet-carte">
+      </li><li class="cachet-carte" style="--c:#e9b058">
         <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-4" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-4">QD2A · APPEL 26/27 · QD2A · APPEL 26/27 ·</textPath></text></svg><b>4</b></span>
         <h3>Avec sa fiche</h3>
         <p>Accompagné de la fiche de renseignements 26/27, en PDF à remplir.</p>
@@ -167,97 +167,68 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
     </ul>
   </div>
 </section>
-<section class="route" id="parcours" data-scene data-grille="scene" data-entete-cache aria-labelledby="parcours-h">
-  <div class="route-cadre" data-collant>
-    <div class="route-texte conteneur-gauche">
-      <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:2" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p q-fil-nouvelle" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Le parcours d’un texte</p>
-      <h2 id="parcours-h">De votre boîte d’envoi à la scène</h2>
-      <ol class="route-etapes">
-        <li class="route-etape" data-etape="0"><span class="route-num">1</span><span><b>L’envoi</b> Par e-mail à Thierry Blanc, coordinateur du comité, avec la fiche remplie.</span></li><li class="route-etape" data-etape="1"><span class="route-num">2</span><span><b>Trois lecteurs</b> Trois lecteurs bénévoles lisent le texte et écrivent chacun une fiche.</span></li><li class="route-etape" data-etape="2"><span class="route-num">3</span><span><b>Deux avis favorables</b> Avec deux avis favorables, le texte entre en sélection finale.</span></li><li class="route-etape" data-etape="3"><span class="route-num">4</span><span><b>La sélection finale</b> Elle est relue par l’ensemble du comité, réuni une fois par mois.</span></li><li class="route-etape" data-etape="4"><span class="route-num">5</span><span><b>L’élection</b> Les têtes du comité élisent ensemble le lauréat ; chaque comité choisit son coup de cœur.</span></li><li class="route-etape" data-etape="5"><span class="route-num">6</span><span><b>La scène et le livre</b> Le lauréat reçoit un prix en numéraire, une mise en lecture dans quatre pays et une édition chez Passage(s).</span></li>
-      </ol>
-    </div>
-    <div class="route-carte" data-effet="parcours" data-visuel aria-hidden="true">
-      <svg class="route-svg" viewBox="0 0 600 560" preserveAspectRatio="xMidYMid meet">
-        <path class="route-fond" d="M60 500 C 180 500, 120 380, 240 380 S 420 420, 450 300 S 300 200, 380 140 S 560 120, 540 50"/>
-        <path class="route-trait" data-route d="M60 500 C 180 500, 120 380, 240 380 S 420 420, 450 300 S 300 200, 380 140 S 560 120, 540 50"/>
-      </svg>
-      <span class="route-station" data-station="0"><b>1</b></span><span class="route-station" data-station="1"><b>2</b></span><span class="route-station" data-station="2"><b>3</b></span><span class="route-station" data-station="3"><b>4</b></span><span class="route-station" data-station="4"><b>5</b></span><span class="route-station" data-station="5"><b>6</b></span>
-      <span class="route-env" data-route-env><i></i></span>
-      <div class="route-livres" data-route-livres>
-        <figure class="media route-livre" style="--cadrage:50% 50%">
+<section class="etapes-texte" id="parcours" aria-labelledby="parcours-h">
+  <div class="conteneur">
+    <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:2" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p q-fil-nouvelle" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Le parcours d’un texte</p>
+    <h2 id="parcours-h" data-anime="lignes">Six étapes, de l’e-mail à la scène</h2>
+    <ol class="six-etapes" data-anime="cascade">
+      <li style="--c:#d9783c"><span class="six-num" aria-hidden="true">1</span><h3>L’envoi</h3><p>Par e-mail à Thierry Blanc, coordinateur du comité, avec la fiche remplie.</p></li><li style="--c:#5f9c8f"><span class="six-num" aria-hidden="true">2</span><h3>Trois lecteurs</h3><p>Trois lecteurs bénévoles lisent le texte et écrivent chacun une fiche.</p></li><li style="--c:#557a49"><span class="six-num" aria-hidden="true">3</span><h3>Deux avis favorables</h3><p>Avec deux avis favorables, le texte entre en sélection finale.</p></li><li style="--c:#e9b058"><span class="six-num" aria-hidden="true">4</span><h3>La sélection finale</h3><p>Elle est relue par l’ensemble du comité, réuni une fois par mois.</p></li><li style="--c:#993b35"><span class="six-num" aria-hidden="true">5</span><h3>L’élection</h3><p>Les têtes du comité élisent ensemble le lauréat ; chaque comité choisit son coup de cœur.</p></li><li style="--c:#4f2045"><span class="six-num" aria-hidden="true">6</span><h3>La scène et le livre</h3><p>Le texte lauréat est lu en public dans les pays du comité (en juin 2026 : France, Cameroun, Belgique) et édité chez Passage(s).</p></li>
+    </ol>
+    <div class="livres">
+      <p class="livres-titre">Des lauréats déjà édités chez Passage(s), collection Quartiers Intranquilles</p>
+      <ul class="livres-liste" data-anime="cascade">
+        <li><figure class="media livre" data-fx="vitesse" style="--cadrage:50% 50%">
   <picture>
-    <img src="/assets/images/site/couv-nombril-400.webp" srcset="/assets/images/site/couv-nombril-400.webp 400w" sizes="90px" alt="" width="400" height="622" loading="lazy" decoding="async">
+    <img src="/assets/images/site/couv-nombril-400.webp" srcset="/assets/images/site/couv-nombril-400.webp 400w" sizes="(max-width: 760px) 28vw, 200px" alt="Couverture : C’est là que mon nombril est enterré" width="400" height="622" loading="lazy" decoding="async">
   </picture>
-</figure><figure class="media route-livre" style="--cadrage:50% 50%">
+</figure></li><li><figure class="media livre" data-fx="vitesse" style="--cadrage:50% 50%">
   <picture>
-    <img src="/assets/images/site/couv-loin-des-hommes-400.webp" srcset="/assets/images/site/couv-loin-des-hommes-400.webp 400w" sizes="90px" alt="" width="400" height="622" loading="lazy" decoding="async">
+    <img src="/assets/images/site/couv-loin-des-hommes-400.webp" srcset="/assets/images/site/couv-loin-des-hommes-400.webp 400w" sizes="(max-width: 760px) 28vw, 200px" alt="Couverture : Loin des hommes" width="400" height="622" loading="lazy" decoding="async">
   </picture>
-</figure><figure class="media route-livre" style="--cadrage:50% 50%">
+</figure></li><li><figure class="media livre" data-fx="vitesse" style="--cadrage:50% 50%">
   <picture>
-    <img src="/assets/images/site/couv-saison-2020-400.webp" srcset="/assets/images/site/couv-saison-2020-400.webp 400w" sizes="90px" alt="" width="400" height="622" loading="lazy" decoding="async">
+    <img src="/assets/images/site/couv-saison-2020-400.webp" srcset="/assets/images/site/couv-saison-2020-400.webp 400w" sizes="(max-width: 760px) 28vw, 200px" alt="Couverture : Tranzit, Un oiseau à l’aube, Césariennes sous nos tropiques (saison 2020-2021)" width="400" height="622" loading="lazy" decoding="async">
   </picture>
-</figure>
-      </div>
+</figure></li>
+      </ul>
     </div>
   </div>
 </section>
 <section class="fiche" id="fiche" aria-labelledby="fiche-h">
   <div class="conteneur fiche-grille">
-    <figure class="media fiche-photo" data-grok data-anime="rideau" style="--cadrage:50% 50%;aspect-ratio:3 / 4">
-  <picture>
-    <img src="/assets/images/grok/g-appel-fiches-784.webp" srcset="/assets/images/grok/g-appel-fiches-480.webp 480w, /assets/images/grok/g-appel-fiches-784.webp 784w" sizes="(max-width: 760px) 100vw, 38vw" alt="Trois piles de fiches de lecture à côté d’un tapuscrit" width="784" height="1168" loading="lazy" decoding="async">
-  </picture><figcaption class="mention-ia">Illustration générée</figcaption>
-</figure>
+    <p class="fiche-chiffre" data-anime data-visuel><span>Environ</span> <strong>200</strong> <span>textes reçus par saison</span></p>
     <div>
       <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:3" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p est-pose" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p q-fil-nouvelle" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Ce que vous recevez</p>
       <h2 id="fiche-h" class="titre-axes" data-axes>Une fiche, toujours</h2>
-      <p data-anime="mots">Chaque autrice et chaque auteur reçoit une fiche de lecture détaillée. Le comité accepte aussi de relire plusieurs versions d’un même texte, ce que peu de comités font.</p>
-      <p class="fiche-chiffre" data-anime><strong data-compteur="200">200</strong> Plus de 200 pièces reçues pour la saison 22/23.</p>
+      <p>Chaque autrice et chaque auteur reçoit une fiche de lecture détaillée. Le comité accepte aussi de relire plusieurs versions d’un même texte.</p>
+      <p class="fiche-plus">Les textes qui ne sont pas lus pendant une saison le sont la suivante.</p>
     </div>
   </div>
 </section>
 <section class="depot" id="deposer" aria-labelledby="deposer-h">
   <div class="conteneur depot-grille">
     <div class="depot-texte">
-      <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:4" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p est-pose" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p est-pose" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p q-fil-nouvelle" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Déposer</p>
-      <h2 id="deposer-h" data-anime="lignes">Glissez votre texte dans l’enveloppe</h2>
-      <p>Démonstration : sur ce site, rien n’est envoyé. Aujourd’hui, l’envoi se fait par e-mail à comiteqdaa@gmail.com, avec la fiche de renseignements.</p>
-      <div class="depot-visuel" data-grille="retour" data-effet="enveloppe" data-fx="vitesse" data-visuel><div class="enveloppe" data-enveloppe aria-hidden="true">
-  <div class="env-dos"></div>
-  <div class="env-feuille" data-env-feuille><i></i><i></i><i></i><i></i></div>
-  <div class="env-face"></div>
-  <div class="env-rabat" data-env-rabat></div>
-  <span class="env-tampon" data-env-tampon>Reçu</span>
-</div><p class="env-legende" data-env-legende>lu par trois lecteurs</p></div>
+      <p class="surtitre"><svg class="q-fil" viewBox="112 52 366 456" data-grille="fil" data-effet="q-fil" style="--k:4" aria-hidden="true" focusable="false"><use href="#q-p-france" class="q-fil-p est-pose" fill="#de7943"/><use href="#q-p-cameroun" class="q-fil-p est-pose" fill="#57814e"/><use href="#q-p-belgique" class="q-fil-p est-pose" fill="#6aa699"/><use href="#q-p-canada" class="q-fil-p est-pose" fill="#e9b058"/><use href="#q-p-coups" class="q-fil-p q-fil-nouvelle" fill="#993b35"/><use href="#q-p-laureate" class="q-fil-p" fill="#4f2045"/><use href="#q-lettre" class="q-fil-l"/></svg>Envoyer</p>
+      <h2 id="deposer-h" data-anime="lignes">Votre texte part par e-mail</h2>
+      <p>Pas de formulaire : le comité reçoit les textes par e-mail, avec la fiche de renseignements remplie. L’appel est ouvert toute l’année.</p>
+      <figure class="mail-apercu" data-visuel>
+        <dl>
+          <dt>À</dt><dd>comiteqdaa@gmail.com</dd>
+          <dt>Objet</dt><dd>Envoi d’un texte, appel 26/27</dd>
+          <dt>Pièces jointes</dt><dd><span class="pj">votre texte</span> <span class="pj">la fiche 26/27 remplie</span></dd>
+        </dl>
+        <figcaption>L’e-mail à envoyer</figcaption>
+      </figure>
     </div>
-    <form class="etapes" data-formulaire data-etapes-form novalidate aria-labelledby="deposer-h">
-      <p class="etapes-annonce" id="etapes-annonce">Trois étapes : vous, le texte, le récapitulatif.</p>
-      <ol class="etapes-fil" aria-hidden="true"><li class="actif">Vous</li><li>Le texte</li><li>Récapitulatif</li></ol>
-      <fieldset class="etape" data-etape-form="0">
-        <legend>Vous</legend>
-        <div class="champ"><label for="d-nom">Nom et prénom</label><input id="d-nom" name="nom" autocomplete="name" required></div>
-        <div class="champ"><label for="d-email">E-mail</label><input id="d-email" name="email" type="email" autocomplete="email" required></div>
-        <div class="champ"><label for="d-pays">Pays</label><input id="d-pays" name="pays" autocomplete="country-name" required></div>
-        <p><button type="button" class="bouton" data-etape-suivante>Continuer</button></p>
-      </fieldset>
-      <fieldset class="etape" data-etape-form="1" hidden>
-        <legend>Le texte</legend>
-        <div class="champ"><label for="d-titre">Titre du texte</label><input id="d-titre" name="titre" required></div>
-        <div class="champ"><label for="d-annee">Année d’écriture</label><input id="d-annee" name="annee" inputmode="numeric" pattern="[0-9]{4}" required></div>
-        <div class="champ champ-fichier"><label for="d-fichier">Votre texte (PDF)</label><input id="d-fichier" name="fichier" type="file" accept=".pdf,application/pdf"><p class="champ-aide">Glissez le fichier ici ou choisissez-le. Démonstration : rien n’est envoyé.</p></div>
-        <div class="champ champ-fichier"><label for="d-fiche">La fiche de renseignements remplie (PDF)</label><input id="d-fiche" name="fiche" type="file" accept=".pdf,application/pdf"></div>
-        <div class="champ champ-case"><input id="d-fr" name="francais" type="checkbox" value="oui" required><label for="d-fr">Le texte est écrit en français, sans traduction</label></div>
-        <div class="champ champ-case"><input id="d-inedit" name="inedit" type="checkbox" value="oui" required><label for="d-inedit">Le texte n’est pas encore édité</label></div>
-        <p class="etapes-boutons"><button type="button" class="bouton bouton--contour" data-etape-precedente>Revenir</button> <button type="button" class="bouton" data-etape-suivante>Continuer</button></p>
-      </fieldset>
-      <fieldset class="etape" data-etape-form="2" hidden>
-        <legend>Récapitulatif</legend>
-        <dl class="recap" data-recap></dl>
-        <p class="mention-donnees">Vos données servent seulement à traiter votre envoi. Politique de confidentialité : à compléter.</p>
-        <p class="etapes-boutons"><button type="button" class="bouton bouton--contour" data-etape-precedente>Revenir</button> <button type="submit" class="bouton">Glisser dans l’enveloppe</button></p>
-      </fieldset>
-      <p data-message-envoi data-texte="Démonstration : rien n’a été envoyé. Sur le site final, votre texte partira vers le comité." tabindex="-1" hidden></p>
-    </form>
+    <div class="depot-envoi">
+      <ol class="depot-etapes" data-anime="cascade">
+        <li><span class="six-num" aria-hidden="true">1</span><div><h3>Remplir la fiche</h3><p>La fiche de renseignements 26/27, en PDF.</p><p><a class="lien-fleche" href="https://3028e62e-0d54-43bc-897f-dc8b2bf3f9ef.filesusr.com/ugd/17efc3_eb2ab16afec24ccfbb98b40b9053f34f.pdf" target="_blank" rel="noopener" aria-label="Fiche de renseignements 26/27 (PDF) (nouvel onglet)">Fiche de renseignements 26/27 (PDF)</a></p></div></li>
+        <li><span class="six-num" aria-hidden="true">2</span><div><h3>Joindre le texte</h3><p>Votre texte et la fiche remplie, en pièces jointes.</p></div></li>
+        <li><span class="six-num" aria-hidden="true">3</span><div><h3>Écrire au comité</h3><p>À l’adresse du Quartier, avec l’objet « Envoi d’un texte, appel 26/27 ».</p><p class="depot-adresse"><a href="mailto:comiteqdaa@gmail.com?subject=Envoi%20d%E2%80%99un%20texte%2C%20appel%2026%2F27">comiteqdaa@gmail.com</a></p></div></li>
+      </ol>
+      <p class="depot-action"><a class="bouton bouton--grand" href="mailto:comiteqdaa@gmail.com?subject=Envoi%20d%E2%80%99un%20texte%2C%20appel%2026%2F27" data-survol="magnetique">Envoyer un texte par e-mail</a></p>
+      <p class="depot-note">Votre messagerie s’ouvre avec l’adresse et l’objet déjà remplis.</p>
+    </div>
   </div>
 </section>
 </main>
@@ -269,7 +240,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
       <p class="pied-texte">Comité de lecture international des écritures dramatiques contemporaines de langue française. Association loi 1901 depuis mai 2020.</p>
     </div>
     <div>
-      <p><strong>Nous trouver</strong></p>
+      <p><strong>Adresse</strong></p>
       <p>Théâtre des Quartiers d&#39;Ivry, Centre Dramatique National du Val-de-Marne<br>Manufacture des Œillets, 1 place Pierre Gosnat, 94200 Ivry-sur-Seine<br><a href="mailto:comiteqdaa@gmail.com">comiteqdaa@gmail.com</a></p>
       <p><a href="https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/" target="_blank" rel="noopener" aria-label="Facebook (nouvel onglet)">Facebook</a></p>
     </div>
@@ -287,8 +258,7 @@ setTimeout(function () { if (!d.classList.contains('demarre')) d.classList.add('
   </div>
   <div class="conteneur pied-bas"><p>Maquette : les informations marquées « à compléter » seront fournies par le Quartier.</p><p>Mentions légales : à compléter · Politique de confidentialité : à compléter</p><p>© Le Quartier des Autrices et des Auteurs</p></div>
 </footer>
-<div data-barre-fixe>
-  <a class="bouton bouton--contour" href="mailto:comiteqdaa@gmail.com">E-mail</a>
+<div data-barre-fixe class="barre-une">
   <a class="bouton" href="/appel-a-textes#deposer" data-libelle="L’appel à textes">Envoyer un texte</a>
 </div>
 </body>

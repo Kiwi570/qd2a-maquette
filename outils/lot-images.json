@@ -1,103 +1,10 @@
 [
  {
-  "source": "recu/grokzip/qd2a-images/g-accueil-ouverture.jpg",
-  "nom": "grok/g-accueil-ouverture",
-  "largeurs": [
-   640,
-   1168
-  ],
-  "source_mobile": "recu/grokzip/qd2a-images/g-accueil-ouverture-mobile.jpg"
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-accueil-lecture.jpg",
-  "nom": "grok/g-accueil-lecture",
-  "largeurs": [
-   640,
-   1168
-  ],
-  "source_mobile": "recu/grokzip/qd2a-images/g-accueil-lecture-mobile.jpg"
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-saison-ouverture.jpg",
-  "nom": "grok/g-saison-ouverture",
-  "largeurs": [
-   640,
-   1168
-  ],
-  "source_mobile": "recu/grokzip/qd2a-images/g-saison-ouverture-mobile.jpg"
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-appel-ouverture.jpg",
-  "nom": "grok/g-appel-ouverture",
-  "largeurs": [
-   640,
-   1168
-  ],
-  "source_mobile": "recu/grokzip/qd2a-images/g-appel-ouverture-mobile.jpg"
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-hydre-ouverture.jpg",
-  "nom": "grok/g-hydre-ouverture",
-  "largeurs": [
-   640,
-   1168
-  ],
-  "source_mobile": "recu/grokzip/qd2a-images/g-hydre-ouverture-mobile.jpg"
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-accueil-appel.jpg",
-  "nom": "grok/g-accueil-appel",
-  "largeurs": [
-   640,
-   1168
-  ]
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-saison-lectures.jpg",
-  "nom": "grok/g-saison-lectures",
-  "largeurs": [
-   640,
-   1168
-  ]
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-hydre-marais.jpg",
-  "nom": "grok/g-hydre-marais",
-  "largeurs": [
-   640,
-   1168
-  ]
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-contact-bandeau.jpg",
-  "nom": "grok/g-contact-bandeau",
-  "largeurs": [
-   640,
-   1168
-  ]
- },
- {
   "source": "recu/grokzip/qd2a-images/g-404.jpg",
   "nom": "grok/g-404",
   "largeurs": [
    640,
    1168
-  ]
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-accueil-lecteur.jpg",
-  "nom": "grok/g-accueil-lecteur",
-  "largeurs": [
-   480,
-   784
-  ]
- },
- {
-  "source": "recu/grokzip/qd2a-images/g-appel-fiches.jpg",
-  "nom": "grok/g-appel-fiches",
-  "largeurs": [
-   480,
-   784
   ]
  },
  {
@@ -176,38 +83,6 @@
   "cadrage": [
    49,
    55
-  ]
- },
- {
-  "source": "recu/site/qd2a-recu/qd2a-france.png",
-  "nom": "site/comite-france",
-  "largeurs": [
-   480,
-   900
-  ]
- },
- {
-  "source": "recu/site/qd2a-recu/qd2a-belgique-3.png",
-  "nom": "site/comite-belgique",
-  "largeurs": [
-   480,
-   900
-  ]
- },
- {
-  "source": "recu/site/qd2a-recu/qd2a-cameroun.png",
-  "nom": "site/comite-cameroun",
-  "largeurs": [
-   480,
-   900
-  ]
- },
- {
-  "source": "recu/site/qd2a-recu/qd2a-canada.png",
-  "nom": "site/comite-canada",
-  "largeurs": [
-   480,
-   900
   ]
  },
  {

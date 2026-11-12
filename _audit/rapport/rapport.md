@@ -1,15 +1,29 @@
 # Rapport d’audit
 
-Projet : `qd2a-maquette` · 12/11/2026 17:26:40 · 3 min · 1 page(s) · audit standard ciblé sur / (étapes : fichiers, mesures, mouvement, fluidite, films)
+Projet : `qd2a-maquette` · 12/11/2026 19:05:36 · 6 min · 4 page(s) · audit complet ciblé sur /appel-a-textes,/contact,/hydre,/saison (étapes : bords, ecran, mouvement, fluidite)
 
 ## Résumé
 
 - Statut : **tout a tourné, aucun échec**
-- Passe : `20261112-162349-standard-cible-partiel` · version ?v=3
+- Passe : `20261112-175940-complet-cible-partiel` · version ?v=4
 - Échecs : **0**
-- À regarder : **5**
+- À regarder : **3**
 - Non lancé : **0**
-- Contrôles passés : vercel.json (1), .vercelignore (1), robots.txt (1), numéro de version (1), langues (1), mesures (14), balayage (1), films d’ouverture (2), films de transition (2), fluidité (2), défilement selon l’appareil (5), mouvement (2), effets du plan (11), souris immobile (4)
+- Contrôles passés : bords de l’écran (5), fluidité (8), défilement selon l’appareil (5), mouvement (8), effets du plan (11), souris immobile (8)
+
+## Passes de cette version (?v=4)
+
+Chaque passe garde son rapport dans `_audit/passes/` : une relance ciblée ne fait pas disparaître la preuve d’une passe plus large.
+
+| Passe | Niveau | Pages | Étapes | Échecs | À regarder | Non lancé | Statut |
+|---|---|---|---|---:|---:|---:|---|
+| 20261112-170642-rapide | rapide | toutes | toutes | 0 | 2 | 1 | complet |
+| 20261112-171432-complet | complet | toutes | toutes | 29 | 4 | 1 | échecs |
+| 20261112-174009-complet-cible-partiel | complet | /,/appel-a-textes,/contact,/hydre,/saison | fichiers, mesures | 9 | 0 | 0 | échecs |
+| 20261112-174825-complet-cible-partiel | complet | /,/appel-a-textes,/contact,/hydre,/saison | fichiers, mesures | 3 | 0 | 0 | échecs |
+| 20261112-175538-complet-cible-partiel | complet | /,/hydre | fichiers, mesures | 1 | 0 | 0 | échecs |
+| 20261112-175817-complet-cible-partiel | complet | /hydre | fichiers, mesures | 0 | 0 | 0 | complet |
+| **20261112-175940-complet-cible-partiel** (celle-ci) | complet | /appel-a-textes,/contact,/hydre,/saison | bords, ecran, mouvement, fluidite | 0 | 3 | 0 | complet |
 
 ## Échecs
 
@@ -17,19 +31,11 @@ Aucun.
 
 ## À regarder
 
-### « à compléter » visible (2)
+### effet qui ne bouge pas au défilement (3)
 
-- **« à compléter » visible** — `appel-a-textes.html` — 1 fois hors du pied de page : remplacer par une phrase vraie qui oriente le visiteur (« Tarifs selon la saison, donnés à la réservation ») ou retirer l'élément, et le noter dans la fiche du README (sauf sens propre : « dossier à compléter »)
-- **« à compléter » visible** — `contact.html` — 1 fois hors du pied de page : remplacer par une phrase vraie qui oriente le visiteur (« Tarifs selon la saison, donnés à la réservation ») ou retirer l'élément, et le noter dans la fiche du README (sauf sens propre : « dossier à compléter »)
-
-### journal du projet (1)
-
-- **journal du projet** — aucune entrée pour la version 3 de donnees/site.json
-
-### retour avant : changement brusque (2)
-
-- **retour avant : changement brusque** — `/saison` — à 81 ms (différence 61 %) (films/retour-avant-1366.png) _(1366×768 retour avant)_
-- **retour avant : changement brusque** — `/saison` — à 81 ms (différence 55 %) (films/retour-avant-390.png) _(390×844 retour avant)_
+- **effet qui ne bouge pas au défilement** — `/appel-a-textes` — div.trois-lecteurs.trois-lecteurs--grand — trois-lecteurs : il ne bouge ni au défilement ni tout seul à cette taille (effet au survol, au clic, ou réservé à l'ordinateur ?) ; il ne compte pas comme effet de section _(1366×768 normal, 390×844 normal)_
+- **effet qui ne bouge pas au défilement** — `/saison` — ol.sommaire-liste — sommaire : il ne bouge ni au défilement ni tout seul à cette taille (effet au survol, au clic, ou réservé à l'ordinateur ?) ; il ne compte pas comme effet de section _(1366×768 normal, 390×844 normal)_
+- **effet qui ne bouge pas au défilement** — `/hydre` — ul.tetes-liste — tetes : il ne bouge ni au défilement ni tout seul à cette taille (effet au survol, au clic, ou réservé à l'ordinateur ?) ; il ne compte pas comme effet de section _(390×844 normal)_
 
 ## Non lancé
 
@@ -38,13 +44,21 @@ Tout a été lancé.
 
 ## Repères
 
-- Numéro de version des fichiers : ?v=3
-- Audit standard : étapes lourdes sur /.
 - Accessibilité : axe-core 4.12.1 en plus des contrôles intégrés.
-- Ouverture / (1366×768) : 2816 ms depuis le premier octet
-- Ouverture / (390×844) : 2825 ms depuis le premier octet
-- Fluidité / 1366×768 (molette) : 0 % d'images lentes sur 368, tâche la plus longue 58 ms
-- Fluidité / 390×844 (doigt) : 0 % d'images lentes sur 1345, tâche la plus longue 0 ms
+- bords de l’écran /appel-a-textes 1920×1080 : réussi à la tentative 2 (avant : cdpSession.send: Protocol error (Page.startScreencast): Not attached to an active page)
+- Bords de l’écran : 487 images d’intro, 8 de voile et 116 de menu jugées (panneau immobile couvrant tout l’écran), barre de défilement classique de 15 px.
+- Tient dans l'écran /appel-a-textes : aucune section épinglée ou plein écran.
+- Tient dans l'écran /contact : aucune section épinglée ou plein écran.
+- Tient dans l'écran /hydre : aucune section épinglée ou plein écran.
+- Tient dans l'écran /saison : aucune section épinglée ou plein écran.
+- Fluidité /appel-a-textes 1366×768 (molette) : 0 % d'images lentes sur 227, tâche la plus longue 0 ms
+- Fluidité /contact 1366×768 (molette) : 0 % d'images lentes sur 175, tâche la plus longue 0 ms
+- Fluidité /hydre 1366×768 (molette) : 0 % d'images lentes sur 238, tâche la plus longue 0 ms
+- Fluidité /saison 1366×768 (molette) : 0 % d'images lentes sur 330, tâche la plus longue 0 ms
+- Fluidité /appel-a-textes 390×844 (doigt) : 0 % d'images lentes sur 1342, tâche la plus longue 0 ms
+- Fluidité /contact 390×844 (doigt) : 0 % d'images lentes sur 1337, tâche la plus longue 0 ms
+- Fluidité /hydre 390×844 (doigt) : 0 % d'images lentes sur 1334, tâche la plus longue 0 ms
+- Fluidité /saison 390×844 (doigt) : 0 % d'images lentes sur 1343, tâche la plus longue 0 ms
 
 ## Fichiers
 
