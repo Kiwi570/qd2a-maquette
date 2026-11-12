@@ -51,7 +51,7 @@ function rendre(v, dansBalise) {
 }
 
 /* Attributs techniques : jamais de typographie (une espace insécable casserait sizes, media, srcset…). */
-const TECHNIQUES = /(?:^|\s)(href|src|srcset|sizes|media|action|style|class|id|for|type|rel|name|value|lang|hreflang|role|target|loading|decoding|fetchpriority|width|height|tabindex|autocomplete|aria-controls|aria-describedby|aria-labelledby|aria-current|aria-expanded|aria-hidden|d|viewBox|points|transform|pathLength|cx|cy|r|x|y|data-(?!libelle)[\w-]*)=["']$/i;
+const TECHNIQUES = /(?:^|\s)(href|src|srcset|sizes|media|action|method|enctype|accept|style|class|id|for|form|list|type|rel|name|value|lang|hreflang|role|target|loading|decoding|fetchpriority|width|height|tabindex|autocomplete|inputmode|enterkeyhint|pattern|min|max|step|minlength|maxlength|datetime|colspan|rowspan|aria-controls|aria-describedby|aria-labelledby|aria-current|aria-expanded|aria-hidden|d|viewBox|points|transform|gradientTransform|patternTransform|preserveAspectRatio|pathLength|cx|cy|r|rx|ry|fx|fy|x|y|x1|y1|x2|y2|dx|dy|offset|fill|stroke|stroke-width|stroke-dasharray|stroke-dashoffset|stroke-linecap|stroke-linejoin|opacity|fill-opacity|stop-color|stop-opacity|xmlns|xmlns:xlink|xlink:href|data-(?!libelle)[\w-]*)=["']$/i;
 /* Attributs de texte : typographie sans ajout d'espace (alt, title, aria-label, placeholder, content, data-libelle…). */
 const ATTRIBUT = /(?:^|\s)[\w:-]+=["']$/;
 

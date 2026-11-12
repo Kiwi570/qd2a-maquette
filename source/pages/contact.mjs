@@ -27,7 +27,7 @@ export default (c) => html`
 <section class="ecrire" id="formulaire" aria-labelledby="formulaire-h">
   <div class="conteneur ecrire-grille">
     <form class="ecrire-form" data-formulaire data-form-lettre novalidate aria-labelledby="formulaire-h">
-      <h2 id="formulaire-h" class="axes" data-axes data-grille="typo">${c.t('contact.formulaire.titre')}</h2>
+      <h2 id="formulaire-h" class="titre-axes" data-axes data-grille="typo">${c.t('contact.formulaire.titre')}</h2>
       <p>${c.t('contact.formulaire.texte')}</p>
       <div class="champ"><label for="c-nom">${c.t('contact.formulaire.nom')}</label><input id="c-nom" name="nom" autocomplete="name" required></div>
       <div class="champ"><label for="c-email">${c.t('contact.formulaire.email')}</label><input id="c-email" name="email" type="email" autocomplete="email" required></div>

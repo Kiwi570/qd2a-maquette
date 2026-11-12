@@ -1,0 +1,225 @@
+{
+ "explication": "Vitrine du projet : des ouvertures de la bibliothèque à dépasser, jamais à imiter (ni leur idée, ni leur mise en page).",
+ "activite": [
+  "association",
+  "culture"
+ ],
+ "metier": "comité de lecture",
+ "besoin": [
+  "agenda",
+  "inscription"
+ ],
+ "ton": [
+  "chaleureux"
+ ],
+ "univers": [],
+ "ambiance": [],
+ "concept": [],
+ "depot": "qd2a-maquette",
+ "ecartees": [
+  "qd2a-maquette"
+ ],
+ "ouvertures": [
+  {
+   "rang": 1,
+   "id": "la-voie-du-sensible-maquette/debut",
+   "maquette": "la-voie-du-sensible-maquette",
+   "client": "praticienne en soins énergétiques, rituels, Roue Médecine, ateliers de création et art-thérapie dans la Drôme",
+   "metier": "praticienne en soins énergétiques",
+   "activite": [
+    "bien-être",
+    "culture"
+   ],
+   "pourquoi": [
+    "même activité",
+    "besoin agenda, inscription",
+    "clair et sombre alternés (20 % sombre)",
+    "trait-qui-se-dessine"
+   ],
+   "lumiere": "mixte",
+   "part_sombre": 20,
+   "note_section": 5,
+   "note_maquette": 82,
+   "titre": "La Voiedu Sensible",
+   "description": "« La Voie du Sensible » : portrait dans une roue aux quatre directions (N, E, S, O) dont l'arc de la saison du jour s'allume",
+   "familles": [
+    "trait-qui-se-dessine"
+   ],
+   "plan": null,
+   "module": null,
+   "fiche": "sections/la-voie-du-sensible-maquette/debut.json",
+   "capture": "medias/la-voie-du-sensible-maquette/debut-p1440.jpg",
+   "video": "medias/la-voie-du-sensible-maquette/debut-p720.mp4",
+   "en_ligne": "https://la-voie-du-sensible-maquette.vercel.app"
+  },
+  {
+   "rang": 2,
+   "id": "libre-solidaire-maquette/haut",
+   "maquette": "libre-solidaire-maquette",
+   "client": "maison d'édition indépendante (essais sur l'environnement, la société, la vigne)",
+   "metier": "maison d'édition",
+   "activite": [
+    "culture",
+    "commerce"
+   ],
+   "pourquoi": [
+    "même activité",
+    "besoin agenda, inscription",
+    "ambiance chaleureux",
+    "style sombre (91 % sombre)",
+    "3d",
+    "webgl"
+   ],
+   "lumiere": "sombre",
+   "part_sombre": 91,
+   "note_section": 4,
+   "note_maquette": 89,
+   "titre": "Héros : sol vivant et livres en 3D",
+   "description": "La photo de sol devient une matière vivante en WebGL (OGL, Flowmap) : le curseur laisse une trace liquide et porte une lumière dorée rasante. Trois nouveautés en livres 3D inclinables au pointeur à côté du titre.",
+   "familles": [
+    "3d",
+    "webgl"
+   ],
+   "plan": null,
+   "module": null,
+   "fiche": "sections/libre-solidaire-maquette/haut.json",
+   "capture": "medias/libre-solidaire-maquette/haut-p1440.jpg",
+   "video": "medias/libre-solidaire-maquette/haut-p720.mp4",
+   "en_ligne": "https://libre-solidaire-maquette.vercel.app"
+  },
+  {
+   "rang": 3,
+   "id": "fanfare-dongelberg-maquette/debut",
+   "maquette": "fanfare-dongelberg-maquette",
+   "client": "fanfare royale de village en Brabant wallon : concerts, cortèges, commémorations, école de musique",
+   "metier": "fanfare",
+   "activite": [
+    "association",
+    "culture"
+   ],
+   "pourquoi": [
+    "même activité",
+    "besoin agenda, inscription",
+    "ambiance chaleureux",
+    "clair et sombre alternés (44 % sombre)",
+    "webgl"
+   ],
+   "lumiere": "mixte",
+   "part_sombre": 44,
+   "note_section": 4,
+   "note_maquette": 84,
+   "titre": "Dongelberg",
+   "description": "« Dongelberg » en or sur bleu nuit, guirlande de fanions, photo de la fanfare en cortège sous un effet WebGL, prochain rendez-vous",
+   "familles": [
+    "webgl"
+   ],
+   "plan": null,
+   "module": null,
+   "fiche": "sections/fanfare-dongelberg-maquette/debut.json",
+   "capture": "medias/fanfare-dongelberg-maquette/debut-p1440.jpg",
+   "video": "medias/fanfare-dongelberg-maquette/debut-p720.mp4",
+   "en_ligne": "https://fanfare-dongelberg-maquette.vercel.app"
+  },
+  {
+   "rang": 4,
+   "id": "pausephoto65-maquette/ouverture",
+   "maquette": "pausephoto65-maquette",
+   "client": "photographe portraitiste et d'événements à Tarbes (Hautes-Pyrénées) : séances, saisons, mariages, baptêmes",
+   "metier": "photographe",
+   "activite": [
+    "culture",
+    "commerce"
+   ],
+   "pourquoi": [
+    "même activité",
+    "ambiance chaleureux",
+    "style clair (10 % sombre)",
+    "objet-manipulable"
+   ],
+   "lumiere": "clair",
+   "part_sombre": 10,
+   "note_section": 5,
+   "note_maquette": 84,
+   "titre": "Faites unepause.",
+   "description": "« Faites une pause. » : pluie de tirages photo qui tombent autour du titre, à attraper",
+   "familles": [
+    "objet-manipulable"
+   ],
+   "plan": null,
+   "module": null,
+   "fiche": "sections/pausephoto65-maquette/ouverture.json",
+   "capture": "medias/pausephoto65-maquette/ouverture-p1440.jpg",
+   "video": "medias/pausephoto65-maquette/ouverture-p720.mp4",
+   "en_ligne": "https://pausephoto65-maquette.vercel.app"
+  },
+  {
+   "rang": 5,
+   "id": "jeanf-maquette/debut",
+   "maquette": "jeanf-maquette",
+   "client": "artiste plasticien et vidéaste nomade à Bruxelles (peintures, sculptures, films, résidences), site bilingue",
+   "metier": "artiste plasticien",
+   "activite": [
+    "culture"
+   ],
+   "pourquoi": [
+    "même activité",
+    "besoin agenda",
+    "clair et sombre alternés (20 % sombre)",
+    "masque"
+   ],
+   "lumiere": "mixte",
+   "part_sombre": 20,
+   "note_section": 5,
+   "note_maquette": 86,
+   "titre": "JeanF, Nomade Polymedia",
+   "description": "« JeanF, Nomade Polymedia » : œuvre accrochée au mur de plâtre dont les volets s'ouvrent, étiquette de musée",
+   "familles": [
+    "masque"
+   ],
+   "plan": null,
+   "module": null,
+   "fiche": "sections/jeanf-maquette/debut.json",
+   "capture": "medias/jeanf-maquette/debut-p1440.jpg",
+   "video": "medias/jeanf-maquette/debut-p720.mp4",
+   "en_ligne": "https://jeanf-maquette.vercel.app"
+  },
+  {
+   "rang": 6,
+   "id": "francis-gerardin-maquette/hero",
+   "maquette": "francis-gerardin-maquette",
+   "client": "animateur d'événements, formateur par l'improvisation et coach personnel à Strasbourg",
+   "metier": "animateur et formateur",
+   "activite": [
+    "conseil",
+    "formation",
+    "spectacle"
+   ],
+   "pourquoi": [
+    "activité proche",
+    "besoin agenda",
+    "style clair (14 % sombre)",
+    "lumiere-pointeur",
+    "webgl",
+    "masque"
+   ],
+   "lumiere": "clair",
+   "part_sombre": 14,
+   "note_section": 5,
+   "note_maquette": 87,
+   "titre": "Héros raturé et photo en trame",
+   "description": "Titre en lignes masquées, puis « Pour vous animer former coacher » rayés un à un au stylo rouge (DrawSVG) et remplacés par « accompagner » souligné à la main ; la photo naît d'une trame offset en WebGL (OGL) avec loupe sous le curseur et se dissout au défilement. Repli : l'image simple.",
+   "familles": [
+    "lumiere-pointeur",
+    "webgl",
+    "masque",
+    "trait-qui-se-dessine"
+   ],
+   "plan": null,
+   "module": "rature-au-stylo",
+   "fiche": "sections/francis-gerardin-maquette/hero.json",
+   "capture": "medias/francis-gerardin-maquette/hero-p1440.jpg",
+   "video": "medias/francis-gerardin-maquette/hero-p720.mp4",
+   "en_ligne": "https://francis-gerardin-maquette.vercel.app"
+  }
+ ]
+}

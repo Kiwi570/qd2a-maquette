@@ -77,6 +77,91 @@
   "accueil": {
     "hero": {
       "surtitre": "Comité de lecture international · depuis 2020",
+      "l1": "Le Quartier",
+      "l2": "des Autrices",
+      "l3": "et des Auteurs",
+      "texte": "Nous lisons les écritures dramatiques contemporaines de langue française, d’où qu’elles viennent. Près de 50 lecteurs, quatre comités, et chaque texte reçu lu par trois d’entre eux.",
+      "action": "Envoyer un texte",
+      "info": "Appel à textes 26/27 ouvert, sans date limite",
+      "q": "Le logo du Quartier, fait des visages du comité",
+      "consigne": "Attrapez une tête de l’Hydre",
+      "consigneTactile": "Faites glisser une forme du Q",
+      "france": "QD2A France",
+      "belgique": "QD2A Belgique",
+      "cameroun": "QD2A Cameroun",
+      "canada": "QD2A Canada",
+      "coups": "Coups de cœur 25/26",
+      "laureate": "Lauréate 25/26",
+      "franceD": "Le comité d’origine, à Ivry-sur-Seine",
+      "belgiqueD": "La tête bruxelloise",
+      "camerounD": "Arrivé à la rentrée 24/25",
+      "canadaD": "Arrivé à la rentrée 25/26",
+      "coupsD": "Choisis par les quatre comités",
+      "laureateD": "Stephie Mazunya, Chronologies",
+      "ecarter": "écarter"
+    },
+    "lecteurs": {
+      "surtitre": "Le comité",
+      "titre": "Près de 50 lecteurs, quatre têtes",
+      "texte": "Autrices, auteurs, comédiennes, metteurs en scène, lecteurs : tous bénévoles, en France, en Belgique, au Cameroun et au Canada. Chacun lit à sa façon, et c’est ce qui fait le comité.",
+      "filtres": "Afficher un comité",
+      "tous": "Les quatre",
+      "france": "France",
+      "belgique": "Belgique",
+      "cameroun": "Cameroun",
+      "canada": "Canada",
+      "groupe": "Membres du QD2A {pays}",
+      "lieuFrance": "Ivry-sur-Seine",
+      "lieuBelgique": "Bruxelles",
+      "lieuCameroun": "Yaoundé",
+      "lieuCanada": "Depuis 25/26",
+      "lien": "Rencontrer l’Hydre",
+      "note": "Les visages publiés sur le site du Quartier."
+    },
+    "trajet": {
+      "surtitre": "Comment un texte est lu",
+      "titre": "D’un e-mail à la scène",
+      "e1t": "Un texte arrive",
+      "e1": "Par e-mail, avec sa fiche de renseignements. L’appel est ouvert toute l’année : plus de 200 textes reçus pour la saison 22/23.",
+      "e2t": "Trois lecteurs",
+      "e2": "Trois lecteurs bénévoles le lisent, et chacun écrit sa fiche.",
+      "e3t": "Deux avis favorables",
+      "e3": "Deux avis favorables suffisent pour passer en sélection finale.",
+      "e4t": "26 textes en sélection finale",
+      "e4": "Saison 25/26 : 26 textes venus de 12 pays, relus par tout le comité.",
+      "e5t": "Une lauréate, quatre coups de cœur",
+      "e5": "Les quatre comités élisent ensemble la lauréate ; chacun choisit aussi son coup de cœur.",
+      "e6t": "Lus à voix haute",
+      "e6": "En juin 2026 : France le 3, Cameroun le 6, Belgique le 12.",
+      "texteRecu": "Texte reçu",
+      "fiche": "Fiche",
+      "lecteur": "Lecteur {n}",
+      "favorable": "Favorable",
+      "reserve": "Réservé",
+      "selection": "26 textes · 12 pays",
+      "laureate": "Lauréate",
+      "coup": "Coup de cœur",
+      "region": "Le trajet d’un texte, de l’envoi à la lecture publique",
+      "mailA": "À",
+      "mailObjet": "Objet",
+      "mailObjetTexte": "Envoi d’un texte, appel 26/27",
+      "mailPj": "Pièces jointes",
+      "mailPjTexte": "mon-texte.pdf · fiche-26-27.pdf"
+    },
+    "saison": {
+      "surtitre": "Saison 25/26 · la lauréate",
+      "titre": "Chronologies",
+      "texte": "Deux jeunes femmes, deux trajectoires qui se croisent et s’éloignent : l’éveil, l’écriture, l’épreuve du retour au pays.",
+      "distinctions": "Distinctions",
+      "lien": "Toute la saison 25/26",
+      "coupsTitre": "Et les quatre coups de cœur",
+      "comite": "Choisi par",
+      "alt": "Stephie Mazunya, autrice de Chronologies, assise sur une chaise en rotin",
+      "consigne": "Feuilletez le tapuscrit",
+      "consigneTactile": "Faites glisser le tapuscrit"
+    },
+    "hero2": {
+      "surtitre": "Comité de lecture international · depuis 2020",
       "titre": "Le Quartier des Autrices et des Auteurs",
       "texte": "Nous lisons les écritures dramatiques contemporaines de langue française, d’où qu’elles viennent. Près de 50 lecteurs, quatre comités, et chaque texte reçu lu par trois d’entre eux.",
       "action": "Envoyer un texte",
@@ -103,59 +188,23 @@
       "l3": "et des Auteurs",
       "tampon": "QD2A 25/26"
     },
-    "titres": {
-      "titre": "Les 26 textes de la sélection finale 25/26"
-    },
-    "lecture": {
-      "surtitre": "Comment un texte est lu",
-      "titre": "Trois lecteurs, trois fiches, puis tout le comité",
-      "consigne": "Faites pivoter la table",
-      "e1t": "Le texte arrive",
-      "e1": "Par e-mail, avec sa fiche de renseignements. L’appel est ouvert toute l’année.",
-      "e2t": "Trois lecteurs",
-      "e2": "Trois lecteurs bénévoles le lisent, et chacun écrit sa fiche.",
-      "e3t": "Deux avis favorables",
-      "e3": "Deux avis favorables suffisent pour passer en sélection finale.",
-      "e4t": "Tout le comité relit",
-      "e4": "La sélection finale est relue par l’ensemble du comité, qui se réunit une fois par mois.",
-      "e5t": "Un lauréat, élu en commun",
-      "e5": "Les quatre comités élisent ensemble le lauréat ; chacun choisit aussi son coup de cœur.",
-      "fiche": "Fiche de lecture",
-      "lecteur": "Lecteur",
-      "favorable": "Favorable",
-      "pile": "Sélection finale",
-      "laureat": "Lauréat",
-      "alt": "Lecteur de dos annotant un tapuscrit au crayon rouge",
-      "recu": "Texte reçu"
-    },
-    "saison": {
-      "surtitre": "Saison 25/26",
-      "titre": "Une lauréate, quatre coups de cœur",
-      "texte": "Faites tourner : la lauréate internationale et les coups de cœur des comités.",
-      "region": "Carrousel de la saison 25/26",
-      "precedent": "Texte précédent",
-      "suivant": "Texte suivant",
-      "lien": "Toute la saison 25/26",
-      "laureate": "Lauréate internationale",
-      "coup": "Coup de cœur"
-    },
-    "plein": {
-      "g": "Lu",
-      "d": "à voix haute",
-      "titre": "Le lauréat est lu à voix haute",
-      "apres": "Chaque année, le texte lauréat est mis en lecture dans les pays du comité. En juin 2026 : France le 3, Cameroun le 6, Belgique le 12.",
-      "alt": "Plateau vide préparé pour une lecture, quatre pupitres éclairés"
+    "lu": {
+      "surtitre": "Juin 2026",
+      "titre": "Lu à voix haute, dans trois pays",
+      "texte": "Chaque année, la lauréate et le coup de cœur de chaque comité sont mis en lecture publique.",
+      "alt": "Projecteurs de théâtre allumés au-dessus d’une scène"
     },
     "hydre": {
       "surtitre": "Le manifeste",
-      "avant": "un comité de lecture",
-      "apres": "une Hydre de Lerne",
-      "titreDebut": "Le Quartier n’est pas seulement",
-      "titreFin": "C’est",
+      "titreDebut": "Le Quartier n’est pas seulement un comité de lecture.",
+      "titreFin": "C’est une Hydre de Lerne.",
       "texte": "Un comité aux têtes nombreuses, autrices, auteurs, comédiennes, metteurs en scène, lecteurs, dont aucune ne lit pareil. Lire, ici, est une expérience vivante : on y engage le lecteur, l’autre, et la conversation.",
-      "signature": "D’après le manifeste de Laëtitia Ajanohun, autrice, metteuse en scène, comédienne et membre du QD2A. Texte intégral à reprendre.",
-      "pays": "France · Belgique · Cameroun · Canada",
-      "lien": "Rencontrer l’Hydre"
+      "signature": "D’après le manifeste de Laëtitia Ajanohun, autrice, metteuse en scène, comédienne et membre du QD2A.",
+      "citation": "« un monde où les ponts sont plus puissants que les murs »",
+      "lien": "Rencontrer l’Hydre",
+      "alt": "Une soirée du Quartier en plein air, la nuit, sous un parasol rouge",
+      "peintureAlt": "Peinture « La palabre africaine » : des personnages assis en cercle discutent sous un auvent",
+      "peintureCredit": "« La palabre africaine, faut pas être pressé », peinture reprise du site du Quartier"
     },
     "appel": {
       "surtitre": "Saison 26/27",
@@ -165,8 +214,12 @@
       "c2": "Texte dramatique ou libre adaptation, de trois ans au plus",
       "c3": "Inédit au moment de l’envoi",
       "c4": "Avec la fiche de renseignements 26/27",
-      "action": "Envoyer un texte",
-      "alt": "Tapuscrit tenu par une pince, sortant d’une enveloppe kraft"
+      "mail": "Envoyer par e-mail",
+      "mailSujet": "Envoi d’un texte, appel 26/27",
+      "deposer": "Déposer en ligne (démonstration)",
+      "lecteursTitre": "Votre texte sera lu par trois d’entre eux",
+      "lecteursNote": "Trois membres du comité, tirés au hasard à chaque visite.",
+      "lecteurAlt": "Un membre du comité QD2A"
     },
     "partenaires": {
       "titre": "Ils nous accueillent et nous accompagnent",
@@ -216,7 +269,10 @@
       "canada": "Lecture au Canada : à compléter."
     },
     "pays": {
-      "titre": "Douze pays dans la sélection"
+      "surtitre": "D’où viennent les textes",
+      "titre": "Douze pays dans la sélection",
+      "unite": "texte",
+      "unites": "textes"
     },
     "fin": {
       "titre": "La saison 26/27 se lit déjà",
@@ -261,7 +317,7 @@
       "e5t": "L’élection",
       "e5": "Les têtes du comité élisent ensemble le lauréat ; chaque comité choisit son coup de cœur.",
       "e6t": "La scène et le livre",
-      "e6": "Le lauréat reçoit un prix en numéraire (montant à compléter), une mise en lecture dans quatre pays et une édition chez Passage(s).",
+      "e6": "Le lauréat reçoit un prix en numéraire, une mise en lecture dans quatre pays et une édition chez Passage(s).",
       "etape": "Étape"
     },
     "retour": {
@@ -320,8 +376,9 @@
     "tetes": {
       "surtitre": "Les quatre têtes",
       "titre": "Un comité par pays",
-      "texte": "Chaque pays a sa tête au comité, ses lecteurs, et son coup de cœur.",
-      "alt": "Le comité QD2A {pays}"
+      "texte": "Chaque pays a sa tête au comité, ses lecteurs, et son coup de cœur. Voici leurs visages, publiés sur le site du Quartier.",
+      "alt": "Le comité QD2A {pays}",
+      "membres": "Membres du QD2A {pays}"
     },
     "choix": {
       "surtitre": "Comment l’Hydre choisit",

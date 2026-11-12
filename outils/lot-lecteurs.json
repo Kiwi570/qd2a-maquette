@@ -1,0 +1,600 @@
+[
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-4.jpg",
+  "nom": "site/lecteurs/belgique-04",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   47,
+   48
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-5.jpg",
+  "nom": "site/lecteurs/belgique-05",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   54,
+   50
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-6.jpg",
+  "nom": "site/lecteurs/belgique-06",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   46,
+   44
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-7.jpg",
+  "nom": "site/lecteurs/belgique-07",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   46,
+   34
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-8.jpg",
+  "nom": "site/lecteurs/belgique-08",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   45,
+   48
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-9.jpg",
+  "nom": "site/lecteurs/belgique-09",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   56,
+   43
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-10.jpg",
+  "nom": "site/lecteurs/belgique-10",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   36,
+   37
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-11.jpg",
+  "nom": "site/lecteurs/belgique-11",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   53,
+   32
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-12.jpg",
+  "nom": "site/lecteurs/belgique-12",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   51,
+   51
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-13.jpg",
+  "nom": "site/lecteurs/belgique-13",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   36,
+   42
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-14.jpg",
+  "nom": "site/lecteurs/belgique-14",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   50,
+   42
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-15.jpg",
+  "nom": "site/lecteurs/belgique-15",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   47,
+   50
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-16.jpg",
+  "nom": "site/lecteurs/belgique-16",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   51,
+   47
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-belgique-17.jpg",
+  "nom": "site/lecteurs/belgique-17",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   37,
+   49
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-canada-2.jpg",
+  "nom": "site/lecteurs/canada-02",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   45,
+   54
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-canada-3.jpg",
+  "nom": "site/lecteurs/canada-03",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   53,
+   53
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-2.jpg",
+  "nom": "site/lecteurs/cameroun-02",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   41,
+   49
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-3.jpg",
+  "nom": "site/lecteurs/cameroun-03",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   51,
+   29
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-4.jpg",
+  "nom": "site/lecteurs/cameroun-04",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   61,
+   39
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-5.jpg",
+  "nom": "site/lecteurs/cameroun-05",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   53,
+   29
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-6.jpg",
+  "nom": "site/lecteurs/cameroun-06",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   63,
+   47
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-7.jpg",
+  "nom": "site/lecteurs/cameroun-07",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   49,
+   30
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-8.png",
+  "nom": "site/lecteurs/cameroun-08",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   46,
+   35
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-9.jpg",
+  "nom": "site/lecteurs/cameroun-09",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   47,
+   44
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-10.jpg",
+  "nom": "site/lecteurs/cameroun-10",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   50,
+   44
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-11.jpg",
+  "nom": "site/lecteurs/cameroun-11",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   45,
+   47
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-12.jpg",
+  "nom": "site/lecteurs/cameroun-12",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   44,
+   40
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/qd2a-cameroun-13.jpg",
+  "nom": "site/lecteurs/cameroun-13",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   48,
+   25
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-2.jpg",
+  "nom": "site/lecteurs/france-02",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   40,
+   39
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-3.jpg",
+  "nom": "site/lecteurs/france-03",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   42,
+   39
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-4.jpg",
+  "nom": "site/lecteurs/france-04",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   32,
+   32
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-5.jpg",
+  "nom": "site/lecteurs/france-05",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   37,
+   44
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-6.jpg",
+  "nom": "site/lecteurs/france-06",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   46,
+   50
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-7.jpg",
+  "nom": "site/lecteurs/france-07",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   50,
+   55
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-8.jpg",
+  "nom": "site/lecteurs/france-08",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   49,
+   48
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-9.jpg",
+  "nom": "site/lecteurs/france-09",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   47,
+   48
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-10.jpg",
+  "nom": "site/lecteurs/france-10",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   36,
+   48
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-11.jpg",
+  "nom": "site/lecteurs/france-11",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   52,
+   24
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-12.jpg",
+  "nom": "site/lecteurs/france-12",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   48,
+   48
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-13.jpg",
+  "nom": "site/lecteurs/france-13",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   57,
+   40
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-14.jpg",
+  "nom": "site/lecteurs/france-14",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   52,
+   46
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-15.jpg",
+  "nom": "site/lecteurs/france-15",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   59,
+   41
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-16.jpg",
+  "nom": "site/lecteurs/france-16",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   54,
+   46
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-17.jpg",
+  "nom": "site/lecteurs/france-17",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   59,
+   46
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-18.jpg",
+  "nom": "site/lecteurs/france-18",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   45,
+   33
+  ]
+ },
+ {
+  "source": "recu/site/qd2a-recu/membres-19.jpg",
+  "nom": "site/lecteurs/france-19",
+  "largeurs": [
+   160,
+   320
+  ],
+  "ratio": "1:1",
+  "cadrage": [
+   47,
+   44
+  ]
+ }
+]

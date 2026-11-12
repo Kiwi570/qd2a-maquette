@@ -37,7 +37,7 @@ export default (c) => html`
 <section class="cachets" id="conditions" aria-labelledby="conditions-h">
   <div class="conteneur">
     <p class="surtitre">${c.t('appel.conditions.surtitre')}</p>
-    <h2 id="conditions-h" class="axes" data-axes data-grille="typo">${c.t('appel.conditions.titre')}</h2>
+    <h2 id="conditions-h" class="titre-axes" data-axes data-grille="typo">${c.t('appel.conditions.titre')}</h2>
     <ul class="cachets-liste" data-anime="cascade">
       ${[1, 2, 3, 4].map((n) => html`<li class="cachet-carte">
         <span class="cachet" data-visuel aria-hidden="true"><svg viewBox="0 0 120 120" data-audit-ignorer><defs><path id="cercle-${n}" d="M60 60 m-44 0 a44 44 0 1 1 88 0 a44 44 0 1 1 -88 0"/></defs><circle cx="60" cy="60" r="56"/><circle cx="60" cy="60" r="34"/><text><textPath href="#cercle-${n}">${c.t('appel.conditions.cachet')}</textPath></text></svg><b>${n}</b></span>
@@ -76,7 +76,7 @@ export default (c) => html`
     ${c.media({ nom: 'grok/g-appel-fiches', alt: c.s('appel.retour.alt'), classe: 'fiche-photo', sizes: '(max-width: 760px) 100vw, 38vw', ratio: '3 / 4', attrs: 'data-anime="rideau"' })}
     <div>
       <p class="surtitre">${c.t('appel.retour.surtitre')}</p>
-      <h2 id="fiche-h" class="frappe" data-frappe data-effet="frappe">${c.t('appel.retour.titre')}</h2>
+      <h2 id="fiche-h" class="titre-axes" data-axes>${c.t('appel.retour.titre')}</h2>
       <p data-anime="mots">${c.t('appel.retour.texte')}</p>
       <p class="fiche-chiffre" data-anime><strong data-compteur="200">200</strong> ${c.t('appel.retour.plus')}</p>
     </div>

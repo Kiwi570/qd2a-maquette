@@ -1,0 +1,88 @@
+{
+ "client": "Le Quartier des Autrices et des Auteurs (QD2A)",
+ "depot": "qd2a-maquette",
+ "site_actuel": "https://comiteqdaa.wixsite.com/qd2a",
+ "activite": "comité de lecture international d'écritures dramatiques (association, culture)",
+ "constat": "Le site Wix disperse l'appel à textes, la méthode et les saisons dans de longues pages et des affiches en images. On ne voit ni le geste du comité (lire, annoter, choisir) ni les visages qui lisent.",
+ "recentes": [
+  {
+   "nom": "Red-Act",
+   "plan": "recit-lineaire",
+   "familles": [
+    "carrousel",
+    "typo-geante"
+   ],
+   "voile": "propre",
+   "modules": [
+    "carrousel-3d"
+   ]
+  }
+ ],
+ "directions": [
+  {
+   "nom": "Le Tapuscrit",
+   "idee": "Le site se lit comme un tapuscrit annoté par le comité : papier ivoire, encre, crayon rouge du lecteur, tampons et cachets.",
+   "plan": "recit-lineaire",
+   "palette": [
+    "#f4efe4",
+    "#16130f",
+    "#c8321e",
+    "#2b3a8c"
+   ],
+   "polices": [
+    "Fraunces",
+    "Recursive"
+   ],
+   "grille": {
+    "objet": "tapuscrit lauréat à feuilleter à la main",
+    "fil": "trait de crayon rouge dans la marge",
+    "voile": "page qui se tourne",
+    "forme_voile": "propre",
+    "familles": [
+     "3d",
+     "typo-geante",
+     "carrousel",
+     "vitesse",
+     "webgl",
+     "trait-qui-se-dessine"
+    ],
+    "signature": "3d",
+    "modernes": [
+     "table de lecture 3D",
+     "carrousel 3D de la saison",
+     "plateau qui ondule en WebGL"
+    ]
+   },
+   "modules": [
+    "document-a-feuilleter"
+   ],
+   "ancrage": [
+    {
+     "element": "chaque texte reçu est lu par trois lecteurs qui écrivent chacun une fiche",
+     "source": "site:/comment-ca-marche"
+    },
+    {
+     "element": "la lauréate 25/26, Stephie Mazunya, et son texte Chronologies",
+     "source": "site:/saison-25-26"
+    },
+    {
+     "element": "les quatre comités France, Belgique, Cameroun, Canada (l'Hydre de Lerne)",
+     "source": "site:/manifeste"
+    },
+    {
+     "element": "des dizaines de portraits d'autrices, d'auteurs et de membres des comités",
+     "source": "photo:planche-3.jpg"
+    },
+    {
+     "element": "le logo coloré (Q blanc sur formes orange, vert, bleu-vert, rouge, violet)",
+     "source": "photo:planche.jpg"
+    }
+   ],
+   "invente": [
+    "table de lecture en bois et tapuscrits photographiés (images générées)",
+    "crayon rouge du lecteur",
+    "voile en page qui se tourne"
+   ]
+  }
+ ]
+}

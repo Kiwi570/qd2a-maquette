@@ -19,7 +19,6 @@ export default (c) => {
   const nomsPays = paysOrdre.map((p) => sel.pays[p]);
   return html`
 <section class="ouv ouv-saison ecran" id="debut">
-  ${c.media({ nom: 'grok/g-saison-ouverture', alt: c.s('saison.hero.alt'), cadrage: '50% 70%', priorite: true, classe: 'saison-fond', sizes: '100vw', attrs: 'data-fx="parallaxe" data-fx-force="8"' })}
   <div class="saison-ouv conteneur">
     <p class="surtitre" data-anime="gsap" data-info-cle><span class="pastille" aria-hidden="true"></span>${c.t('saison.hero.surtitre')} · ${c.t('saison.hero.info')}</p>
     <div class="saison-26" data-iris-centre data-effet="pile" data-visuel aria-hidden="true">
@@ -40,8 +39,8 @@ export default (c) => {
     </figure>
     <div class="laureat-texte">
       <p class="surtitre">${c.t('saison.laureat.surtitre')}</p>
-      <h2 id="laureat-h" class="laureat-titre frappe" data-frappe data-effet="frappe">${L.titre}</h2>
-      <p class="laureat-autrice axes" data-axes data-grille="typo">${L.autrice} · ${L.pays}</p>
+      <h2 id="laureat-h" class="laureat-titre titre-axes" data-axes data-grille="typo">${L.titre}</h2>
+      <p class="laureat-autrice">${L.autrice} · ${L.pays}</p>
       <p data-anime="mots">${L.resume}</p>
       <div class="laureat-cols">
         <div>
@@ -114,21 +113,22 @@ export default (c) => {
         ${s.lectures.map((l) => html`<li class="agenda-date" data-date="${l.date}">
           <p class="agenda-jour"><time datetime="${l.date}">${DATE(l.date)}</time> <span class="statut" data-statut data-termine="${c.s('saison.lectures.termine')}" data-avenir="${c.s('saison.lectures.aVenir')}">${l.date < aujourdhui ? c.t('saison.lectures.termine') : c.t('saison.lectures.aVenir')}</span></p>
           <h3>${l.comite}</h3>
-          <p class="agenda-lieu">${l.lieu}</p>
+          ${l.lieu ? html`<p class="agenda-lieu">${l.lieu}</p>` : ''}
           <ul>${l.textes.map((t) => html`<li>${t}</li>`)}</ul>
         </li>`)}
       </ol>
-      <p class="agenda-note">${c.t('saison.lectures.canada')}</p>
     </div>
     ${c.media({ nom: 'grok/g-saison-lectures', alt: c.s('saison.lectures.alt'), classe: 'lectures-photo', sizes: '(max-width: 760px) 100vw, 45vw', attrs: 'data-fx="parallaxe"' })}
   </div>
 </section>
 
-<section class="pays-bande" id="pays" aria-labelledby="pays-h">
-  <h2 id="pays-h" class="visuellement-cache">${c.t('saison.pays.titre')} : ${nomsPays.join(', ')}</h2>
-  <div data-fx="mots-geants" data-fx-force="28" aria-hidden="true" data-ruban data-visuel>
-    <p data-fx-rangee class="pays-r1">${nomsPays.slice(0, 6).join(' · ')} · ${nomsPays.slice(0, 3).join(' · ')}</p>
-    <p data-fx-rangee data-sens="-1" class="pays-r2">${nomsPays.slice(6).join(' · ')} · ${nomsPays.slice(6, 9).join(' · ')}</p>
+<section class="pays-liste" id="pays" aria-labelledby="pays-h">
+  <div class="conteneur">
+    <p class="surtitre">${c.t('saison.pays.surtitre')}</p>
+    <h2 id="pays-h" class="titre-axes" data-axes>${c.t('saison.pays.titre')}</h2>
+    <ol class="pays-grille" data-anime="cascade" data-visuel>
+      ${paysOrdre.map((p) => html`<li><b>${paysCompte[p]}</b><span>${sel.pays[p]}</span><em>${paysCompte[p] > 1 ? c.t('saison.pays.unites') : c.t('saison.pays.unite')}</em></li>`)}
+    </ol>
   </div>
 </section>
 

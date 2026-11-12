@@ -1,6 +1,6 @@
 /* L'Hydre de Lerne : la page bleu encre. Ouverture plein cadre où quatre cous partent d'Ivry vers les quatre têtes ;
    le manifeste international mot à mot sur fond de marais ; les quatre comités reliés par leurs cous (carrousel
-   3D au défilement) ; comment l'Hydre choisit (quatre traits qui se rejoignent) ; la vie du Quartier ; partenaires. */
+   en visages, chacun à sa couleur du logo) ; comment l'Hydre choisit (quatre traits qui se rejoignent) ; la vie du Quartier ; partenaires. */
 import { html } from '../../outils/gabarit.mjs';
 
 export const page = { cle: 'hydre', fichier: 'hydre', theme: 'bleu', imagePartage: 'grok/g-hydre-ouverture-1168.webp' };
@@ -10,6 +10,8 @@ const TETES = [[14, 22], [38, 8], [62, 8], [86, 22]];
 
 export default (c) => {
   const comites = c.donnees.comites;
+  const lecteurs = c.donnees.lecteurs.lecteurs;
+  const couleurs = Object.fromEntries(c.donnees.logo.pieces.map((p) => [p.cle, p.couleur]));
   const cou = ([x, y], i) => `M300,384 C300,${250 - i * 12} ${x * 6},${y * 4 + 170} ${x * 6},${y * 4}`;
   return html`
 <section class="ouv ouv-hydre ecran" id="debut">
@@ -17,8 +19,8 @@ export default (c) => {
   <div class="hydre-ouv conteneur">
     <div class="hydre-dessin" data-iris-centre data-effet="cous" data-visuel aria-hidden="true">
       <svg viewBox="0 0 600 400" preserveAspectRatio="xMidYMid meet">
-        ${TETES.map((t, i) => html`<path class="cou" data-cou d="${cou(t, i)}" pathLength="1"/>`)}
-        ${TETES.map(([x, y]) => html`<circle class="tete" data-tete cx="${x * 6}" cy="${y * 4}" r="9"/>`)}
+        ${TETES.map((t, i) => html`<path class="cou" data-cou d="${cou(t, i)}" pathLength="1" style="--c:${couleurs[comites[i].cle]}"/>`)}
+        ${TETES.map(([x, y], i) => html`<circle class="tete" data-tete cx="${x * 6}" cy="${y * 4}" r="11" style="--c:${couleurs[comites[i].cle]}"/>`)}
         <circle class="corps" cx="300" cy="384" r="7"/>
       </svg>
       ${TETES.map(([x, y], i) => html`<span class="tete-nom" data-tete-nom style="--x:${x}%;--y:${y * 1}%">${comites[i].pays}</span>`)}
@@ -38,27 +40,24 @@ export default (c) => {
   ${c.media({ nom: 'grok/g-hydre-marais', alt: c.s('hydre.manifeste.alt'), classe: 'marais-fond', sizes: '100vw', attrs: 'data-fx="parallaxe" data-fx-force="12"' })}
   <div class="conteneur marais-texte">
     <p class="surtitre">${c.t('hydre.manifeste.surtitre')}</p>
-    <h2 id="manifeste-h" class="axes" data-axes data-grille="typo">${c.t('hydre.manifeste.titre')}</h2>
+    <h2 id="manifeste-h" class="titre-axes" data-axes data-grille="typo">${c.t('hydre.manifeste.titre')}</h2>
     <p class="manifeste-texte" data-mot-a-mot data-effet="mot-a-mot">${c.t('hydre.manifeste.texte')}</p>
     <blockquote class="citation" data-anime><p>${c.t('hydre.manifeste.citation')}</p><footer>${c.t('hydre.manifeste.source')}</footer></blockquote>
   </div>
 </section>
 
-<section class="tetes" id="comites" data-scene data-entete-cache aria-labelledby="comites-h">
-  <div class="tetes-cadre" data-collant>
-    <div class="conteneur tetes-tete">
-      <p class="surtitre">${c.t('hydre.tetes.surtitre')}</p>
-      <h2 id="comites-h" data-anime="lignes">${c.t('hydre.tetes.titre')}</h2>
-      <p class="masque-ecran-bas">${c.t('hydre.tetes.texte')}</p>
-    </div>
-    <div class="tambour-zone" data-effet="tambour" data-visuel>
-      <ul class="tambour" data-tambour>
-        ${comites.map((x, i) => html`<li class="tambour-carte" style="--i:${i}" data-carte="${i}">
-          ${c.media({ nom: x.image, alt: c.s('hydre.tetes.alt', { pays: x.pays }), classe: 'tambour-photo', sizes: '(max-width: 760px) 50vw, 20vw', ratio: '2 / 3' })}
-          <div class="tambour-texte"><h3>QD2A ${x.pays}</h3><p>${x.depuis}</p></div>
-        </li>`)}
-      </ul>
-    </div>
+<section class="tetes" id="comites" aria-labelledby="comites-h">
+  <div class="conteneur">
+    <p class="surtitre">${c.t('hydre.tetes.surtitre')}</p>
+    <h2 id="comites-h" data-anime="lignes">${c.t('hydre.tetes.titre')}</h2>
+    <p class="tetes-intro">${c.t('hydre.tetes.texte')}</p>
+    <ul class="tetes-liste" data-tetes data-effet="tetes" data-visuel>
+      ${comites.map((x, i) => html`<li class="tete-col" style="--c:${couleurs[x.cle]};--i:${i}" data-tete-col>
+        <h3><span class="tete-pastille" aria-hidden="true"></span>QD2A ${x.pays}</h3>
+        <p class="tete-depuis">${[x.ville, x.depuis].filter(Boolean).join(' · ')}</p>
+        <ul class="tete-visages" aria-label="${c.s('hydre.tetes.membres', { pays: x.pays })}">${lecteurs.filter((l) => l.pays === x.cle).map((l) => html`<li><img src="/assets/images/${l.image}-160.webp" alt="" width="160" height="160" loading="lazy" decoding="async"></li>`)}</ul>
+      </li>`)}
+    </ul>
   </div>
 </section>
 
@@ -86,7 +85,7 @@ export default (c) => {
   <div class="conteneur vie-grille">
     <div>
       <p class="surtitre">${c.t('hydre.coordination.surtitre')}</p>
-      <h2 id="vie-h" class="frappe" data-frappe data-effet="frappe">${c.t('hydre.coordination.titre')}</h2>
+      <h2 id="vie-h" class="titre-axes" data-axes>${c.t('hydre.coordination.titre')}</h2>
       <p data-anime="mots">${c.t('hydre.coordination.texte')}</p>
     </div>
     ${c.media({ nom: 'site/vie-quartier', alt: c.s('hydre.coordination.alt'), cadrage: '54% 42%', classe: 'vie-photo', sizes: '(max-width: 760px) 100vw, 50vw', attrs: 'data-fx="zoom"' })}

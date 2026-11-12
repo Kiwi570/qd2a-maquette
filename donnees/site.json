@@ -3,11 +3,29 @@
   "nomCourt": "QD2A",
   "adresse": "https://qd2a-maquette.vercel.app",
   "siteActuel": "comiteqdaa.wixsite.com",
-  "version": 1,
-  "langues": ["fr"],
-  "navigation": ["accueil", "saison", "appel", "hydre", "contact"],
-  "actionEntete": { "page": "appel", "ancre": "deposer" },
-  "couleurs": { "fond": "#f4efe4", "texte": "#16130f", "voile": "#ebe3d1", "ouverture": "#f4efe4", "menu": "#16130f", "theme": "#f4efe4" },
+  "version": 2,
+  "langues": [
+    "fr"
+  ],
+  "navigation": [
+    "accueil",
+    "saison",
+    "appel",
+    "hydre",
+    "contact"
+  ],
+  "actionEntete": {
+    "page": "appel",
+    "ancre": "deposer"
+  },
+  "couleurs": {
+    "fond": "#f5f0e8",
+    "texte": "#1a1614",
+    "voile": "#efe7da",
+    "ouverture": "#f5f0e8",
+    "menu": "#26142b",
+    "theme": "#f4efe4"
+  },
   "formeVoile": "page",
   "contact": {
     "email": "comiteqdaa@gmail.com",
@@ -16,7 +34,9 @@
     "facebook": "https://www.facebook.com/Le-Quartier-des-Autrices-et-des-Auteurs-103225861496773/",
     "fiche": "https://3028e62e-0d54-43bc-897f-dc8b2bf3f9ef.filesusr.com/ugd/17efc3_eb2ab16afec24ccfbb98b40b9053f34f.pdf"
   },
-  "polices": ["/assets/fonts/fraunces.woff2"],
+  "polices": [
+    "/assets/fonts/fraunces.woff2"
+  ],
   "imagePartage": "grok/g-accueil-ouverture-1168.webp",
   "curseur": false
 }

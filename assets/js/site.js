@@ -1,7 +1,7 @@
 /* Effets propres au QD2A (direction « Le Tapuscrit »). Le socle gère l'ouverture, le voile « page », l'en-tête,
    le menu, le mode calme, les boucles et la bibliothèque d'effets ; ici, seulement ce qui est propre au client.
-   Effets du plan : tapuscrit, frappe, crayon, fiches, pile, enveloppe, cous, servante (data-effet). */
-import { demarrer, boucle, etat, versObjet, quand } from './socle/index.js?v=1';
+   Effets du plan : hydre-q, visages, trajet, q-fil, tapuscrit, trois-lecteurs, pile, enveloppe, cous, servante (data-effet). */
+import { demarrer, boucle, etat, versObjet, quand } from './socle/index.js?v=2';
 
 const gsap = window.gsap;
 const ST = window.ScrollTrigger;
@@ -11,82 +11,173 @@ const borne = (v, a, b) => Math.min(b, Math.max(a, v));
 const calme = () => etat.calme || document.documentElement.classList.contains('secours');
 const souris = () => window.matchMedia('(hover: hover) and (pointer: fine)').matches;
 
-/* ---------- Crayon : fil conducteur rouge dans la marge (grille wouahou, point 4) ---------- */
-function crayon() {
-  const el = $('.fil');
-  if (!el) return;
-  const main = el.parentElement, svg = $('svg', el), trait = $('.fil-trait', el), mine = $('.fil-mine', el);
-  let h = 0, w = 0, total = 0, haut = 0, vh = 0, reperes = [];
-  const xDe = (y) => w / 2 + Math.sin(y / 97) * w * 0.28;
-  function construire() {
-    h = main.offsetHeight; w = el.clientWidth || 20; haut = main.getBoundingClientRect().top + window.scrollY; vh = window.innerHeight;
-    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-    let d = `M${xDe(0).toFixed(1)} 0`, px = xDe(0), py = 0;
-    total = 0;
-    for (let y = 40; y <= h; y += 40) { const x = xDe(y); d += ` L${x.toFixed(1)} ${y}`; total += Math.hypot(x - px, y - py); px = x; py = y; }
-    trait.setAttribute('d', d);
-    trait.style.strokeDasharray = `${total} ${total}`;
-    $$('.fil-repere', svg).forEach((r) => r.remove());
-    reperes = $$(':scope > section', main).map((s, i) => {
-      const y = s.offsetTop + Math.min(90, s.offsetHeight / 3), x = xDe(y), k = Math.min(1, w / 26);
-      const p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-      p.setAttribute('class', 'fil-repere');
-      p.setAttribute('d', i % 2 ? `M${x - 7 * k} ${y - 3} L${x - 2 * k} ${y + 4} L${x + 8 * k} ${y - 8}` : `M${x - 8 * k} ${y} L${x + 8 * k} ${y} M${x - 6 * k} ${y + 5} L${x + 7 * k} ${y + 5}`);
-      svg.appendChild(p);
-      return { p, y };
+/* ---------- Le petit Q des surtitres : une forme de plus à chaque section (grille wouahou, point 4) ---------- */
+function qFil() {
+  const qs = $$('.q-fil');
+  if (!qs.length) return;
+  if (calme() || etat.arrivee === 'retour' || !('IntersectionObserver' in window)) { qs.forEach((q) => q.classList.add('vu')); return; }
+  const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('vu'); io.unobserve(e.target); } }), { threshold: 1, rootMargin: '0px 0px -10% 0px' });
+  qs.forEach((q) => io.observe(q));
+}
+
+/* ---------- Le Q aux visages (accueil) : on attrape une forme, elle s'écarte puis revient avec élan (point 1).
+   Profondeur : chaque forme suit la souris à sa distance ; au défilement, le Q se défait doucement. ---------- */
+const COULEURS_Q = ['217, 120, 60', '85, 122, 73', '95, 156, 143', '233, 176, 88', '153, 59, 53', '79, 32, 69'];
+function qVisages() {
+  const svg = $('[data-q]');
+  if (!svg) return;
+  const pieces = $$('.q-piece', svg), etiquette = $('[data-q-etiquette]'), legende = $$('[data-legende]');
+  const noms = Object.fromEntries(legende.map((li) => [li.dataset.legende, li.querySelector('b').textContent]));
+  const vb = svg.viewBox.baseVal, cx = vb.x + vb.width / 2, cy = vb.y + vb.height / 2;
+  const etats = new Map(pieces.map((p, i) => {
+    const im = $('image', p);
+    const px = +im.getAttribute('x') + +im.getAttribute('width') / 2, py = +im.getAttribute('y') + +im.getAttribute('height') / 2;
+    const n = Math.hypot(px - cx, py - cy) || 1;
+    return [p, { x: 0, y: 0, px: 0, py: 0, ex: 0, ey: 0, dx: (px - cx) / n, dy: (py - cy) / n, prof: 0.5 + (i % 3) * 0.35 }];
+  }));
+  const bouge = new Map(pieces.map((p) => [p, $('.q-bouge', p)]));
+  const appliquer = (p) => { const s = etats.get(p); bouge.get(p).setAttribute('transform', `translate(${(s.x + s.px + s.ex).toFixed(2)} ${(s.y + s.py + s.ey).toFixed(2)})`); };
+  const montrer = (p, oui) => {
+    p.classList.toggle('montre', oui);
+    legende.forEach((li) => li.classList.toggle('vise', oui && li.dataset.legende === p.dataset.piece));
+    if (etiquette) { if (oui) etiquette.textContent = noms[p.dataset.piece] || ''; etiquette.classList.toggle('visible', oui); }
+  };
+  const ecarter = (p) => {
+    const s = etats.get(p);
+    if (!gsap || calme()) return;
+    gsap.killTweensOf(s, 'x,y');
+    gsap.timeline({ onUpdate: () => appliquer(p) })
+      .to(s, { x: s.dx * 20, y: s.dy * 20, duration: 0.35, ease: 'power3.out' })
+      .to(s, { x: 0, y: 0, duration: 1.1, ease: 'elastic.out(1, 0.38)' });
+  };
+  pieces.forEach((p) => {
+    p.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') montrer(p, true); });
+    p.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse' && !p.classList.contains('saisi')) montrer(p, false); });
+    p.addEventListener('focus', () => montrer(p, true));
+    p.addEventListener('blur', () => montrer(p, false));
+    p.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); montrer(p, true); ecarter(p); } });
+  });
+  if (calme() || !gsap) return;
+  /* Saisie : on tire une forme hors du Q (résistance élastique), elle revient avec l'élan du lâcher.
+     Au doigt : un glissement horizontal la saisit, le défilement vertical reste libre. */
+  let g = null;
+  const resiste = (d) => Math.sign(d) * 150 * (1 - Math.exp(-Math.abs(d) / 150));
+  svg.addEventListener('pointerdown', (e) => {
+    const p = e.target.closest('.q-piece');
+    if (!p || (e.button && e.button !== 0)) return;
+    const r = svg.getBoundingClientRect();
+    g = { p, x: e.clientX, y: e.clientY, k: vb.width / Math.max(1, r.width), id: e.pointerId, decide: e.pointerType === 'mouse', hist: [] };
+    if (g.decide) { svg.setPointerCapture(e.pointerId); p.classList.add('saisi'); montrer(p, true); gsap.killTweensOf(etats.get(p), 'x,y'); }
+  });
+  svg.addEventListener('pointermove', (e) => {
+    if (!g || e.pointerId !== g.id) return;
+    const dx = e.clientX - g.x, dy = e.clientY - g.y;
+    if (!g.decide) {
+      if (Math.abs(dy) > 10 && Math.abs(dy) > Math.abs(dx)) { g = null; return; }
+      if (Math.abs(dx) < 8) return;
+      g.decide = true; svg.setPointerCapture(e.pointerId); g.p.classList.add('saisi'); montrer(g.p, true); gsap.killTweensOf(etats.get(g.p), 'x,y');
+    }
+    const s = etats.get(g.p);
+    s.x = resiste(dx * g.k); s.y = resiste(dy * g.k);
+    g.hist.push([performance.now(), s.x, s.y]); if (g.hist.length > 5) g.hist.shift();
+    appliquer(g.p);
+  });
+  const lacher = (e) => {
+    if (!g || e.pointerId !== g.id) return;
+    const { p, hist } = g, s = etats.get(p);
+    const a = hist[0], b = hist[hist.length - 1];
+    const dt = a && b ? Math.max(16, b[0] - a[0]) / 1000 : 1;
+    const vx = a && b ? (b[1] - a[1]) / dt : 0, vy = a && b ? (b[2] - a[2]) / dt : 0;
+    p.classList.remove('saisi');
+    if (!p.matches(':hover')) montrer(p, false);
+    g = null;
+    gsap.timeline({ onUpdate: () => appliquer(p) })
+      .to(s, { x: resiste(s.x + vx * 0.08), y: resiste(s.y + vy * 0.08), duration: 0.18, ease: 'power2.out' })
+      .to(s, { x: 0, y: 0, duration: 1.3, ease: 'elastic.out(1, 0.35)' });
+  };
+  svg.addEventListener('pointerup', lacher);
+  svg.addEventListener('pointercancel', lacher);
+  /* Profondeur : à la souris, chaque forme suit le pointeur à sa distance, et se stabilise dès qu'il s'arrête. */
+  if (souris()) {
+    const zone = svg.closest('.q-zone');
+    const suivre = pieces.map((p) => {
+      const s = etats.get(p);
+      return { s, fx: gsap.quickTo(s, 'px', { duration: 0.8, ease: 'power3', onUpdate: () => appliquer(p) }), fy: gsap.quickTo(s, 'py', { duration: 0.8, ease: 'power3', onUpdate: () => appliquer(p) }) };
     });
-    poser(window.scrollY);
+    zone.addEventListener('pointermove', (e) => {
+      const r = zone.getBoundingClientRect();
+      const nx = (e.clientX - r.left) / r.width - 0.5, ny = (e.clientY - r.top) / r.height - 0.5;
+      suivre.forEach((q) => { q.fx(nx * 18 * q.s.prof); q.fy(ny * 14 * q.s.prof); });
+    });
+    zone.addEventListener('pointerleave', () => suivre.forEach((q) => { q.fx(0); q.fy(0); }));
   }
-  function poser(scroll) {
-    if (calme()) { trait.style.strokeDashoffset = '0'; reperes.forEach((r) => r.p.classList.add('est-atteint')); return; }
-    const y = borne(scroll - haut + vh * 0.62, 0, h);
-    trait.style.strokeDashoffset = String(total * (1 - y / Math.max(1, h)));
-    mine.style.transform = `translate(${(xDe(y) - w / 2).toFixed(1)}px, ${(y - 18).toFixed(1)}px)`;
-    reperes.forEach((r) => r.p.classList.toggle('est-atteint', r.y <= y));
-  }
-  construire();
+  /* Au défilement, le Q se défait doucement : chaque forme s'écarte du centre. */
   if (ST) {
-    ST.addEventListener('refresh', construire);
-    if (!calme()) ST.create({ trigger: main, start: 'top bottom', end: 'bottom top', onUpdate: (s) => poser(s.scroll()) });
+    const sec = svg.closest('section');
+    ST.create({ trigger: sec, start: 'top top', end: 'bottom top', scrub: 0.4, onUpdate: (st) => {
+      pieces.forEach((p) => { const s = etats.get(p); const f = st.progress * 46 * s.prof; s.ex = s.dx * f; s.ey = s.dy * f; appliquer(p); });
+    } });
   }
+  /* Une invitation, une fois l'ouverture finie : chaque forme s'écarte et revient, l'une après l'autre. */
+  quand('pret', () => {
+    if (etat.arrivee === 'retour') return;
+    pieces.forEach((p, i) => gsap.delayedCall(0.5 + i * 0.12, () => ecarter(p)));
+  });
+}
+
+/* ---------- Le comité : les 46 visages se regroupent par tête au défilement (recomposition), filtres ---------- */
+function mur() {
+  const m = $('[data-mur]');
+  if (!m) return;
+  const sec = m.closest('section');
+  const boutons = $$('[data-mur-filtre]'), groupes = $$('[data-groupe]', m);
+  boutons.forEach((b) => b.addEventListener('click', () => {
+    const f = b.dataset.murFiltre;
+    boutons.forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+    m.dataset.filtre = f;
+    groupes.forEach((gr) => gr.classList.toggle('choisi', gr.dataset.groupe === f));
+  }));
+  if (calme() || !ST || !gsap) return;
+  /* La lumière de la section glisse du violet vers l'orange des affiches du Quartier. */
+  gsap.fromTo(sec, { '--bgx': '0%' }, { '--bgx': '100%', ease: 'none', scrollTrigger: { trigger: sec, start: 'top bottom', end: 'bottom top', scrub: true } });
+  if (etat.arrivee === 'retour') return;
+  const visages = $$('.visage', m), noms = $$('.mur-nom', m);
+  /* Chaque visage part de la place d'un autre (mélange fixe), puis rejoint sa tête. Positions relatives
+     (offsetLeft, offsetTop) : elles ne dépendent pas des transformations en cours. */
+  const ordre = visages.map((_, i) => i);
+  for (let i = ordre.length - 1, h = 7; i > 0; i--) { h = (h * 9301 + 49297) % 233280; const j = Math.floor((h / 233280) * (i + 1)); [ordre[i], ordre[j]] = [ordre[j], ordre[i]]; }
+  const pos = () => visages.map((v) => [v.offsetLeft, v.offsetTop]);
+  let P = pos();
+  ST.addEventListener('refresh', () => { P = pos(); });
+  const tl = gsap.timeline({ scrollTrigger: { trigger: m, start: 'top 92%', end: 'top 30%', scrub: 0.6, invalidateOnRefresh: true } });
+  tl.fromTo(visages, { x: (i) => P[ordre[i]][0] - P[i][0], y: (i) => P[ordre[i]][1] - P[i][1], scale: 0.82 }, { x: 0, y: 0, scale: 1, ease: 'power2.inOut', duration: 1 }, 0)
+    .fromTo(noms, { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.3, stagger: 0.08 }, 0.65);
+}
+
+/* ---------- Trois lecteurs tirés au hasard : ceux qui pourraient lire votre texte ---------- */
+function troisLecteurs() {
+  const bloc = $('[data-trois-lecteurs]');
+  if (!bloc) return;
+  let liste = [];
+  try { liste = JSON.parse($('[data-lecteurs-liste]', bloc).textContent); } catch { return; }
+  const imgs = $$('[data-lecteur-img]', bloc);
+  const pris = new Set();
+  imgs.forEach((img) => {
+    let k = Math.floor(Math.random() * liste.length), essais = 0;
+    while (pris.has(k) && essais++ < 20) k = Math.floor(Math.random() * liste.length);
+    pris.add(k);
+    img.src = `/assets/images/${liste[k]}-320.webp`;
+  });
+  if (!ST || calme() || !gsap || etat.arrivee === 'retour') return;
+  gsap.fromTo($$('.trois-lecteur', bloc), { y: 30, rotate: (i) => [-6, 4, -3][i], opacity: 0 }, { y: 0, rotate: 0, opacity: 1, duration: 0.7, stagger: 0.15, ease: 'back.out(1.6)', scrollTrigger: { trigger: bloc, start: 'top 80%' } });
 }
 
 /* ---------- Typographie qui bouge : axe CASL de Recursive, de la machine à la main (point 5) ---------- */
 function axes() {
   $$('[data-axes]').forEach((el) => {
     if (!el.dataset.effet) el.dataset.effet = 'axes';
-    if (calme() || !ST) { el.style.setProperty('--casl', '1'); return; }
-    ST.create({ trigger: el, start: 'top 92%', end: 'top 28%', scrub: 0.4, onUpdate: (s) => el.style.setProperty('--casl', s.progress.toFixed(3)) });
-  });
-}
-
-/* ---------- Frappe : un titre se tape à la machine quand il entre dans l'écran ---------- */
-function frappe() {
-  const titres = $$('[data-frappe]');
-  if (!titres.length || calme() || etat.arrivee === 'retour') return;
-  titres.forEach((el) => {
-    const texte = el.textContent;
-    el.setAttribute('aria-label', texte);
-    const mots = texte.split(/(\s+)/);
-    el.innerHTML = mots.map((m) => (/^\s+$/.test(m) ? m : `<span class="frappe-mot" aria-hidden="true" style="white-space:nowrap">${[...m].map((ch) => `<span class="frappe-car">${ch.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</span>`).join('')}</span>`)).join('');
-    const cars = $$('.frappe-car', el);
-    const curseur = document.createElement('span');
-    curseur.className = 'frappe-curseur'; curseur.setAttribute('aria-hidden', 'true');
-    const io = new IntersectionObserver((es) => {
-      if (!es[0].isIntersecting) return;
-      io.disconnect();
-      let i = 0;
-      const pas = Math.max(22, Math.min(55, 1100 / cars.length));
-      const taper = () => {
-        if (i >= cars.length) { setTimeout(() => curseur.remove(), 1400); return; }
-        cars[i].classList.add('vu');
-        cars[i].after(curseur);
-        i++;
-        setTimeout(taper, pas + (cars[i - 1].textContent === ',' ? 120 : 0));
-      };
-      taper();
-    }, { threshold: 0.6 });
-    io.observe(el);
+    if (calme() || !ST) { el.style.setProperty('--casl', '1'); el.style.setProperty('--axe', '1'); return; }
+    ST.create({ trigger: el, start: 'top 92%', end: 'top 28%', scrub: 0.4, onUpdate: (s) => { const v = s.progress.toFixed(3); el.style.setProperty('--casl', v); el.style.setProperty('--axe', v); } });
   });
 }
 
@@ -191,23 +282,26 @@ function tapuscrit() {
     });
     t.addEventListener('pointerleave', () => { rx(0); ry(0); });
   }
-  /* Au défilement, le tapuscrit s'éloigne doucement. */
-  if (ST && !calme()) gsap.to(t, { '--ty-def': '-60px', ease: 'none', scrollTrigger: { trigger: '.ouv-accueil', start: 'top top', end: 'bottom top', scrub: true } });
-  /* Une invitation, une seule fois, après l'ouverture : le coin de la première page se soulève. */
+  /* Une invitation, une seule fois, quand il entre dans l'écran : le coin de la première page se soulève. */
   quand('pret', () => {
     pretVu = true; rendre();
-    if (calme() || etat.arrivee === 'retour' || !gsap) return;
-    gsap.to(st, { p: 0.32, duration: 0.55, delay: 0.6, ease: 'power2.out', yoyo: true, repeat: 1, onUpdate: rendre });
+    if (calme() || etat.arrivee === 'retour' || !gsap || !('IntersectionObserver' in window)) return;
+    const io = new IntersectionObserver((es) => {
+      if (!es[0].isIntersecting) return;
+      io.disconnect();
+      gsap.to(st, { p: 0.32, duration: 0.55, delay: 0.3, ease: 'power2.out', yoyo: true, repeat: 1, onUpdate: rendre });
+    }, { threshold: 0.7 });
+    io.observe(t);
   });
 }
 
-/* ---------- Curseur crayon : une mine rouge qui laisse une trace éphémère (souris seulement) ---------- */
-function curseurCrayon() {
+/* ---------- Curseur vivant : une petite forme du Q qui laisse une traînée aux couleurs du logo (souris seulement) ---------- */
+function curseurVivant() {
   if (calme() || !souris()) return;
-  document.documentElement.classList.add('curseur-crayon');
+  document.documentElement.classList.add('curseur-vivant');
   quand('pret', () => {
     const cv = document.createElement('canvas');
-    cv.className = 'trace-crayon'; cv.setAttribute('aria-hidden', 'true'); cv.setAttribute('data-audit-ignorer', ''); cv.setAttribute('data-souris', '');
+    cv.className = 'trace-vivante'; cv.setAttribute('aria-hidden', 'true'); cv.setAttribute('data-audit-ignorer', ''); cv.setAttribute('data-souris', '');
     document.body.appendChild(cv);
     const ctx = cv.getContext('2d');
     let dpr = 1, W = 0, H = 0;
@@ -227,91 +321,54 @@ function curseurCrayon() {
       ctx.lineCap = 'round'; ctx.lineJoin = 'round';
       for (let i = 1; i < pts.length; i++) {
         const a = pts[i - 1], b = pts[i], age = (now - b.t) / 700;
-        ctx.strokeStyle = `rgba(200, 50, 30, ${(0.55 * (1 - age)).toFixed(3)})`;
-        ctx.lineWidth = 1.6 + 1.2 * (1 - age);
+        ctx.strokeStyle = `rgba(${COULEURS_Q[Math.floor(b.t / 140) % 6]}, ${(0.5 * (1 - age)).toFixed(3)})`;
+        ctx.lineWidth = 2 + 4 * (1 - age);
         ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
       }
     });
   });
 }
 
-/* ---------- Table de lecture en 3D : trois fiches, deux tampons, la sélection, le lauréat (point 6) ---------- */
-function tableDeLecture() {
-  const sec = $('#lecture');
+/* ---------- Le trajet d'un texte : de l'e-mail à la scène (scène épinglée du métier : trier, choisir, lire) ---------- */
+function trajet() {
+  const sec = $('#trajet');
   if (!sec || !gsap) return;
-  const table = $('[data-table]', sec), etapes = $$('[data-etape]', sec);
-  const fiches = $$('[data-t-fiche]', sec), tampons = $$('[data-t-tampon]', sec);
-  const tap = $('[data-t-tap]', sec), lau = $('[data-t-laureat]', sec), pile = $('[data-t-pile]', sec);
+  const etapes = $$('[data-etape]', sec);
   const marquer = (k) => etapes.forEach((e, i) => e.classList.toggle('actif', i === k));
   if (calme() || !ST) { etapes.forEach((e) => e.classList.add('actif')); return; }
+  const scene = $('[data-trajet]', sec), grille = $('.tr-grille', scene);
+  const textes = $$('[data-tr-texte]', scene), recu = $('.tr-texte--recu', scene), autres = textes.filter((t) => t !== recu);
+  const lecteurs = $$('[data-tr-lecteur]', scene), tampons = $$('[data-tr-tampon]', scene);
+  const portraits = $$('[data-tr-portrait]', scene), dates = $$('[data-tr-date]', scene);
+  const libSel = $('[data-tr-selection]', scene), libRecu = $('[data-tr-recu]', scene);
+  /* Le texte reçu arrive au milieu de la scène, en grand, avant de rejoindre sa place dans la sélection. */
+  const vers = () => ({ x: scene.offsetWidth / 2 - (grille.offsetLeft + recu.offsetLeft + recu.offsetWidth / 2), y: scene.offsetHeight * 0.41 - (grille.offsetTop + recu.offsetTop + recu.offsetHeight / 2), s: Math.max(2.2, Math.min(3.4, (scene.offsetWidth * 0.3) / Math.max(1, recu.offsetWidth))) });
+  let V = vers();
+  ST.addEventListener('refresh', () => { V = vers(); });
   const tl = gsap.timeline({ paused: true, defaults: { ease: 'power2.out' } });
-  tl.fromTo(tap, { y: '-140%', z: 160, rotate: -8, opacity: 0 }, { y: '0%', z: 0, rotate: 0, opacity: 1, duration: 0.8 }, 0)
-    .fromTo(fiches, { x: (i) => ['-180%', '180%', '160%'][i], y: (i) => ['-60%', '-80%', '90%'][i], z: 140, rotate: (i) => [-25, 20, 14][i], opacity: 0 },
-      { x: 0, y: 0, z: 0, rotate: (i) => [-6, 5, 3][i], opacity: 1, duration: 0.7, stagger: 0.28 }, 1)
-    .fromTo(tampons, { scale: 2.6, opacity: 0, rotate: -30 }, { scale: 1, opacity: 1, rotate: -14, duration: 0.3, ease: 'back.out(2.2)', stagger: 0.3 }, 2.1)
-    .to(tap, { left: '8%', top: '52%', rotate: -4, z: 26, duration: 0.8, ease: 'power3.inOut' }, 3)
-    .to(fiches, { opacity: 0.35, duration: 0.5 }, 3.1)
-    .fromTo(pile, { y: 0 }, { y: '-4%', duration: 0.4 }, 3.4)
-    .fromTo(lau, { scale: 3, opacity: 0, rotate: -40 }, { scale: 1, opacity: 1, rotate: -9, duration: 0.35, ease: 'back.out(2)' }, 4.1)
-    .fromTo(table, { '--rz': '-22deg' }, { '--rz': '10deg', duration: 5, ease: 'none' }, 0);
-  ST.create({ trigger: sec, start: 'top top', end: 'bottom bottom', scrub: 0.5,
-    onUpdate: (s) => { tl.progress(s.progress); marquer(Math.min(4, Math.floor(s.progress * 5.2))); } });
+  tl.fromTo(libRecu, { opacity: 0, y: -16 }, { opacity: 1, y: 0, duration: 0.35 }, 0)
+    .fromTo(recu, { x: () => V.x, y: () => V.y - 90, scale: () => V.s, rotate: -10, opacity: 0 }, { x: () => V.x, y: () => V.y, scale: () => V.s, rotate: -3, opacity: 1, duration: 0.6 }, 0.15)
+    .fromTo(lecteurs, { opacity: 0, y: 30, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.15 }, 1)
+    .fromTo(tampons, { opacity: 0, scale: 2.6, rotate: -30 }, { opacity: 1, scale: 1, rotate: -8, duration: 0.3, ease: 'back.out(2)', stagger: 0.3 }, 2)
+    .to([lecteurs, libRecu], { opacity: 0, duration: 0.3 }, 3)
+    .to(recu, { x: 0, y: 0, scale: 1, rotate: 0, duration: 0.6, ease: 'power3.inOut' }, 3)
+    .fromTo(autres, { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.5, stagger: { each: 0.012, from: 13 } }, 3.2)
+    .fromTo(libSel, { opacity: 0 }, { opacity: 1, duration: 0.3 }, 3.6)
+    .to([textes, libSel], { opacity: 0, scale: 0.85, duration: 0.4, stagger: { each: 0.006, from: 'random' } }, 4)
+    .fromTo(portraits, { opacity: 0, y: 40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.1 }, 4.25)
+    .fromTo(dates, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, stagger: 0.15 }, 5)
+    .to({}, { duration: 0.4 }, 5.6);
+  ST.create({ trigger: sec, start: 'top top', end: 'bottom bottom', scrub: 0.5, invalidateOnRefresh: true,
+    onRefresh: () => tl.invalidate(),
+    onUpdate: (s) => { tl.progress(s.progress); marquer(Math.min(5, Math.floor(s.progress * 6.15))); } });
   marquer(0);
-  /* La table pivote à la main, avec élan. */
-  const zone = $('.lecture-scene', sec);
-  const rd = { v: 0 };
-  const appliquer = () => table.style.setProperty('--rd', `${rd.v.toFixed(1)}deg`);
-  let g = null;
-  zone.addEventListener('pointerdown', (e) => { g = { x: e.clientX, y: e.clientY, v0: rd.v, decide: e.pointerType === 'mouse', id: e.pointerId, t: performance.now(), dern: e.clientX }; if (g.decide) zone.setPointerCapture(e.pointerId); gsap.killTweensOf(rd); });
-  zone.addEventListener('pointermove', (e) => {
-    if (!g || e.pointerId !== g.id) return;
-    const dx = e.clientX - g.x;
-    if (!g.decide) { if (Math.abs(e.clientY - g.y) > 10 && Math.abs(e.clientY - g.y) > Math.abs(dx)) { g = null; return; } if (Math.abs(dx) < 8) return; g.decide = true; zone.setPointerCapture(e.pointerId); }
-    rd.v = borne(g.v0 + dx * 0.35, -70, 70); g.vit = (e.clientX - g.dern) / Math.max(1, performance.now() - g.t); g.t = performance.now(); g.dern = e.clientX; appliquer();
-  });
-  const fin = () => { if (!g) return; const v = g.vit || 0; g = null; gsap.to(rd, { v: borne(rd.v + v * 120, -70, 70), duration: 1.1, ease: 'power3.out', onUpdate: appliquer }); };
-  zone.addEventListener('pointerup', fin); zone.addEventListener('pointercancel', fin);
 }
 
-/* ---------- Carrousel 3D de la saison et tambour des comités ---------- */
-function rotatif({ section, conteneur, cartes, pas, axe, prec, suiv }) {
-  const sec = $(section);
-  if (!sec) return;
-  const anneau = $(conteneur, sec), items = $$(cartes, sec), n = items.length;
-  const st = { off: 0 }, sc = { p: 0 };
-  const rendre = () => {
-    const rot = -sc.p * pas * (n - 1) + st.off;
-    anneau.style.setProperty('--rot', `${rot.toFixed(2)}deg`);
-    items.forEach((it, i) => {
-      let a = ((axe === 'x' ? -i : i) * pas + rot) % 360; if (a > 180) a -= 360; if (a < -180) a += 360;
-      const visible = Math.abs(a) < 88;
-      it.style.visibility = visible ? '' : 'hidden';
-      it.inert = Math.abs(a) > 30;
-    });
-  };
-  if (calme() || !ST || !gsap) { items.forEach((it) => { it.inert = false; }); return; }
-  const mesurer = () => {
-    if (axe === 'y') { const w = anneau.offsetWidth; anneau.style.setProperty('--R', `${Math.round((w / 2) / Math.tan(Math.PI / n) * 1.55)}px`); }
-  };
-  mesurer();
-  ST.addEventListener('refresh', mesurer);
-  ST.create({ trigger: sec, start: 'top top', end: 'bottom bottom', scrub: 0.6, snap: { snapTo: 1 / (n - 1), duration: { min: 0.2, max: 0.6 }, delay: 0.15, ease: 'power2.inOut' }, onUpdate: (s) => { sc.p = s.progress; rendre(); } });
-  const tourner = (k) => gsap.to(st, { off: Math.round((st.off + k * pas) / pas) * pas, duration: 0.8, ease: 'power3.out', onUpdate: rendre });
-  if (prec) $(prec, sec)?.addEventListener('click', () => tourner(1));
-  if (suiv) $(suiv, sec)?.addEventListener('click', () => tourner(-1));
-  anneau.addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') { e.preventDefault(); tourner(-1); } if (e.key === 'ArrowLeft') { e.preventDefault(); tourner(1); } });
-  const zone = anneau.parentElement;
-  let g = null;
-  zone.addEventListener('pointerdown', (e) => { if (e.target.closest('a, button')) return; g = { x: e.clientX, y: e.clientY, o0: st.off, decide: e.pointerType === 'mouse', id: e.pointerId, t: performance.now(), dern: e.clientX, v: 0 }; if (g.decide) zone.setPointerCapture(e.pointerId); gsap.killTweensOf(st); });
-  zone.addEventListener('pointermove', (e) => {
-    if (!g || e.pointerId !== g.id) return;
-    const dx = e.clientX - g.x;
-    if (!g.decide) { if (Math.abs(e.clientY - g.y) > 10 && Math.abs(e.clientY - g.y) > Math.abs(dx)) { g = null; return; } if (Math.abs(dx) < 8) return; g.decide = true; zone.setPointerCapture(e.pointerId); }
-    st.off = g.o0 + dx * 0.3; const now = performance.now(); g.v = (e.clientX - g.dern) / Math.max(1, now - g.t); g.t = now; g.dern = e.clientX; rendre();
-  });
-  const fin = () => { if (!g) return; const cible = Math.round((st.off + g.v * 260) / pas) * pas; g = null; gsap.to(st, { off: cible, duration: 1, ease: 'power3.out', onUpdate: rendre }); };
-  zone.addEventListener('pointerup', fin); zone.addEventListener('pointercancel', fin);
-  rendre();
+/* ---------- Hydre : les quatre têtes se dressent l'une après l'autre au défilement ---------- */
+function tetes() {
+  const cols = $$('[data-tete-col]');
+  if (!cols.length || calme() || !ST || !gsap || etat.arrivee === 'retour' || window.innerWidth < 761) return;
+  gsap.fromTo(cols, { y: (i) => 60 + i * 50 }, { y: 0, ease: 'power2.out', stagger: 0.1, scrollTrigger: { trigger: '[data-tetes]', start: 'top 98%', end: 'top 30%', scrub: 0.5 } });
 }
 
 /* Animations d'entrée lancées hors de la timeline de l'intro : terminées si l'on quitte la page (cache du navigateur). */
@@ -533,27 +590,28 @@ demarrer({
       poser('[data-tete-nom]', { opacity: 0 });
       poser('.saison-26-pile i', { opacity: 0, y: -140 });
     }
-    crayon(); axes(); frappe(); motAMot();
-    auPassage('[data-rature]', 'rature-faite', 0.6);
+    qFil(); axes(); motAMot();
     auPassage('[data-coches]', 'vu', 0.4);
-    tapuscrit(); curseurCrayon(); tableDeLecture(); pileSelection(); statuts(); lampes(); route(); depot();
-    rotatif({ section: '#saison', conteneur: '[data-anneau]', cartes: '.anneau-carte', pas: 72, axe: 'y', prec: '[data-car-prec]', suiv: '[data-car-suiv]' });
-    rotatif({ section: '#comites', conteneur: '[data-tambour]', cartes: '.tambour-carte', pas: 90, axe: 'x' });
+    qVisages(); mur(); trajet(); troisLecteurs();
+    tapuscrit(); curseurVivant(); pileSelection(); statuts(); lampes(); route(); depot();
+    tetes();
     /* Au défilement : le dessin de l'Hydre et le « 26 » s'éloignent. */
     if (ST && !calme()) {
       ['.hydre-dessin', '.saison-26'].forEach((s) => { if ($(s)) gsap.to(s, { yPercent: -18, ease: 'none', scrollTrigger: { trigger: $(s).closest('section'), start: 'top top', end: 'bottom top', scrub: true } }); });
     }
   },
-  /* Intro (moins de 3 s) : le nom se tape à la machine, la feuille file jusqu'à l'objet d'ouverture de la page,
-     puis l'écran s'ouvre depuis lui (versObjet). Les effets longs partent hors de la timeline (tl.call). */
+  /* Intro (moins de 3 s) : les six formes du logo arrivent de six côtés et forment le Q, le nom apparaît,
+     puis le Q file jusqu'à l'objet d'ouverture de la page (à l'accueil, le Q fait de visages : il s'y pose exactement)
+     et l'écran s'ouvre depuis lui (versObjet). Les effets longs partent hors de la timeline (tl.call). */
   jouer() {
     if (!gsap) return null;
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    const cars = $$('.ouverture-car');
-    tl.to(cars, { opacity: 1, duration: 0.01, stagger: 0.85 / Math.max(1, cars.length) }, 0.12)
-      .to('.ouverture-souligne path', { strokeDashoffset: 0, duration: 0.3, ease: 'power2.inOut' }, 1.02)
-      .to('.ouverture-ligne, .ouverture-curseur', { opacity: 0, duration: 0.2 }, 1.3);
-    versObjet(tl, { a: 1.4, duree: 0.5, ouverture: 0.7 });
+    const dirs = [[-150, -20], [-10, -150], [150, -90], [170, 20], [-110, 140], [110, 150]];
+    tl.fromTo('.oq-piece', { opacity: 0, x: (i) => dirs[i][0], y: (i) => dirs[i][1], rotate: (i) => (i % 2 ? 26 : -26), scale: 0.55 },
+      { opacity: 1, x: 0, y: 0, rotate: 0, scale: 1, duration: 0.7, stagger: 0.07, ease: 'back.out(1.5)' }, 0.08)
+      .fromTo('.ouverture-mot', { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.4, stagger: 0.05 }, 0.5)
+      .to('.ouverture-nom, .ouverture-ligne', { opacity: 0, duration: 0.25 }, 1.25);
+    versObjet(tl, { a: 1.35, duree: 0.55, ouverture: 0.7, echelleMax: 4 });
     entree(tl, 1.9);
     tl.call(() => { pileOuverture(null); cous(null); }, null, 1.95);
     return tl;

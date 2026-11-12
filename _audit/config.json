@@ -1,6 +1,26 @@
 {
   "siteActuel": "comiteqdaa.wixsite.com",
-  "pagesTypes": ["/", "/saison", "/appel-a-textes", "/hydre", "/contact"],
-  "effets": ["tapuscrit", "frappe", "crayon", "fiches", "pile", "enveloppe", "cous", "servante"],
-  "grille": { "dispenses": {} }
+  "pagesTypes": [
+    "/",
+    "/saison",
+    "/appel-a-textes",
+    "/hydre",
+    "/contact"
+  ],
+  "effets": [
+    "hydre-q",
+    "visages",
+    "trajet",
+    "q-fil",
+    "tapuscrit",
+    "trois-lecteurs",
+    "pile",
+    "enveloppe",
+    "cous",
+    "tetes",
+    "servante"
+  ],
+  "grille": {
+    "dispenses": {}
+  }
 }

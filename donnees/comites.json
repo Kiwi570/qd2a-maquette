@@ -9,7 +9,7 @@
  {
   "pays": "Belgique",
   "cle": "belgique",
-  "depuis": "Année d’arrivée à compléter",
+  "depuis": "La tête bruxelloise de l’Hydre",
   "image": "site/comite-belgique",
   "ville": "Bruxelles"
  },
@@ -25,6 +25,6 @@
   "cle": "canada",
   "depuis": "Arrivé à la rentrée 25/26",
   "image": "site/comite-canada",
-  "ville": "Ville à compléter"
+  "ville": ""
  }
 ]

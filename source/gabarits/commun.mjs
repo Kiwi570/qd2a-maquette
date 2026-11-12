@@ -1,6 +1,7 @@
 /* Gabarit commun : head, en-tête, menu, pied de page, barre fixe du téléphone, voile.
    Les conventions data-* sont celles que lisent le socle JavaScript et l'audit (voir le README). */
-import { html, brut } from '../../outils/gabarit.mjs';
+import { html, brut, texteBrut } from '../../outils/gabarit.mjs';
+import { symboles, qIntro, qFil } from './q.mjs';
 
 const navigation = (c) => c.site.navigation.filter((cle) => c.pages[cle] && (c.pages[cle].langues || c.langues).includes(c.l));
 
@@ -134,8 +135,14 @@ function voile(c) {
   const vagues = forme === 'vague'
     ? html`<svg class="voile-vague voile-vague--haut" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 C 240 20 480 20 720 70 S 1200 130 1440 40 V 120 H 0 Z"/></svg><svg class="voile-vague voile-vague--bas" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0 C 240 100 480 100 720 50 S 1200 -10 1440 80 V 0 H 0 Z"/></svg>`
     : '';
-  const pli = forme === 'page' ? html`<span class="voile-pli" aria-hidden="true"></span><span class="voile-lignes" aria-hidden="true"></span>` : '';
+  const pli = forme === 'page' ? html`<span class="voile-pli" aria-hidden="true"></span>` : '';
   return html`<div data-voile data-forme="${forme}" aria-hidden="true">${vagues}${pli}<div class="voile-contenu"><img src="/assets/images/logo.png" alt="" width="56" height="56"><span data-voile-libelle>${c.libelle(c.page.cle)}</span></div></div>`;
+}
+
+/* Le petit Q des surtitres (grille, point 4) : posé devant chaque surtitre de la page, dans l'ordre. */
+function avecFil(c, contenu) {
+  let k = 0;
+  return brut(texteBrut(contenu).replace(/<p class="surtitre[^"]*"[^>]*>/g, (m) => m + texteBrut(qFil(c.donnees.logo, k++))));
 }
 
 export function page(c, contenu) {
@@ -143,19 +150,19 @@ export function page(c, contenu) {
 <html lang="${c.l}" data-v="${c.v}"${c.page.theme ? brut(` class="theme-${c.page.theme}"`) : ''}${c.site.curseur ? brut(' data-curseur') : ''}>
 ${tete(c)}
 <body id="haut">
+${symboles(c.donnees.logo)}
 ${voile(c)}
 <div class="ouverture-panneau" data-ouverture aria-hidden="true">
-  <div class="ouverture-feuille" data-ouverture-objet>
-    <p class="ouverture-tape">${[...c.s('commun.introTape')].map((ch, i) => html`<span class="ouverture-car${ch === ' ' ? ' ouverture-espace' : ''}" style="--i:${i}">${ch === ' ' ? brut('&nbsp;') : ch}</span>`)}<span class="ouverture-curseur"></span></p>
-    <svg class="ouverture-souligne" viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M3 9 C 50 4, 120 12, 197 6" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" pathLength="1"/></svg>
+  <div class="ouverture-scene">
+    ${qIntro(c.donnees.logo)}
+    <p class="ouverture-nom">${c.s('commun.introTape').split(' ').map((m, i) => html`${i ? ' ' : ''}<span class="ouverture-mot" style="--i:${i}">${m}</span>`)}</p>
     <p class="ouverture-ligne">${c.t('commun.introLigne')}</p>
   </div>
 </div>
 <a class="evitement" href="#contenu">${c.t('commun.evitement')}</a>
 ${entete(c)}
 <main id="contenu" tabindex="-1"${c.page.sansAction ? brut(' data-sans-action') : ''}${c.page.sansEffet ? brut(' data-sans-effet') : ''}>
-<div class="fil" data-grille="fil" data-effet="crayon" aria-hidden="true"><svg class="fil-svg"><path class="fil-trait" d=""/></svg><span class="fil-mine"></span></div>
-${contenu}
+${avecFil(c, contenu)}
 </main>
 ${pied(c)}
 ${barre(c)}
